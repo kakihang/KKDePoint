@@ -1,0 +1,91 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - AMap2DMap (4.1.0):
+    - AMapFoundation (~> 1.0)
+  - AMapFoundation (1.1.0)
+  - AMapSearch (4.1.0):
+    - AMapFoundation (~> 1.0)
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - CocoaLumberjack (2.3.0):
+    - CocoaLumberjack/Default (= 2.3.0)
+    - CocoaLumberjack/Extensions (= 2.3.0)
+  - CocoaLumberjack/Core (2.3.0)
+  - CocoaLumberjack/Default (2.3.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.3.0):
+    - CocoaLumberjack/Default
+  - Masonry (1.0.1)
+  - MBProgressHUD (0.9.2)
+  - MJRefresh (3.1.9)
+  - MLTransition (2.1.0)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - UITableView+FDTemplateLayoutCell (1.4)
+  - WMPageController (1.6.4)
+  - YYKit (1.0.7):
+    - YYKit/no-arc (= 1.0.7)
+  - YYKit/no-arc (1.0.7)
+
+DEPENDENCIES:
+  - AFNetworking
+  - AMap2DMap
+  - AMapSearch
+  - BlocksKit
+  - CocoaLumberjack
+  - Masonry
+  - MBProgressHUD
+  - MJRefresh
+  - MLTransition
+  - SDWebImage
+  - UITableView+FDTemplateLayoutCell
+  - WMPageController
+  - YYKit
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AMap2DMap: '0950d46480e8fdb38a5170450866aecc6dc8c387'
+  AMapFoundation: 15db20567e6512422a086a01b42a88b145bc2500
+  AMapSearch: cb4722480d2d4331a032d43bd1070ed0fa55dac9
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
+  MLTransition: 48ce7b91ef0c6acfcb9d03b22d2fa75d5826018f
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
+  WMPageController: 7096ade70280e7891254267a85d847ec423450e0
+  YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
+
+PODFILE CHECKSUM: 9c945991296c8c4a7f6ce245b17855ed35b7c193
+
+COCOAPODS: 1.0.1
