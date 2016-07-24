@@ -9,12 +9,24 @@
 #ifndef Constant_h
 #define Constant_h
 
+
+
 // 三原色和透明度 颜色宏
 #define KKCOLOR(kred, kgreen, kblue, kalpha) [UIColor colorWithRed:kred/255.0 green:kgreen/255.0 blue:kblue/255.0 alpha:kalpha]
 // 图片设置宏
 #define KKIMAGE(string) [UIImage imageNamed:string]
 
 // 全局默认背景颜色
-#defien KKGOGLE
+#define KKGLOBAL KKCOLOR(238, 238, 238, 1.0)
+
+
+
+
+/** FRAME **/
+// tabBar 文字大小
+#define KKFrameTaBarFont 10
+
+
+
 
 #endif /* Constant_h */

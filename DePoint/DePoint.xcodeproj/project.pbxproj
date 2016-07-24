@@ -804,6 +804,39 @@
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = DePoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AMap2DMap\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AMapFoundation\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AMapSearch\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/BlocksKit\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MLTransition\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/WMPageController\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/YYKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kakihang.DePoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -817,6 +850,39 @@
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = DePoint/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AMap2DMap\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AMapFoundation\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AMapSearch\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/BlocksKit\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MLTransition\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/WMPageController\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/YYKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kakihang.DePoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

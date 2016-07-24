@@ -13,8 +13,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = KKCOLOR(238, 238, 238, 1);
-
+    
+    
 }
 
 @end
