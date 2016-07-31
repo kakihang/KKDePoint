@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 #import "KKFrameTabC.h"
+#import <UMMobClick/MobClick.h>
+#import <AFNetworkActivityIndicatorManager.h>
+
+// 高德地图框架
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 
 @interface AppDelegate ()
@@ -18,6 +23,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // 高德地图apiKey
+    [AMapServices sharedServices].apiKey = KKGDMAPAPIKEY;
+    
+    // 显示网络菊花
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    // 显示网络连接状态
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        NSLog(@"%@", AFStringFromNetworkReachabilityStatus(status));
+    }];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
+    // 友盟数据统计
+    UMConfigInstance.appKey = KKUMAPIKEY;
+    UMConfigInstance.channelId = @"App Store";
+    [MobClick startWithConfigure:UMConfigInstance];
+    [MobClick setLogEnabled:YES]; // 不拦截本地错误日志
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[KKFrameTabC alloc] init];

@@ -12,6 +12,11 @@
 		268F4C991D41A69200B8AD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268F4C971D41A69200B8AD32 /* LaunchScreen.storyboard */; };
 		268F4CA41D41A69200B8AD32 /* DePointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4CA31D41A69200B8AD32 /* DePointTests.m */; };
 		268F4CAF1D41A69200B8AD32 /* DePointUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4CAE1D41A69200B8AD32 /* DePointUITests.m */; };
+		26AD7A021D4A2B01009217B5 /* KKCenterAnno.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A011D4A2B01009217B5 /* KKCenterAnno.m */; };
+		26AD7A0E1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A0B1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.m */; };
+		26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A0D1D4A447D009217B5 /* CLLocationManager+KKModel.m */; };
+		26AD7A121D4A44B6009217B5 /* KKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A111D4A44B6009217B5 /* KKMapView.m */; };
+		26AE8F491D48D5C300E5E763 /* KKLocationVModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE8F481D48D5C300E5E763 /* KKLocationVModel.m */; };
 		26D6BD4D1D4244AB00CFBB01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD4C1D4244AB00CFBB01 /* AppDelegate.m */; };
 		26D6BD5A1D42456F00CFBB01 /* NSObject+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD521D42456F00CFBB01 /* NSObject+Parse.m */; };
 		26D6BD5B1D42456F00CFBB01 /* NSString+YX.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD541D42456F00CFBB01 /* NSString+YX.m */; };
@@ -26,6 +31,7 @@
 		26D6BD771D42532F00CFBB01 /* KKDisVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD761D42532F00CFBB01 /* KKDisVCtrl.m */; };
 		26D6BD7A1D42534400CFBB01 /* KKNearVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD791D42534400CFBB01 /* KKNearVCtrl.m */; };
 		26D6BD7D1D42536700CFBB01 /* KKSetVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD7C1D42536700CFBB01 /* KKSetVCtrl.m */; };
+		26E5D7DC1D49AA8800B6CCC1 /* KKAnno.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5D7DB1D49AA8800B6CCC1 /* KKAnno.m */; };
 		70C35D79B8847229B799CA52 /* libPods-DePoint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7A60D83CAB1FE7C8E3A9FF /* libPods-DePoint.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +65,18 @@
 		268F4CAA1D41A69200B8AD32 /* DePointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DePointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		268F4CAE1D41A69200B8AD32 /* DePointUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DePointUITests.m; sourceTree = "<group>"; };
 		268F4CB01D41A69200B8AD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26AD7A001D4A2B01009217B5 /* KKCenterAnno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCenterAnno.h; sourceTree = "<group>"; };
+		26AD7A011D4A2B01009217B5 /* KKCenterAnno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCenterAnno.m; sourceTree = "<group>"; };
+		26AD7A0A1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AMapPOIAroundSearchRequest+KKModel.h"; sourceTree = "<group>"; };
+		26AD7A0B1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AMapPOIAroundSearchRequest+KKModel.m"; sourceTree = "<group>"; };
+		26AD7A0C1D4A447D009217B5 /* CLLocationManager+KKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+KKModel.h"; sourceTree = "<group>"; };
+		26AD7A0D1D4A447D009217B5 /* CLLocationManager+KKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+KKModel.m"; sourceTree = "<group>"; };
+		26AD7A101D4A44B6009217B5 /* KKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMapView.h; sourceTree = "<group>"; };
+		26AD7A111D4A44B6009217B5 /* KKMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMapView.m; sourceTree = "<group>"; };
+		26AE8F451D48D39C00E5E763 /* NearConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NearConstant.h; sourceTree = "<group>"; };
+		26AE8F461D48D3D800E5E763 /* FrameConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameConstant.h; sourceTree = "<group>"; };
+		26AE8F471D48D5C300E5E763 /* KKLocationVModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLocationVModel.h; sourceTree = "<group>"; };
+		26AE8F481D48D5C300E5E763 /* KKLocationVModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLocationVModel.m; sourceTree = "<group>"; };
 		26D6BD4A1D42445200CFBB01 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		26D6BD4B1D4244AB00CFBB01 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26D6BD4C1D4244AB00CFBB01 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -89,6 +107,8 @@
 		26D6BD791D42534400CFBB01 /* KKNearVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNearVCtrl.m; sourceTree = "<group>"; };
 		26D6BD7B1D42536700CFBB01 /* KKSetVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSetVCtrl.h; sourceTree = "<group>"; };
 		26D6BD7C1D42536700CFBB01 /* KKSetVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSetVCtrl.m; sourceTree = "<group>"; };
+		26E5D7DA1D49AA8800B6CCC1 /* KKAnno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAnno.h; sourceTree = "<group>"; };
+		26E5D7DB1D49AA8800B6CCC1 /* KKAnno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAnno.m; sourceTree = "<group>"; };
 		4F7A60D83CAB1FE7C8E3A9FF /* libPods-DePoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DePoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F10234853F8E081D978B540 /* Pods-DePoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DePoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DePoint/Pods-DePoint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +205,17 @@
 			path = DePointUITests;
 			sourceTree = "<group>";
 		};
+		26AD7A091D4A447D009217B5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				26AD7A0A1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.h */,
+				26AD7A0B1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.m */,
+				26AD7A0C1D4A447D009217B5 /* CLLocationManager+KKModel.h */,
+				26AD7A0D1D4A447D009217B5 /* CLLocationManager+KKModel.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		26D6BD2D1D42428800CFBB01 /* 4-Set 设置 */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +231,8 @@
 		26D6BD2E1D42429000CFBB01 /* 3-Nearby 附近 */ = {
 			isa = PBXGroup;
 			children = (
+				26AE8F451D48D39C00E5E763 /* NearConstant.h */,
+				26AD7A091D4A447D009217B5 /* Category */,
 				26D6BD3A1D4243FC00CFBB01 /* Controller */,
 				26D6BD3B1D4243FC00CFBB01 /* Model */,
 				26D6BD3C1D4243FC00CFBB01 /* View */,
@@ -236,6 +269,7 @@
 		26D6BD311D4242AB00CFBB01 /* 0-Frame 主框架 */ = {
 			isa = PBXGroup;
 			children = (
+				26AE8F461D48D3D800E5E763 /* FrameConstant.h */,
 				26D6BD421D42441900CFBB01 /* Controller */,
 				26D6BD431D42441900CFBB01 /* Model */,
 				26D6BD441D42441900CFBB01 /* View */,
@@ -343,6 +377,12 @@
 		26D6BD3C1D4243FC00CFBB01 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				26E5D7DA1D49AA8800B6CCC1 /* KKAnno.h */,
+				26E5D7DB1D49AA8800B6CCC1 /* KKAnno.m */,
+				26AD7A001D4A2B01009217B5 /* KKCenterAnno.h */,
+				26AD7A011D4A2B01009217B5 /* KKCenterAnno.m */,
+				26AD7A101D4A44B6009217B5 /* KKMapView.h */,
+				26AD7A111D4A44B6009217B5 /* KKMapView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,6 +390,8 @@
 		26D6BD3D1D4243FC00CFBB01 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				26AE8F471D48D5C300E5E763 /* KKLocationVModel.h */,
+				26AE8F481D48D5C300E5E763 /* KKLocationVModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -537,6 +579,7 @@
 		268F4C7E1D41A69100B8AD32 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KK;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = liudhkk;
 				TargetAttributes = {
@@ -655,21 +698,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26AD7A121D4A44B6009217B5 /* KKMapView.m in Sources */,
 				26D6BD5D1D42456F00CFBB01 /* UIView+HUD.m in Sources */,
 				26D6BD641D42482E00CFBB01 /* BaseViewModel.m in Sources */,
 				26D6BD611D4247EE00CFBB01 /* BaseNetworking.m in Sources */,
+				26AE8F491D48D5C300E5E763 /* KKLocationVModel.m in Sources */,
 				26D6BD4D1D4244AB00CFBB01 /* AppDelegate.m in Sources */,
 				26D6BD5C1D42456F00CFBB01 /* UIScrollView+Refresh.m in Sources */,
 				26D6BD711D4252CB00CFBB01 /* KKFrameTabC.m in Sources */,
 				26D6BD5A1D42456F00CFBB01 /* NSObject+Parse.m in Sources */,
+				26E5D7DC1D49AA8800B6CCC1 /* KKAnno.m in Sources */,
 				26D6BD6A1D424B3A00CFBB01 /* NSDate+Extension.m in Sources */,
 				26D6BD7D1D42536700CFBB01 /* KKSetVCtrl.m in Sources */,
+				26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */,
 				26D6BD741D42531200CFBB01 /* KKMediVCtrl.m in Sources */,
 				26D6BD7A1D42534400CFBB01 /* KKNearVCtrl.m in Sources */,
 				26D6BD5B1D42456F00CFBB01 /* NSString+YX.m in Sources */,
 				26D6BD771D42532F00CFBB01 /* KKDisVCtrl.m in Sources */,
+				26AD7A021D4A2B01009217B5 /* KKCenterAnno.m in Sources */,
 				26D6BD6D1D42503400CFBB01 /* UIView+Frame.m in Sources */,
 				268F4C8B1D41A69100B8AD32 /* main.m in Sources */,
+				26AD7A0E1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +852,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = DePoint/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -837,7 +887,7 @@
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/YYKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kakihang.DePoint;
+				PRODUCT_BUNDLE_IDENTIFIER = IOS1604.kk.dp.win;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -849,6 +899,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = DePoint/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -883,7 +934,7 @@
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/YYKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kakihang.DePoint;
+				PRODUCT_BUNDLE_IDENTIFIER = IOS1604.kk.dp.win;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

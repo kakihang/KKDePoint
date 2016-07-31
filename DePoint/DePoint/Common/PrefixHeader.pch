@@ -14,7 +14,7 @@
 #import <UIImageView+WebCache.h>
 #import <YYKit.h>
 #import <UITableView+FDTemplateLayoutCell.h>
-#import <BlocksKit.h>
+#import <BlocksKit+UIKit.h>
 #import <CocoaLumberjack.h>
 #import <MLTransition.h>
 #import <AFNetworking.h>
@@ -28,6 +28,8 @@
 #import "UIView+HUD.h"
 
 #import "Constant.h"
+#import "FrameConstant.h"
+#import "NearConstant.h"
 
 
 #endif /* PrefixHeader_pch */

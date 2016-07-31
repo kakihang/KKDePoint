@@ -53,7 +53,7 @@
                 selectedImage:KKIMAGE(@"near")];
     
     // 添加附近子控制器
-    [self setupViewController:[[KKNearVCtrl alloc] init]
+    [self setupViewController:[[KKSetVCtrl alloc] init]
                      navTitle:@"我的"
                   tabBarTitle:@"我的"
                         image:KKIMAGE(@"set")
@@ -80,6 +80,7 @@
     viewController.tabBarItem.image = image;
     viewController.tabBarItem.selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     viewController.navigationController.navigationBar.barTintColor = KKCOLOR(228, 228, 228, 1);
+    viewController.navigationItem.title = navTitle;
     
     // 添加子控制器
     [self addChildViewController:nav];

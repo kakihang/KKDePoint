@@ -14,8 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - AMap2DMap (4.1.0):
-    - AMapFoundation (~> 1.0)
   - AMapFoundation (1.1.0)
   - AMapSearch (4.1.0):
     - AMapFoundation (~> 1.0)
@@ -50,6 +48,7 @@ PODS:
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
   - UITableView+FDTemplateLayoutCell (1.4)
+  - UMengAnalytics-NO-IDFA (4.0.5)
   - WMPageController (1.6.4)
   - YYKit (1.0.7):
     - YYKit/no-arc (= 1.0.7)
@@ -57,7 +56,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - AMap2DMap
   - AMapSearch
   - BlocksKit
   - CocoaLumberjack
@@ -67,12 +65,12 @@ DEPENDENCIES:
   - MLTransition
   - SDWebImage
   - UITableView+FDTemplateLayoutCell
+  - UMengAnalytics-NO-IDFA
   - WMPageController
   - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  AMap2DMap: '0950d46480e8fdb38a5170450866aecc6dc8c387'
   AMapFoundation: 15db20567e6512422a086a01b42a88b145bc2500
   AMapSearch: cb4722480d2d4331a032d43bd1070ed0fa55dac9
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
@@ -83,9 +81,10 @@ SPEC CHECKSUMS:
   MLTransition: 48ce7b91ef0c6acfcb9d03b22d2fa75d5826018f
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
+  UMengAnalytics-NO-IDFA: 965a219b05475ff2a4c09a164139a27bbaa0e25b
   WMPageController: 7096ade70280e7891254267a85d847ec423450e0
   YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
 
-PODFILE CHECKSUM: 9c945991296c8c4a7f6ce245b17855ed35b7c193
+PODFILE CHECKSUM: 35f4589cf91620f32d48c69a9227b8e8ee7d8bbe
 
 COCOAPODS: 1.0.1
