@@ -13,14 +13,10 @@
 
 
 @interface KKNearVCtrl() <CLLocationManagerDelegate, MKMapViewDelegate, AMapSearchDelegate>
-// 地图View
-@property (nonatomic, strong) KKMapView *mapView;
-// 定位模型
-@property (nonatomic, strong) KKLocationVModel *locationVM;
-// 地图管理者
-@property (nonatomic, strong) CLLocationManager *manager;
-// 附近单元数组
-@property (nonatomic, strong) NSMutableArray <KKAnno *> *dataList;
+@property (nonatomic, strong) KKMapView *mapView; // 地图View
+@property (nonatomic, strong) KKLocationVModel *locationVM; // 定位模型
+@property (nonatomic, strong) CLLocationManager *manager; // 地图管理者
+@property (nonatomic, strong) NSMutableArray <KKAnno *> *dataList; // 附近单元数组
 @end
 
 
