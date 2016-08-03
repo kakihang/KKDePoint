@@ -120,4 +120,12 @@
     }
     
 }
+
+
++ (NSString *)kk_currentDatebyFormat:(NSString *)format {
+    NSDateFormatter *mat = [[NSDateFormatter alloc] init];
+    mat.dateFormat = format;
+    return [mat stringFromDate:[NSDate date]];
+}
+
 @end

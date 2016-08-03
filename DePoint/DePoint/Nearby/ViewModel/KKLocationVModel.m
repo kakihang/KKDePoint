@@ -22,12 +22,15 @@
 @end
 
 
-@implementation KKLocationVModel
+@implementation KKLocationVModel {
+    BOOL _centerAnnoFlag;
+}
 
 - (instancetype)initWithMapView:(KKMapView *)mapView {
     if (self = [super init]) {
         _mapView = mapView;
         [self.mapView addAnnotation:self.centerAnno];
+        _centerAnnoFlag = YES;
     }
     return self;
 }
@@ -52,6 +55,15 @@
     [self startSearch];
 }
 
+- (void)setKeywords:(NSString *)keywords {
+    self.request.keywords = keywords;
+    [self startSearch];
+}
+
+- (void)setRadius:(NSInteger)radius {
+    self.request.radius = radius;
+    [self startSearch];
+}
 
 
 #pragma mark - 大头针
@@ -61,8 +73,19 @@
 }
 
 - (void)changeAnno:(KKCenterAnno *)anno coordinate:(CLLocationCoordinate2D)coordinate {
+    
     [UIView animateWithDuration:0.1 animations:^{
         anno.coordinate = coordinate;
+        
+        //        CLLocationCoordinate2D userCoordinate = self.mapView.userLocation.coordinate;
+        //        if (coordinate.latitude==userCoordinate.latitude
+        //            && coordinate.longitude==userCoordinate.longitude) {
+        //            _centerAnnoFlag = NO;
+        //            [self.mapView removeAnnotation:self.centerAnno];
+        //        } else if (!_centerAnnoFlag) {
+        //            _centerAnnoFlag = YES;
+        //            [self.mapView addAnnotation:self.centerAnno];
+        //        }
     }];
 }
 

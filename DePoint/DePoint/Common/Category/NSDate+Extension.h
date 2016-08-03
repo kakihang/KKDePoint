@@ -20,4 +20,7 @@
 // 传入自1970以来的秒数，返回日期字符串，具体格式请参考代码
 + (NSString *)kk_stringTimeFromSeconds:(NSTimeInterval)time;
 
+// 获取当前日期，按传入格式初始化，并返回
++ (NSString *)kk_currentDatebyFormat:(NSString *)format;
+
 @end

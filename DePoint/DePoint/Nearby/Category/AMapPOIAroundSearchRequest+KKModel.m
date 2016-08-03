@@ -27,8 +27,8 @@
     request.types = @"医疗保健服务";
     request.radius =  3000;//<! 查询半径，范围：0-50000，单位：米 [default = 3000]
     request.sortrule = 0; //<! 排序规则, 0-距离排序；1-综合排序, 默认1
-    request.requireExtension = YES; //<! 是否返回扩展信息，默认为 NO。
-    request.offset = 20; //每页记录数
+    request.requireExtension = NO; //<! 是否返回扩展信息，默认为 NO。
+    request.offset = 100; //每页记录数
     request.page = 1; //当前页数
     
     return request;

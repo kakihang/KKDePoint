@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2654FE1A1D517AA40051FA41 /* KKMedicineChestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE191D517AA40051FA41 /* KKMedicineChestModel.m */; };
+		2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */; };
+		2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1F1D5189BD0051FA41 /* KKSanBox.m */; };
 		268F4C8B1D41A69100B8AD32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4C8A1D41A69100B8AD32 /* main.m */; };
 		268F4C961D41A69200B8AD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 268F4C951D41A69200B8AD32 /* Assets.xcassets */; };
 		268F4C991D41A69200B8AD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268F4C971D41A69200B8AD32 /* LaunchScreen.storyboard */; };
 		268F4CA41D41A69200B8AD32 /* DePointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4CA31D41A69200B8AD32 /* DePointTests.m */; };
 		268F4CAF1D41A69200B8AD32 /* DePointUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4CAE1D41A69200B8AD32 /* DePointUITests.m */; };
+		26A8A1681D503AC8007894CD /* KKNearbyTViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8A1671D503AC8007894CD /* KKNearbyTViewCell.m */; };
+		26A8A16B1D5051FC007894CD /* KKColumnButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8A16A1D5051FC007894CD /* KKColumnButtons.m */; };
 		26AD7A021D4A2B01009217B5 /* KKCenterAnno.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A011D4A2B01009217B5 /* KKCenterAnno.m */; };
 		26AD7A0E1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A0B1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.m */; };
 		26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A0D1D4A447D009217B5 /* CLLocationManager+KKModel.m */; };
@@ -54,6 +59,12 @@
 
 /* Begin PBXFileReference section */
 		13AE236248656BA1E762C9AC /* Pods-DePoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DePoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-DePoint/Pods-DePoint.release.xcconfig"; sourceTree = "<group>"; };
+		2654FE181D517AA40051FA41 /* KKMedicineChestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMedicineChestModel.h; sourceTree = "<group>"; };
+		2654FE191D517AA40051FA41 /* KKMedicineChestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMedicineChestModel.m; sourceTree = "<group>"; };
+		2654FE1B1D517ACB0051FA41 /* KKCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCollectionModel.h; sourceTree = "<group>"; };
+		2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCollectionModel.m; sourceTree = "<group>"; };
+		2654FE1E1D5189BD0051FA41 /* KKSanBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSanBox.h; sourceTree = "<group>"; };
+		2654FE1F1D5189BD0051FA41 /* KKSanBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSanBox.m; sourceTree = "<group>"; };
 		268F4C861D41A69100B8AD32 /* DePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		268F4C8A1D41A69100B8AD32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		268F4C951D41A69200B8AD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +76,10 @@
 		268F4CAA1D41A69200B8AD32 /* DePointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DePointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		268F4CAE1D41A69200B8AD32 /* DePointUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DePointUITests.m; sourceTree = "<group>"; };
 		268F4CB01D41A69200B8AD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A8A1661D503AC8007894CD /* KKNearbyTViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNearbyTViewCell.h; sourceTree = "<group>"; };
+		26A8A1671D503AC8007894CD /* KKNearbyTViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNearbyTViewCell.m; sourceTree = "<group>"; };
+		26A8A1691D5051FC007894CD /* KKColumnButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKColumnButtons.h; sourceTree = "<group>"; };
+		26A8A16A1D5051FC007894CD /* KKColumnButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKColumnButtons.m; sourceTree = "<group>"; };
 		26AD7A001D4A2B01009217B5 /* KKCenterAnno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCenterAnno.h; sourceTree = "<group>"; };
 		26AD7A011D4A2B01009217B5 /* KKCenterAnno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCenterAnno.m; sourceTree = "<group>"; };
 		26AD7A0A1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AMapPOIAroundSearchRequest+KKModel.h"; sourceTree = "<group>"; };
@@ -340,6 +355,10 @@
 		26D6BD371D4243DF00CFBB01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2654FE181D517AA40051FA41 /* KKMedicineChestModel.h */,
+				2654FE191D517AA40051FA41 /* KKMedicineChestModel.m */,
+				2654FE1B1D517ACB0051FA41 /* KKCollectionModel.h */,
+				2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,6 +373,8 @@
 		26D6BD391D4243DF00CFBB01 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2654FE1E1D5189BD0051FA41 /* KKSanBox.h */,
+				2654FE1F1D5189BD0051FA41 /* KKSanBox.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -383,6 +404,10 @@
 				26AD7A011D4A2B01009217B5 /* KKCenterAnno.m */,
 				26AD7A101D4A44B6009217B5 /* KKMapView.h */,
 				26AD7A111D4A44B6009217B5 /* KKMapView.m */,
+				26A8A1661D503AC8007894CD /* KKNearbyTViewCell.h */,
+				26A8A1671D503AC8007894CD /* KKNearbyTViewCell.m */,
+				26A8A1691D5051FC007894CD /* KKColumnButtons.h */,
+				26A8A16A1D5051FC007894CD /* KKColumnButtons.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -706,17 +731,22 @@
 				26D6BD4D1D4244AB00CFBB01 /* AppDelegate.m in Sources */,
 				26D6BD5C1D42456F00CFBB01 /* UIScrollView+Refresh.m in Sources */,
 				26D6BD711D4252CB00CFBB01 /* KKFrameTabC.m in Sources */,
+				26A8A16B1D5051FC007894CD /* KKColumnButtons.m in Sources */,
 				26D6BD5A1D42456F00CFBB01 /* NSObject+Parse.m in Sources */,
 				26E5D7DC1D49AA8800B6CCC1 /* KKAnno.m in Sources */,
 				26D6BD6A1D424B3A00CFBB01 /* NSDate+Extension.m in Sources */,
 				26D6BD7D1D42536700CFBB01 /* KKSetVCtrl.m in Sources */,
 				26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */,
+				2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */,
 				26D6BD741D42531200CFBB01 /* KKMediVCtrl.m in Sources */,
 				26D6BD7A1D42534400CFBB01 /* KKNearVCtrl.m in Sources */,
 				26D6BD5B1D42456F00CFBB01 /* NSString+YX.m in Sources */,
 				26D6BD771D42532F00CFBB01 /* KKDisVCtrl.m in Sources */,
 				26AD7A021D4A2B01009217B5 /* KKCenterAnno.m in Sources */,
+				26A8A1681D503AC8007894CD /* KKNearbyTViewCell.m in Sources */,
 				26D6BD6D1D42503400CFBB01 /* UIView+Frame.m in Sources */,
+				2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */,
+				2654FE1A1D517AA40051FA41 /* KKMedicineChestModel.m in Sources */,
 				268F4C8B1D41A69100B8AD32 /* main.m in Sources */,
 				26AD7A0E1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.m in Sources */,
 			);

@@ -25,6 +25,8 @@
 - (void)startSearch;
 - (void)startSearchWithCoordinate:(CLLocationCoordinate2D)coordinnate;
 
+- (void)setKeywords:(NSString *)keywords;
+- (void)setRadius:(NSInteger)radius;
 
 // 当前位置
 @property (nonatomic, assign, readonly) CLLocationCoordinate2D coordinate;
