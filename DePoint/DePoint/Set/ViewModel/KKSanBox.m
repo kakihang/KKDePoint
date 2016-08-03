@@ -10,10 +10,16 @@
 
 
 // 归档解档地址
-#define KKMEDICCHESTPATH [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"DeliveryPoint.medicchest.sanbox.plist"]
+#define KKMEDICCHESTPATH [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"DeliveryPoint.medic.chest.sanbox.plist"]
+
+#define KKMEDICHISTORYPATH [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"DeliveryPoint.medic.history.sanbox.plist"]
+
+#define KKDISEASEPATH [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"DeliveryPoint.disea.collection.sanbox.plist"]
 
 @interface KKSanBox()
-@property (nonatomic, strong) NSMutableDictionary *medicDatas;
+@property (nonatomic, strong) NSMutableDictionary *medicDatas; // 药箱
+@property (nonatomic, strong) NSMutableDictionary *medicHistory; // 扫码历史
+@property (nonatomic, strong) NSMutableDictionary *collectionDatas; // 病类收藏
 @end
 
 
@@ -32,6 +38,7 @@
 }
 
 
+
 static KKSanBox *sanBox_ = nil;
 + (instancetype)shareSanBox {
     static dispatch_once_t onceToken;
@@ -47,7 +54,35 @@ static KKSanBox *sanBox_ = nil;
 
 
 
-#pragma mark - 药箱
+#pragma mark -
+
+- (void)saveMedic:(KKMedicineChestModel *)model
+         dataList:(NSMutableDictionary *)dataList
+             path:(NSString *)path {
+    NSString *key = [self getMedicCheKey:model];
+    model.saveDate = [NSDate kk_currentDatebyFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dataList setObject:model forKey:key];
+    [self saveToSanBox:self.medicDatas path:path];
+}
+
+- (void)deleteMedic:(KKMedicineChestModel *)model
+           dataList:(NSMutableDictionary *)dataList
+               path:(NSString *)path {
+    NSString *key = [self getMedicCheKey:model];
+    [dataList removeObjectForKey:key];
+    [self saveToSanBox:dataList path:path];
+}
+
+- (NSArray *)getMedic:(NSDictionary *)dataList {
+    NSArray *keys = [dataList keysSortedByValueUsingComparator:^NSComparisonResult(KKMedicineChestModel *  _Nonnull obj1, KKMedicineChestModel *  _Nonnull obj2) {
+        return [obj2.saveDate compare:obj1.saveDate];
+    }];
+    NSMutableArray *arrry = [NSMutableArray array];
+    for (NSString *key in keys) {
+        [arrry addObject:dataList[key]];
+    }
+    return arrry.copy;
+}
 
 - (NSString *)getMedicCheKey:(KKMedicineChestModel *)medicChestModel {
     NSString *key;
@@ -69,36 +104,59 @@ static KKSanBox *sanBox_ = nil;
             return nil;
         }
     }
-    
     NSAssert1((key.length!=0), @"%s: medicChestModel had error value(keywords was null)", __FUNCTION__);
-    
     return key;
 }
 
+#pragma mark - 药箱
+
 - (void)kk_saveMdeicChest:(KKMedicineChestModel *)medicChestModel {
-    NSString *key = [self getMedicCheKey:medicChestModel];
-    medicChestModel.saveDate = [NSDate kk_currentDatebyFormat:@"yyyy-MM-dd"];
-    [self.medicDatas setObject:medicChestModel forKey:key];
-    [self saveToSanBox:self.medicDatas path:KKMEDICCHESTPATH];
+    [self saveMedic:medicChestModel dataList:self.medicDatas path:KKMEDICCHESTPATH];
 }
 
 - (void)kk_deleteMedic:(KKMedicineChestModel *)medicChestModel {
-    NSString *key = [self getMedicCheKey:medicChestModel];
-    [self.medicDatas removeObjectForKey:key];
-    [self saveToSanBox:self.medicDatas path:KKMEDICCHESTPATH];
+    [self deleteMedic:medicChestModel dataList:self.medicDatas path:KKMEDICCHESTPATH];
 }
 
 - (NSArray <KKMedicineChestModel *> *)kk_getMdeicChest {
-    NSArray *keys = [self.medicDatas keysSortedByValueUsingComparator:^NSComparisonResult(KKMedicineChestModel *  _Nonnull obj1, KKMedicineChestModel *  _Nonnull obj2) {
-        return [obj2.saveDate compare:obj1.saveDate];
-    }];
-    
-    NSMutableArray *arrry = [NSMutableArray array];
-    for (NSString *key in keys) {
-        [arrry addObject:self.medicDatas[key]];
-    }
-    return arrry.copy;
+    return [self getMedic:self.medicDatas];
 }
+
+
+#pragma mark - 扫码历史
+
+- (void)kk_saveMdeicHistory:(KKMedicineChestModel *)medicModel {
+    [self saveMedic:medicModel dataList:self.medicHistory path:KKMEDICHISTORYPATH];
+}
+
+- (void)kk_deleteMedicHistory:(KKMedicineChestModel *)medicModel {
+    [self deleteMedic:medicModel dataList:self.medicHistory path:KKMEDICHISTORYPATH];
+}
+
+- (NSArray <KKMedicineChestModel *> *)kk_getMdeicHistory {
+    return [self getMedic:self.medicHistory];
+}
+
+
+#pragma mark - 病类收藏
+
+- (void)kk_saveDisease:(KKCollectionModel *)collectionModel {
+    collectionModel.saveDate = [NSDate kk_currentDatebyFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [self.collectionDatas setObject:collectionModel forKey:collectionModel.name];
+    [self saveToSanBox:self.collectionDatas path:KKDISEASEPATH];
+}
+
+- (void)kk_deleteDisease:(KKCollectionModel *)collectionModel {
+    [self deleteMedic:medicModel dataList:self.medicHistory path:KKMEDICHISTORYPATH];
+}
+
+- (NSArray <KKMedicineChestModel *> *)kk_getMdeicHistory {
+    return [self getMedic:self.medicHistory];
+}
+
+
+
+#pragma mark - 懒加载
 
 - (NSMutableDictionary *)medicDatas {
     if(_medicDatas == nil) {
@@ -106,6 +164,21 @@ static KKSanBox *sanBox_ = nil;
         [_medicDatas addEntriesFromDictionary:[self getFromSanBox:KKMEDICCHESTPATH]];
     }
     return _medicDatas;
+}
+
+- (NSMutableDictionary *)medicHistory {
+    if(_medicHistory == nil) {
+        _medicHistory = [[NSMutableDictionary alloc] init];
+        [_medicHistory addEntriesFromDictionary:[self getFromSanBox:KKMEDICHISTORYPATH]];
+    }
+    return _medicHistory;
+}
+
+- (NSMutableDictionary *)collectionDatas {
+    if(_collectionDatas == nil) {
+        _collectionDatas = [[NSMutableDictionary alloc] init];
+    }
+    return _collectionDatas;
 }
 
 @end

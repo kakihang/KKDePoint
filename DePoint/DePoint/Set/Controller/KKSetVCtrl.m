@@ -18,14 +18,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray *array = [KKSANBOX kk_getMdeicChest];
-    NSLog(@"--%@--", array);
+    
     
     self.medicChesM.mcMode = KKMedicChModeProduct;
-    self.medicChesM.products.barCode = @"234567845678567";
+    self.medicChesM.products.barCode = @"23456701999912315";
     [KKSANBOX kk_saveMdeicChest:self.medicChesM];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSArray <KKMedicineChestModel *> *array = [KKSANBOX kk_getMdeicChest];
+    NSLog(@"--%@--", array);
+    
+    [array enumerateObjectsUsingBlock:^(KKMedicineChestModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@ %@", obj.products.barCode, obj.saveDate);
+    }];
+}
 
 
 - (KKMedicineChestModel *)medicChesM {

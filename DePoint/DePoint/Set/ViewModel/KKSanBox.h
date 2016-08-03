@@ -11,6 +11,7 @@
 
 #import <Foundation/Foundation.h>
 #import "KKMedicineChestModel.h"
+#import "KKCollectionModel.h"
 
 
 typedef NS_ENUM(NSUInteger, KKSanBoxType) {
@@ -30,5 +31,8 @@ typedef NS_ENUM(NSUInteger, KKSanBoxType) {
 - (void)kk_deleteMedic:(KKMedicineChestModel *)medicChestModel;
 - (NSArray <KKMedicineChestModel *> *)kk_getMdeicChest;
 
+- (void)kk_saveMdeicHistory:(KKMedicineChestModel *)medicModel;
+- (void)kk_deleteMedicHistory:(KKMedicineChestModel *)medicModel;
+- (NSArray <KKMedicineChestModel *> *)kk_getMdeicHistory;
 
 @end
