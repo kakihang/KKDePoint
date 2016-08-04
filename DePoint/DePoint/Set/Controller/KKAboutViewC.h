@@ -1,13 +1,13 @@
 //
-//  KKSetVCtrl.h
+//  KKAboutViewC.h
 //  DePoint
 //
-//  Created by kaki on 16/7/22.
+//  Created by kaki on 16/8/4.
 //  Copyright © 2016年 liudhkk. All rights reserved.
 //
 
 #import "KKCustomVC.h"
 
-@interface KKSetVCtrl : KKCustomVC
+@interface KKAboutViewC : KKCustomVC
 
 @end

@@ -14,14 +14,6 @@
 #import "KKCollectionModel.h"
 
 
-typedef NS_ENUM(NSUInteger, KKSanBoxType) {
-    KKSanBoxTypeMedicSupervision,
-    KKSanBoxTypeMedicProduct,
-    KKSanBoxTypeMedicDetail,
-    KKSanBoxTypeMedicHistory,
-    KKSanBoxTypeDiseaseDetail,
-    KKSanBoxTypeDiseaseHistory,
-};
 
 @interface KKSanBox : NSObject
 
@@ -31,8 +23,13 @@ typedef NS_ENUM(NSUInteger, KKSanBoxType) {
 - (void)kk_deleteMedic:(KKMedicineChestModel *)medicChestModel;
 - (NSArray <KKMedicineChestModel *> *)kk_getMdeicChest;
 
-- (void)kk_saveMdeicHistory:(KKMedicineChestModel *)medicModel;
-- (void)kk_deleteMedicHistory:(KKMedicineChestModel *)medicModel;
-- (NSArray <KKMedicineChestModel *> *)kk_getMdeicHistory;
+//- (void)kk_saveMdeicHistory:(KKMedicineChestModel *)medicModel;
+//- (void)kk_deleteMedicHistory:(KKMedicineChestModel *)medicModel;
+//- (NSArray <KKMedicineChestModel *> *)kk_getMdeicHistory;
+
+- (void)kk_saveDisease:(KKCollectionModel *)collectionModel;
+- (void)kk_deleteDisease:(KKCollectionModel *)collectionModel;
+- (NSArray <KKCollectionModel *> *)kk_getDisease;
+
 
 @end

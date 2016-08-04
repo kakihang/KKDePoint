@@ -10,6 +10,7 @@
 		2654FE1A1D517AA40051FA41 /* KKMedicineChestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE191D517AA40051FA41 /* KKMedicineChestModel.m */; };
 		2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */; };
 		2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1F1D5189BD0051FA41 /* KKSanBox.m */; };
+		265E62331D53297200D65A37 /* UIButton+KKNavBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 265E62321D53297200D65A37 /* UIButton+KKNavBack.m */; };
 		268F4C8B1D41A69100B8AD32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4C8A1D41A69100B8AD32 /* main.m */; };
 		268F4C961D41A69200B8AD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 268F4C951D41A69200B8AD32 /* Assets.xcassets */; };
 		268F4C991D41A69200B8AD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268F4C971D41A69200B8AD32 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,13 @@
 		26D6BD771D42532F00CFBB01 /* KKDisVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD761D42532F00CFBB01 /* KKDisVCtrl.m */; };
 		26D6BD7A1D42534400CFBB01 /* KKNearVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD791D42534400CFBB01 /* KKNearVCtrl.m */; };
 		26D6BD7D1D42536700CFBB01 /* KKSetVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD7C1D42536700CFBB01 /* KKSetVCtrl.m */; };
+		26E582851D52C7D8007FB00E /* KKSetViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E582841D52C7D8007FB00E /* KKSetViewModel.m */; };
+		26E582881D52CF83007FB00E /* KKSetTViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E582871D52CF83007FB00E /* KKSetTViewCell.m */; };
+		26E5828C1D52ED7E007FB00E /* KKAboutViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5828B1D52ED7E007FB00E /* KKAboutViewC.m */; };
+		26E5828F1D531493007FB00E /* KKLoginViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5828E1D531493007FB00E /* KKLoginViewC.m */; };
+		26E582A21D5315EC007FB00E /* KKCustomNavBarV.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5829C1D5315EC007FB00E /* KKCustomNavBarV.m */; };
+		26E582A31D5315EC007FB00E /* KKCustomNavigationC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5829E1D5315EC007FB00E /* KKCustomNavigationC.m */; };
+		26E582A41D5315EC007FB00E /* KKCustomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E582A01D5315EC007FB00E /* KKCustomVC.m */; };
 		26E5D7DC1D49AA8800B6CCC1 /* KKAnno.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5D7DB1D49AA8800B6CCC1 /* KKAnno.m */; };
 		70C35D79B8847229B799CA52 /* libPods-DePoint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7A60D83CAB1FE7C8E3A9FF /* libPods-DePoint.a */; };
 /* End PBXBuildFile section */
@@ -65,6 +73,8 @@
 		2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCollectionModel.m; sourceTree = "<group>"; };
 		2654FE1E1D5189BD0051FA41 /* KKSanBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSanBox.h; sourceTree = "<group>"; };
 		2654FE1F1D5189BD0051FA41 /* KKSanBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSanBox.m; sourceTree = "<group>"; };
+		265E62311D53297200D65A37 /* UIButton+KKNavBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+KKNavBack.h"; sourceTree = "<group>"; };
+		265E62321D53297200D65A37 /* UIButton+KKNavBack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+KKNavBack.m"; sourceTree = "<group>"; };
 		268F4C861D41A69100B8AD32 /* DePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		268F4C8A1D41A69100B8AD32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		268F4C951D41A69200B8AD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +132,22 @@
 		26D6BD791D42534400CFBB01 /* KKNearVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNearVCtrl.m; sourceTree = "<group>"; };
 		26D6BD7B1D42536700CFBB01 /* KKSetVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSetVCtrl.h; sourceTree = "<group>"; };
 		26D6BD7C1D42536700CFBB01 /* KKSetVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSetVCtrl.m; sourceTree = "<group>"; };
+		26E582831D52C7D8007FB00E /* KKSetViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSetViewModel.h; sourceTree = "<group>"; };
+		26E582841D52C7D8007FB00E /* KKSetViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSetViewModel.m; sourceTree = "<group>"; };
+		26E582861D52CF83007FB00E /* KKSetTViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSetTViewCell.h; sourceTree = "<group>"; };
+		26E582871D52CF83007FB00E /* KKSetTViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSetTViewCell.m; sourceTree = "<group>"; };
+		26E582891D52D84F007FB00E /* KKSetConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSetConstant.h; sourceTree = "<group>"; };
+		26E5828A1D52ED7E007FB00E /* KKAboutViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAboutViewC.h; sourceTree = "<group>"; };
+		26E5828B1D52ED7E007FB00E /* KKAboutViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAboutViewC.m; sourceTree = "<group>"; };
+		26E5828D1D531493007FB00E /* KKLoginViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLoginViewC.h; sourceTree = "<group>"; };
+		26E5828E1D531493007FB00E /* KKLoginViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLoginViewC.m; sourceTree = "<group>"; };
+		26E5829B1D5315EC007FB00E /* KKCustomNavBarV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCustomNavBarV.h; sourceTree = "<group>"; };
+		26E5829C1D5315EC007FB00E /* KKCustomNavBarV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCustomNavBarV.m; sourceTree = "<group>"; };
+		26E5829D1D5315EC007FB00E /* KKCustomNavigationC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCustomNavigationC.h; sourceTree = "<group>"; };
+		26E5829E1D5315EC007FB00E /* KKCustomNavigationC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCustomNavigationC.m; sourceTree = "<group>"; };
+		26E5829F1D5315EC007FB00E /* KKCustomVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCustomVC.h; sourceTree = "<group>"; };
+		26E582A01D5315EC007FB00E /* KKCustomVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCustomVC.m; sourceTree = "<group>"; };
+		26E582A11D5315EC007FB00E /* KKCustomVCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCustomVCConstants.h; sourceTree = "<group>"; };
 		26E5D7DA1D49AA8800B6CCC1 /* KKAnno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAnno.h; sourceTree = "<group>"; };
 		26E5D7DB1D49AA8800B6CCC1 /* KKAnno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAnno.m; sourceTree = "<group>"; };
 		4F7A60D83CAB1FE7C8E3A9FF /* libPods-DePoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DePoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +260,7 @@
 		26D6BD2D1D42428800CFBB01 /* 4-Set 设置 */ = {
 			isa = PBXGroup;
 			children = (
+				26E582891D52D84F007FB00E /* KKSetConstant.h */,
 				26D6BD371D4243DF00CFBB01 /* Model */,
 				26D6BD381D4243DF00CFBB01 /* View */,
 				26D6BD391D4243DF00CFBB01 /* ViewModel */,
@@ -323,6 +350,8 @@
 				26D6BD6C1D42503400CFBB01 /* UIView+Frame.m */,
 				26D6BD681D424B3A00CFBB01 /* NSDate+Extension.h */,
 				26D6BD691D424B3A00CFBB01 /* NSDate+Extension.m */,
+				265E62311D53297200D65A37 /* UIButton+KKNavBack.h */,
+				265E62321D53297200D65A37 /* UIButton+KKNavBack.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -348,6 +377,10 @@
 			children = (
 				26D6BD7B1D42536700CFBB01 /* KKSetVCtrl.h */,
 				26D6BD7C1D42536700CFBB01 /* KKSetVCtrl.m */,
+				26E5828A1D52ED7E007FB00E /* KKAboutViewC.h */,
+				26E5828B1D52ED7E007FB00E /* KKAboutViewC.m */,
+				26E5828D1D531493007FB00E /* KKLoginViewC.h */,
+				26E5828E1D531493007FB00E /* KKLoginViewC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -366,6 +399,8 @@
 		26D6BD381D4243DF00CFBB01 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				26E582861D52CF83007FB00E /* KKSetTViewCell.h */,
+				26E582871D52CF83007FB00E /* KKSetTViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,6 +410,8 @@
 			children = (
 				2654FE1E1D5189BD0051FA41 /* KKSanBox.h */,
 				2654FE1F1D5189BD0051FA41 /* KKSanBox.m */,
+				26E582831D52C7D8007FB00E /* KKSetViewModel.h */,
+				26E582841D52C7D8007FB00E /* KKSetViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -514,12 +551,27 @@
 		26D6BD5E1D4247B900CFBB01 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				26E5829A1D5315E1007FB00E /* Controller */,
 				26D6BD5F1D4247EE00CFBB01 /* BaseNetworking.h */,
 				26D6BD601D4247EE00CFBB01 /* BaseNetworking.m */,
 				26D6BD621D42482E00CFBB01 /* BaseViewModel.h */,
 				26D6BD631D42482E00CFBB01 /* BaseViewModel.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		26E5829A1D5315E1007FB00E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				26E5829F1D5315EC007FB00E /* KKCustomVC.h */,
+				26E582A01D5315EC007FB00E /* KKCustomVC.m */,
+				26E582A11D5315EC007FB00E /* KKCustomVCConstants.h */,
+				26E5829B1D5315EC007FB00E /* KKCustomNavBarV.h */,
+				26E5829C1D5315EC007FB00E /* KKCustomNavBarV.m */,
+				26E5829D1D5315EC007FB00E /* KKCustomNavigationC.h */,
+				26E5829E1D5315EC007FB00E /* KKCustomNavigationC.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		BEAE66B4CDCF58A98B958D80 /* Frameworks */ = {
@@ -727,6 +779,7 @@
 				26D6BD5D1D42456F00CFBB01 /* UIView+HUD.m in Sources */,
 				26D6BD641D42482E00CFBB01 /* BaseViewModel.m in Sources */,
 				26D6BD611D4247EE00CFBB01 /* BaseNetworking.m in Sources */,
+				26E582851D52C7D8007FB00E /* KKSetViewModel.m in Sources */,
 				26AE8F491D48D5C300E5E763 /* KKLocationVModel.m in Sources */,
 				26D6BD4D1D4244AB00CFBB01 /* AppDelegate.m in Sources */,
 				26D6BD5C1D42456F00CFBB01 /* UIScrollView+Refresh.m in Sources */,
@@ -740,12 +793,19 @@
 				2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */,
 				26D6BD741D42531200CFBB01 /* KKMediVCtrl.m in Sources */,
 				26D6BD7A1D42534400CFBB01 /* KKNearVCtrl.m in Sources */,
+				26E5828C1D52ED7E007FB00E /* KKAboutViewC.m in Sources */,
 				26D6BD5B1D42456F00CFBB01 /* NSString+YX.m in Sources */,
+				26E582A31D5315EC007FB00E /* KKCustomNavigationC.m in Sources */,
+				26E5828F1D531493007FB00E /* KKLoginViewC.m in Sources */,
 				26D6BD771D42532F00CFBB01 /* KKDisVCtrl.m in Sources */,
+				26E582A21D5315EC007FB00E /* KKCustomNavBarV.m in Sources */,
+				265E62331D53297200D65A37 /* UIButton+KKNavBack.m in Sources */,
+				26E582881D52CF83007FB00E /* KKSetTViewCell.m in Sources */,
 				26AD7A021D4A2B01009217B5 /* KKCenterAnno.m in Sources */,
 				26A8A1681D503AC8007894CD /* KKNearbyTViewCell.m in Sources */,
 				26D6BD6D1D42503400CFBB01 /* UIView+Frame.m in Sources */,
 				2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */,
+				26E582A41D5315EC007FB00E /* KKCustomVC.m in Sources */,
 				2654FE1A1D517AA40051FA41 /* KKMedicineChestModel.m in Sources */,
 				268F4C8B1D41A69100B8AD32 /* main.m in Sources */,
 				26AD7A0E1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.m in Sources */,

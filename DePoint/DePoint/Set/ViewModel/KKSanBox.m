@@ -10,11 +10,11 @@
 
 
 // 归档解档地址
-#define KKMEDICCHESTPATH [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"DeliveryPoint.medic.chest.sanbox.plist"]
+#define KKMEDICCHESTPATH [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"Preferences/DeliveryPoint.medic.chest.sanbox.plist"]
 
-#define KKMEDICHISTORYPATH [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"DeliveryPoint.medic.history.sanbox.plist"]
+#define KKMEDICHISTORYPATH [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"Preferences/DeliveryPoint.medic.history.sanbox.plist"]
 
-#define KKDISEASEPATH [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"DeliveryPoint.disea.collection.sanbox.plist"]
+#define KKDISEASEPATH [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"Preferences/DeliveryPoint.disea.collection.sanbox.plist"]
 
 @interface KKSanBox()
 @property (nonatomic, strong) NSMutableDictionary *medicDatas; // 药箱
@@ -32,7 +32,7 @@
     NSLog(@"%@", path);
 }
 // 解档
-- (NSDictionary *)getFromSanBox:(NSString *)path {
+- (id)getFromSanBox:(NSString *)path {
     NSLog(@"%@", path);
     return [NSKeyedUnarchiver unarchiveObjectWithFile:path];
 }
@@ -147,11 +147,20 @@ static KKSanBox *sanBox_ = nil;
 }
 
 - (void)kk_deleteDisease:(KKCollectionModel *)collectionModel {
-    [self deleteMedic:medicModel dataList:self.medicHistory path:KKMEDICHISTORYPATH];
+    NSString *key = collectionModel.name;
+    [self.collectionDatas removeObjectForKey:key];
+    [self saveToSanBox:self.collectionDatas path:KKDISEASEPATH];
 }
 
-- (NSArray <KKMedicineChestModel *> *)kk_getMdeicHistory {
-    return [self getMedic:self.medicHistory];
+- (NSArray <KKCollectionModel *> *)kk_getDisease {
+    NSArray *keys = [self.collectionDatas keysSortedByValueUsingComparator:^NSComparisonResult(KKCollectionModel *  _Nonnull obj1, KKCollectionModel *  _Nonnull obj2) {
+        return [obj2.saveDate compare:obj1.saveDate];
+    }];
+    NSMutableArray *arrry = [NSMutableArray array];
+    for (NSString *key in keys) {
+        [arrry addObject:self.collectionDatas[key]];
+    }
+    return arrry.copy;
 }
 
 
@@ -177,6 +186,7 @@ static KKSanBox *sanBox_ = nil;
 - (NSMutableDictionary *)collectionDatas {
     if(_collectionDatas == nil) {
         _collectionDatas = [[NSMutableDictionary alloc] init];
+        [_collectionDatas addEntriesFromDictionary:[self getFromSanBox:KKDISEASEPATH]];
     }
     return _collectionDatas;
 }

@@ -23,8 +23,8 @@
     [super viewDidLoad];
     
     // 修改tabBar的渲染颜色
-    self.tabBar.barTintColor = KKCOLOR(228, 228, 228, 1);
-    self.tabBar.tintColor = KKCOLOR(80, 120, 150, 1);
+    self.tabBar.barTintColor = KKGLOBARCOLOR;
+    self.tabBar.tintColor = KKGLOTINTCOLOR;
     
     // 统一设置所有UITabBarItem属性
     UITabBarItem *item = [UITabBarItem appearance];
@@ -71,19 +71,33 @@
     
     /** 统一设置子控制器底色、导航栏颜色 **/
     // 如有特殊需求请求具体子控制器内修改
-    viewController.view.backgroundColor = KKGLOBAL;
-    //    viewController.tabBarController.tabBar.backgroundColor = KKCOLOR(228, 228, 228, 1);;
+    viewController.view.backgroundColor = KKGLOBAL; //全局颜色 238,238,238,1 _kk
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+    UINavigationController *nav;
+    if ([viewController isKindOfClass:[KKSetVCtrl class]]) {
+        // 使用自定义导航栏
+        nav = [self setupCustomNav:(KKCustomVC *)viewController title:navTitle];
+    } else {
+        nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+        viewController.navigationController.navigationBar.barTintColor = KKGLOBARCOLOR;
+        viewController.navigationItem.title = navTitle;
+    }
     
     viewController.tabBarItem.title = tabBarTitle;
     viewController.tabBarItem.image = image;
     viewController.tabBarItem.selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    viewController.navigationController.navigationBar.barTintColor = KKCOLOR(228, 228, 228, 1);
-    viewController.navigationItem.title = navTitle;
+    
     
     // 添加子控制器
     [self addChildViewController:nav];
+}
+
+- (KKCustomNavigationC *)setupCustomNav:(KKCustomVC *)vc title:(NSString *)title {
+    // 这是自定义导航栏,C和子C使用的导航栏是分开的 _kk
+    KKCustomNavigationC *nav = [[KKCustomNavigationC alloc] initWithRootViewController:vc];
+    [vc setNavBarTitle:title];
+    [vc setNabbarBackgroundColor:KKGLOBARCOLOR];
+    return nav;
 }
 
 

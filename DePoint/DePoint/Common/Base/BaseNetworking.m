@@ -16,10 +16,29 @@
     return [manager GET:path parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", task.currentRequest.URL.absoluteString);
         !completionHandler?:completionHandler(responseObject, nil);
+        
+        [[NSOperationQueue new] addOperationWithBlock:^{
+            // 做缓存
+            NSString *cachePath = [KKNETWORKCACHESPATH stringByAppendingPathComponent:task.currentRequest.URL.absoluteString.md5String];
+            [NSKeyedArchiver archiveRootObject:responseObject toFile:cachePath];
+        }];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", task.currentRequest.URL.absoluteString);
         NSLog(@"%@", error);
-        !completionHandler ?: completionHandler(nil, error);
+        
+        [[NSOperationQueue new] addOperationWithBlock:^{
+            // 读缓存
+            NSString *cachePath = [KKNETWORKCACHESPATH stringByAppendingPathComponent:task.currentRequest.URL.absoluteString.md5String];
+            id responseObj = [NSKeyedUnarchiver unarchiveObjectWithFile:cachePath];
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                if (responseObj) {
+                    !completionHandler?:completionHandler(responseObj, nil);
+                } else {
+                    !completionHandler ?: completionHandler(nil, error);
+                }
+            }];
+        }];
     }];
     
 }
