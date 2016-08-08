@@ -6,10 +6,13 @@
 //  Copyright © 2016年 liudhkk. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
-@interface KKSetViewModel : NSObject
 
+typedef void(^block)(id obj);
+
+@interface KKSetViewModel : NSObject
 
 - (NSInteger)getSectionNum;
 - (NSInteger)getRowBySection:(NSInteger)section;
@@ -17,6 +20,6 @@
 - (NSString *)getTitleByIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)getAssistByIndexPath:(NSIndexPath *)indexPath;
 - (UIViewController *)getViewCtrlByIndexPath:(NSIndexPath *)indexPath;
-
+- (block)getBlock:(NSIndexPath *)indexPath;
 
 @end

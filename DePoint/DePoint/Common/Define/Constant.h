@@ -23,6 +23,9 @@
 #define KKGLOTINTCOLOR KKCOLOR(80, 120, 150, 1)
 // bounds.size
 #define KKSCREENBOUNDSIZE [UIScreen mainScreen].bounds.size
+// bounds.size.width 的百分比
+#define KKBWIDTHPRECENT(x)  KKSCREENBOUNDSIZE.width * x * 1.0/375
+
 
 // 网络缓存地址
 #define KKNETWORKCACHESPATH [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"/DP.NETWORK"]
@@ -34,10 +37,12 @@
 #define KKGDMAPAPIKEY @"19d7dfa2a4734ca4f150e15db60d3dd3"
 // 友盟数据统计
 #define KKUMAPIKEY @"579dfeb7e0f55a2aa7000b56"
+// bmob
+#define KKBMOBAPIKEY @"9e266ba3adf895e8b4c40bacb3d461ec"
 
 
-
-
+// 评分地址
+#define KKAPPLESTOREADDRESS @"/wei-xin/id414478124"
 
 
 

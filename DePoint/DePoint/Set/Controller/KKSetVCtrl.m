@@ -11,6 +11,8 @@
 #import "KKSetTViewCell.h"
 #import "KKLoginViewC.h"
 
+#import "KKAboutViewC.h"
+
 @interface KKSetVCtrl() <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) KKSetViewModel *setViewModel;
 @property (nonatomic, strong) UIButton *loginBt; // 登录按钮
@@ -55,12 +57,10 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *vc = [self.setViewModel getViewCtrlByIndexPath:indexPath];
-    if (vc) {
-        vc.view.backgroundColor = KKGLOBAL;
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {    
+    block run = [self.setViewModel getBlock:indexPath];
+    !run?:run(self);
+    
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

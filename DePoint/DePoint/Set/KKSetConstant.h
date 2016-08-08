@@ -9,6 +9,6 @@
 #ifndef KKSetConstant_h
 #define KKSetConstant_h
 
-#define KKBWIDTHPRECENT(x)  KKSCREENBOUNDSIZE.width * x * 1.0/375
+
 
 #endif /* KKSetConstant_h */

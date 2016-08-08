@@ -32,6 +32,7 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - BmobSDK (1.7.1)
   - CocoaLumberjack (2.3.0):
     - CocoaLumberjack/Default (= 2.3.0)
     - CocoaLumberjack/Extensions (= 2.3.0)
@@ -44,9 +45,16 @@ PODS:
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.9)
   - MLTransition (2.1.0)
+  - MOBFoundation (2.0.4)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - ShareSDK3 (3.3.2):
+    - ShareSDK3/ShareSDK (= 3.3.2)
+  - ShareSDK3/ShareSDK (3.3.2)
+  - ShareSDK3/ShareSDKPlatforms/QQ (3.3.2)
+  - ShareSDK3/ShareSDKPlatforms/WeChat (3.3.2)
+  - ShareSDK3/ShareSDKUI (3.3.2)
   - UITableView+FDTemplateLayoutCell (1.4)
   - UMengAnalytics-NO-IDFA (4.0.5)
   - WMPageController (1.6.4)
@@ -58,12 +66,18 @@ DEPENDENCIES:
   - AFNetworking
   - AMapSearch
   - BlocksKit
+  - BmobSDK
   - CocoaLumberjack
   - Masonry
   - MBProgressHUD
   - MJRefresh
   - MLTransition
+  - MOBFoundation
   - SDWebImage
+  - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/WeChat
+  - ShareSDK3/ShareSDKUI
   - UITableView+FDTemplateLayoutCell
   - UMengAnalytics-NO-IDFA
   - WMPageController
@@ -74,17 +88,20 @@ SPEC CHECKSUMS:
   AMapFoundation: 15db20567e6512422a086a01b42a88b145bc2500
   AMapSearch: cb4722480d2d4331a032d43bd1070ed0fa55dac9
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  BmobSDK: ebc3cb46b90d746f23121e9ea058a3122b85861f
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
   MLTransition: 48ce7b91ef0c6acfcb9d03b22d2fa75d5826018f
+  MOBFoundation: e1f2d00e82a20fdc55c61baac4e15c9b9dd361e5
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  ShareSDK3: c76cb96eb38e079952b8157071486d945faa2df2
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
   UMengAnalytics-NO-IDFA: 965a219b05475ff2a4c09a164139a27bbaa0e25b
   WMPageController: 7096ade70280e7891254267a85d847ec423450e0
   YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
 
-PODFILE CHECKSUM: 35f4589cf91620f32d48c69a9227b8e8ee7d8bbe
+PODFILE CHECKSUM: 07b13adde875ebc8a4af7020ca45c8546355f57d
 
 COCOAPODS: 1.0.1

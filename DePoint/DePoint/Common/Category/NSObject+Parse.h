@@ -22,7 +22,7 @@ return [self modelDescription]; \
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (Parse)<YYModel, NSCoding>
+@interface NSObject (Parse)<YYModel>
 
 + (id)parse:(id)JSON;
 

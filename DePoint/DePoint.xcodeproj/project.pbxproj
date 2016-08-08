@@ -11,6 +11,7 @@
 		2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */; };
 		2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1F1D5189BD0051FA41 /* KKSanBox.m */; };
 		265E62331D53297200D65A37 /* UIButton+KKNavBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 265E62321D53297200D65A37 /* UIButton+KKNavBack.m */; };
+		265E62361D53658B00D65A37 /* KKFeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265E62351D53658B00D65A37 /* KKFeedBackVC.m */; };
 		268F4C8B1D41A69100B8AD32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4C8A1D41A69100B8AD32 /* main.m */; };
 		268F4C961D41A69200B8AD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 268F4C951D41A69200B8AD32 /* Assets.xcassets */; };
 		268F4C991D41A69200B8AD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268F4C971D41A69200B8AD32 /* LaunchScreen.storyboard */; };
@@ -45,6 +46,7 @@
 		26E582A31D5315EC007FB00E /* KKCustomNavigationC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5829E1D5315EC007FB00E /* KKCustomNavigationC.m */; };
 		26E582A41D5315EC007FB00E /* KKCustomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E582A01D5315EC007FB00E /* KKCustomVC.m */; };
 		26E5D7DC1D49AA8800B6CCC1 /* KKAnno.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5D7DB1D49AA8800B6CCC1 /* KKAnno.m */; };
+		26FBBD501D54828F00EAAAA9 /* KKPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FBBD4F1D54828F00EAAAA9 /* KKPlaceholderTextView.m */; };
 		70C35D79B8847229B799CA52 /* libPods-DePoint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7A60D83CAB1FE7C8E3A9FF /* libPods-DePoint.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,9 @@
 		2654FE1F1D5189BD0051FA41 /* KKSanBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSanBox.m; sourceTree = "<group>"; };
 		265E62311D53297200D65A37 /* UIButton+KKNavBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+KKNavBack.h"; sourceTree = "<group>"; };
 		265E62321D53297200D65A37 /* UIButton+KKNavBack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+KKNavBack.m"; sourceTree = "<group>"; };
+		265E62341D53658B00D65A37 /* KKFeedBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFeedBackVC.h; sourceTree = "<group>"; };
+		265E62351D53658B00D65A37 /* KKFeedBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFeedBackVC.m; sourceTree = "<group>"; };
+		2660E02D1D5859F900C651FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		268F4C861D41A69100B8AD32 /* DePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		268F4C8A1D41A69100B8AD32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		268F4C951D41A69200B8AD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +155,8 @@
 		26E582A11D5315EC007FB00E /* KKCustomVCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCustomVCConstants.h; sourceTree = "<group>"; };
 		26E5D7DA1D49AA8800B6CCC1 /* KKAnno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAnno.h; sourceTree = "<group>"; };
 		26E5D7DB1D49AA8800B6CCC1 /* KKAnno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAnno.m; sourceTree = "<group>"; };
+		26FBBD4E1D54828E00EAAAA9 /* KKPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPlaceholderTextView.h; sourceTree = "<group>"; };
+		26FBBD4F1D54828F00EAAAA9 /* KKPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPlaceholderTextView.m; sourceTree = "<group>"; };
 		4F7A60D83CAB1FE7C8E3A9FF /* libPods-DePoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DePoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F10234853F8E081D978B540 /* Pods-DePoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DePoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DePoint/Pods-DePoint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -381,6 +388,8 @@
 				26E5828B1D52ED7E007FB00E /* KKAboutViewC.m */,
 				26E5828D1D531493007FB00E /* KKLoginViewC.h */,
 				26E5828E1D531493007FB00E /* KKLoginViewC.m */,
+				265E62341D53658B00D65A37 /* KKFeedBackVC.h */,
+				265E62351D53658B00D65A37 /* KKFeedBackVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -401,6 +410,8 @@
 			children = (
 				26E582861D52CF83007FB00E /* KKSetTViewCell.h */,
 				26E582871D52CF83007FB00E /* KKSetTViewCell.m */,
+				26FBBD4E1D54828E00EAAAA9 /* KKPlaceholderTextView.h */,
+				26FBBD4F1D54828F00EAAAA9 /* KKPlaceholderTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -792,7 +803,9 @@
 				26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */,
 				2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */,
 				26D6BD741D42531200CFBB01 /* KKMediVCtrl.m in Sources */,
+				265E62361D53658B00D65A37 /* KKFeedBackVC.m in Sources */,
 				26D6BD7A1D42534400CFBB01 /* KKNearVCtrl.m in Sources */,
+				26FBBD501D54828F00EAAAA9 /* KKPlaceholderTextView.m in Sources */,
 				26E5828C1D52ED7E007FB00E /* KKAboutViewC.m in Sources */,
 				26D6BD5B1D42456F00CFBB01 /* NSString+YX.m in Sources */,
 				26E582A31D5315EC007FB00E /* KKCustomNavigationC.m in Sources */,
@@ -848,6 +861,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				268F4C981D41A69200B8AD32 /* Base */,
+				2660E02D1D5859F900C651FF /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
