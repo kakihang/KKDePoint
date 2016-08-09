@@ -26,6 +26,8 @@
 // bounds.size.width 的百分比
 #define KKBWIDTHPRECENT(x)  KKSCREENBOUNDSIZE.width * x * 1.0/375
 
+// 缓存地址
+#define KKCACHEPATH [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
 
 // 网络缓存地址
 #define KKNETWORKCACHESPATH [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"/DP.NETWORK"]

@@ -17,6 +17,9 @@ target 'DePoint' do
     pod 'AFNetworking'
     pod 'MBProgressHUD'
     
+    pod 'hpple'
+    pod 'RESideMenu'
+    
     pod 'UMengAnalytics-NO-IDFA' #友盟数据统计 无IDFA
     
     #pod 'AMap3DMap' #3D地图SDK

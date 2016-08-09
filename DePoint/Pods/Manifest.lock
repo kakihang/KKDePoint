@@ -41,11 +41,13 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.3.0):
     - CocoaLumberjack/Default
+  - hpple (0.2.0)
   - Masonry (1.0.1)
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.9)
   - MLTransition (2.1.0)
   - MOBFoundation (2.0.4)
+  - RESideMenu (4.0.7)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
@@ -68,11 +70,13 @@ DEPENDENCIES:
   - BlocksKit
   - BmobSDK
   - CocoaLumberjack
+  - hpple
   - Masonry
   - MBProgressHUD
   - MJRefresh
   - MLTransition
   - MOBFoundation
+  - RESideMenu
   - SDWebImage
   - ShareSDK3
   - ShareSDK3/ShareSDKPlatforms/QQ
@@ -90,11 +94,13 @@ SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   BmobSDK: ebc3cb46b90d746f23121e9ea058a3122b85861f
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
+  hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
   MLTransition: 48ce7b91ef0c6acfcb9d03b22d2fa75d5826018f
   MOBFoundation: e1f2d00e82a20fdc55c61baac4e15c9b9dd361e5
+  RESideMenu: f24c508404b49c667344c54aba7e590883533958
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   ShareSDK3: c76cb96eb38e079952b8157071486d945faa2df2
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
@@ -102,6 +108,6 @@ SPEC CHECKSUMS:
   WMPageController: 7096ade70280e7891254267a85d847ec423450e0
   YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
 
-PODFILE CHECKSUM: 07b13adde875ebc8a4af7020ca45c8546355f57d
+PODFILE CHECKSUM: 800b17b924bd78f9ae6f6349beec0081d7eb5c56
 
 COCOAPODS: 1.0.1

@@ -29,8 +29,14 @@
     self.tableView.contentInset = UIEdgeInsetsMake(-15, 0, 0, 0);
     self.tableView.sectionFooterHeight = 15;
     self.tableView.sectionHeaderHeight = 0;
+    
+    NSLog(@"%@", KKCACHEPATH);
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 
 
 #pragma mark - tableView

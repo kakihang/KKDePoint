@@ -19,6 +19,26 @@
 		268F4CAF1D41A69200B8AD32 /* DePointUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4CAE1D41A69200B8AD32 /* DePointUITests.m */; };
 		26A8A1681D503AC8007894CD /* KKNearbyTViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8A1671D503AC8007894CD /* KKNearbyTViewCell.m */; };
 		26A8A16B1D5051FC007894CD /* KKColumnButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8A16A1D5051FC007894CD /* KKColumnButtons.m */; };
+		26ACAB1D1D58C28E002E4630 /* kk.medi.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26ACAB1C1D58C28E002E4630 /* kk.medi.plist */; };
+		26ACAB211D58CB9F002E4630 /* KKMediHClassTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ACAB201D58CB9F002E4630 /* KKMediHClassTVCell.m */; };
+		26ACAB241D58CC02002E4630 /* KKMediMClassTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ACAB231D58CC02002E4630 /* KKMediMClassTVCell.m */; };
+		26ACAB271D58CC19002E4630 /* KKMediTClassTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ACAB261D58CC19002E4630 /* KKMediTClassTVCell.m */; };
+		26ACAB2A1D596A0F002E4630 /* KKMedClassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ACAB291D596A0F002E4630 /* KKMedClassVC.m */; };
+		26ACAB2D1D596DA1002E4630 /* KKMenuBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ACAB2C1D596DA1002E4630 /* KKMenuBarButton.m */; };
+		26AD333F1D58708000891D9B /* KKMediVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD33341D58708000891D9B /* KKMediVCtrl.m */; };
+		26AD33401D58708000891D9B /* XPDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD33361D58708000891D9B /* XPDetailController.m */; };
+		26AD33411D58708000891D9B /* XPDrugController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD33381D58708000891D9B /* XPDrugController.m */; };
+		26AD33421D58708000891D9B /* XPListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD333A1D58708000891D9B /* XPListController.m */; };
+		26AD33431D58708000891D9B /* XPNexineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD333C1D58708000891D9B /* XPNexineController.m */; };
+		26AD33441D58708000891D9B /* XPPushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD333E1D58708000891D9B /* XPPushController.m */; };
+		26AD334D1D58708B00891D9B /* XPDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD33461D58708B00891D9B /* XPDetailModel.m */; };
+		26AD334E1D58708B00891D9B /* XPDrugNexineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD33481D58708B00891D9B /* XPDrugNexineModel.m */; };
+		26AD334F1D58708B00891D9B /* XPDrugsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD334A1D58708B00891D9B /* XPDrugsModel.m */; };
+		26AD33501D58708B00891D9B /* XPListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD334C1D58708B00891D9B /* XPListModel.m */; };
+		26AD33551D58709200891D9B /* XPDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD33521D58709200891D9B /* XPDetailCell.m */; };
+		26AD33561D58709200891D9B /* XPListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD33541D58709200891D9B /* XPListViewCell.m */; };
+		26AD335A1D5870B500891D9B /* XPNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD33591D5870B500891D9B /* XPNetManager.m */; };
+		26AD335F1D58AE7B00891D9B /* KKMediTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD335E1D58AE7B00891D9B /* KKMediTVC.m */; };
 		26AD7A021D4A2B01009217B5 /* KKCenterAnno.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A011D4A2B01009217B5 /* KKCenterAnno.m */; };
 		26AD7A0E1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A0B1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.m */; };
 		26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A0D1D4A447D009217B5 /* CLLocationManager+KKModel.m */; };
@@ -34,7 +54,6 @@
 		26D6BD6A1D424B3A00CFBB01 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD691D424B3A00CFBB01 /* NSDate+Extension.m */; };
 		26D6BD6D1D42503400CFBB01 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD6C1D42503400CFBB01 /* UIView+Frame.m */; };
 		26D6BD711D4252CB00CFBB01 /* KKFrameTabC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD701D4252CB00CFBB01 /* KKFrameTabC.m */; };
-		26D6BD741D42531200CFBB01 /* KKMediVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD731D42531200CFBB01 /* KKMediVCtrl.m */; };
 		26D6BD771D42532F00CFBB01 /* KKDisVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD761D42532F00CFBB01 /* KKDisVCtrl.m */; };
 		26D6BD7A1D42534400CFBB01 /* KKNearVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD791D42534400CFBB01 /* KKNearVCtrl.m */; };
 		26D6BD7D1D42536700CFBB01 /* KKSetVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD7C1D42536700CFBB01 /* KKSetVCtrl.m */; };
@@ -95,6 +114,46 @@
 		26A8A1671D503AC8007894CD /* KKNearbyTViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNearbyTViewCell.m; sourceTree = "<group>"; };
 		26A8A1691D5051FC007894CD /* KKColumnButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKColumnButtons.h; sourceTree = "<group>"; };
 		26A8A16A1D5051FC007894CD /* KKColumnButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKColumnButtons.m; sourceTree = "<group>"; };
+		26ACAB1C1D58C28E002E4630 /* kk.medi.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = kk.medi.plist; sourceTree = "<group>"; };
+		26ACAB1F1D58CB9F002E4630 /* KKMediHClassTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMediHClassTVCell.h; sourceTree = "<group>"; };
+		26ACAB201D58CB9F002E4630 /* KKMediHClassTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMediHClassTVCell.m; sourceTree = "<group>"; };
+		26ACAB221D58CC02002E4630 /* KKMediMClassTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMediMClassTVCell.h; sourceTree = "<group>"; };
+		26ACAB231D58CC02002E4630 /* KKMediMClassTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMediMClassTVCell.m; sourceTree = "<group>"; };
+		26ACAB251D58CC19002E4630 /* KKMediTClassTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMediTClassTVCell.h; sourceTree = "<group>"; };
+		26ACAB261D58CC19002E4630 /* KKMediTClassTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMediTClassTVCell.m; sourceTree = "<group>"; };
+		26ACAB281D596A0F002E4630 /* KKMedClassVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMedClassVC.h; sourceTree = "<group>"; };
+		26ACAB291D596A0F002E4630 /* KKMedClassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMedClassVC.m; sourceTree = "<group>"; };
+		26ACAB2B1D596DA1002E4630 /* KKMenuBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMenuBarButton.h; sourceTree = "<group>"; };
+		26ACAB2C1D596DA1002E4630 /* KKMenuBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMenuBarButton.m; sourceTree = "<group>"; };
+		26AD33331D58708000891D9B /* KKMediVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMediVCtrl.h; sourceTree = "<group>"; };
+		26AD33341D58708000891D9B /* KKMediVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMediVCtrl.m; sourceTree = "<group>"; };
+		26AD33351D58708000891D9B /* XPDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPDetailController.h; sourceTree = "<group>"; };
+		26AD33361D58708000891D9B /* XPDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPDetailController.m; sourceTree = "<group>"; };
+		26AD33371D58708000891D9B /* XPDrugController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPDrugController.h; sourceTree = "<group>"; };
+		26AD33381D58708000891D9B /* XPDrugController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPDrugController.m; sourceTree = "<group>"; };
+		26AD33391D58708000891D9B /* XPListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPListController.h; sourceTree = "<group>"; };
+		26AD333A1D58708000891D9B /* XPListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPListController.m; sourceTree = "<group>"; };
+		26AD333B1D58708000891D9B /* XPNexineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPNexineController.h; sourceTree = "<group>"; };
+		26AD333C1D58708000891D9B /* XPNexineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPNexineController.m; sourceTree = "<group>"; };
+		26AD333D1D58708000891D9B /* XPPushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPPushController.h; sourceTree = "<group>"; };
+		26AD333E1D58708000891D9B /* XPPushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPPushController.m; sourceTree = "<group>"; };
+		26AD33451D58708B00891D9B /* XPDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPDetailModel.h; sourceTree = "<group>"; };
+		26AD33461D58708B00891D9B /* XPDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPDetailModel.m; sourceTree = "<group>"; };
+		26AD33471D58708B00891D9B /* XPDrugNexineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPDrugNexineModel.h; sourceTree = "<group>"; };
+		26AD33481D58708B00891D9B /* XPDrugNexineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPDrugNexineModel.m; sourceTree = "<group>"; };
+		26AD33491D58708B00891D9B /* XPDrugsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPDrugsModel.h; sourceTree = "<group>"; };
+		26AD334A1D58708B00891D9B /* XPDrugsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPDrugsModel.m; sourceTree = "<group>"; };
+		26AD334B1D58708B00891D9B /* XPListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPListModel.h; sourceTree = "<group>"; };
+		26AD334C1D58708B00891D9B /* XPListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPListModel.m; sourceTree = "<group>"; };
+		26AD33511D58709200891D9B /* XPDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPDetailCell.h; sourceTree = "<group>"; };
+		26AD33521D58709200891D9B /* XPDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPDetailCell.m; sourceTree = "<group>"; };
+		26AD33531D58709200891D9B /* XPListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPListViewCell.h; sourceTree = "<group>"; };
+		26AD33541D58709200891D9B /* XPListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPListViewCell.m; sourceTree = "<group>"; };
+		26AD33571D5870A700891D9B /* XPDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPDefine.h; sourceTree = "<group>"; };
+		26AD33581D5870B500891D9B /* XPNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPNetManager.h; sourceTree = "<group>"; };
+		26AD33591D5870B500891D9B /* XPNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPNetManager.m; sourceTree = "<group>"; };
+		26AD335D1D58AE7B00891D9B /* KKMediTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMediTVC.h; sourceTree = "<group>"; };
+		26AD335E1D58AE7B00891D9B /* KKMediTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMediTVC.m; sourceTree = "<group>"; };
 		26AD7A001D4A2B01009217B5 /* KKCenterAnno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCenterAnno.h; sourceTree = "<group>"; };
 		26AD7A011D4A2B01009217B5 /* KKCenterAnno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCenterAnno.m; sourceTree = "<group>"; };
 		26AD7A0A1D4A447D009217B5 /* AMapPOIAroundSearchRequest+KKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AMapPOIAroundSearchRequest+KKModel.h"; sourceTree = "<group>"; };
@@ -129,8 +188,6 @@
 		26D6BD6E1D42509900CFBB01 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		26D6BD6F1D4252CB00CFBB01 /* KKFrameTabC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFrameTabC.h; sourceTree = "<group>"; };
 		26D6BD701D4252CB00CFBB01 /* KKFrameTabC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFrameTabC.m; sourceTree = "<group>"; };
-		26D6BD721D42531200CFBB01 /* KKMediVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMediVCtrl.h; sourceTree = "<group>"; };
-		26D6BD731D42531200CFBB01 /* KKMediVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMediVCtrl.m; sourceTree = "<group>"; };
 		26D6BD751D42532F00CFBB01 /* KKDisVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDisVCtrl.h; sourceTree = "<group>"; };
 		26D6BD761D42532F00CFBB01 /* KKDisVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDisVCtrl.m; sourceTree = "<group>"; };
 		26D6BD781D42534400CFBB01 /* KKNearVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNearVCtrl.h; sourceTree = "<group>"; };
@@ -253,6 +310,41 @@
 			path = DePointUITests;
 			sourceTree = "<group>";
 		};
+		26ACAB1E1D58CB39002E4630 /* kk */ = {
+			isa = PBXGroup;
+			children = (
+				26ACAB1F1D58CB9F002E4630 /* KKMediHClassTVCell.h */,
+				26ACAB201D58CB9F002E4630 /* KKMediHClassTVCell.m */,
+				26ACAB221D58CC02002E4630 /* KKMediMClassTVCell.h */,
+				26ACAB231D58CC02002E4630 /* KKMediMClassTVCell.m */,
+				26ACAB251D58CC19002E4630 /* KKMediTClassTVCell.h */,
+				26ACAB261D58CC19002E4630 /* KKMediTClassTVCell.m */,
+				26ACAB2B1D596DA1002E4630 /* KKMenuBarButton.h */,
+				26ACAB2C1D596DA1002E4630 /* KKMenuBarButton.m */,
+			);
+			name = kk;
+			sourceTree = "<group>";
+		};
+		26AD335B1D5870C600891D9B /* XPNetManager */ = {
+			isa = PBXGroup;
+			children = (
+				26AD33581D5870B500891D9B /* XPNetManager.h */,
+				26AD33591D5870B500891D9B /* XPNetManager.m */,
+			);
+			name = XPNetManager;
+			sourceTree = "<group>";
+		};
+		26AD335C1D58AE3000891D9B /* kk */ = {
+			isa = PBXGroup;
+			children = (
+				26AD335D1D58AE7B00891D9B /* KKMediTVC.h */,
+				26AD335E1D58AE7B00891D9B /* KKMediTVC.m */,
+				26ACAB281D596A0F002E4630 /* KKMedClassVC.h */,
+				26ACAB291D596A0F002E4630 /* KKMedClassVC.m */,
+			);
+			name = kk;
+			sourceTree = "<group>";
+		};
 		26AD7A091D4A447D009217B5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +398,8 @@
 		26D6BD301D4242A500CFBB01 /* 1-Medicinal 药品查询 */ = {
 			isa = PBXGroup;
 			children = (
+				26AD33571D5870A700891D9B /* XPDefine.h */,
+				26AD335B1D5870C600891D9B /* XPNetManager */,
 				26D6BD3E1D42440C00CFBB01 /* Controller */,
 				26D6BD3F1D42440C00CFBB01 /* Model */,
 				26D6BD401D42440C00CFBB01 /* View */,
@@ -366,6 +460,7 @@
 		26D6BD341D4242FD00CFBB01 /* Resource-资源 */ = {
 			isa = PBXGroup;
 			children = (
+				26ACAB1C1D58C28E002E4630 /* kk.medi.plist */,
 			);
 			name = "Resource-资源";
 			path = Resource;
@@ -472,8 +567,19 @@
 		26D6BD3E1D42440C00CFBB01 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				26D6BD721D42531200CFBB01 /* KKMediVCtrl.h */,
-				26D6BD731D42531200CFBB01 /* KKMediVCtrl.m */,
+				26AD335C1D58AE3000891D9B /* kk */,
+				26AD33331D58708000891D9B /* KKMediVCtrl.h */,
+				26AD33341D58708000891D9B /* KKMediVCtrl.m */,
+				26AD33351D58708000891D9B /* XPDetailController.h */,
+				26AD33361D58708000891D9B /* XPDetailController.m */,
+				26AD33371D58708000891D9B /* XPDrugController.h */,
+				26AD33381D58708000891D9B /* XPDrugController.m */,
+				26AD33391D58708000891D9B /* XPListController.h */,
+				26AD333A1D58708000891D9B /* XPListController.m */,
+				26AD333B1D58708000891D9B /* XPNexineController.h */,
+				26AD333C1D58708000891D9B /* XPNexineController.m */,
+				26AD333D1D58708000891D9B /* XPPushController.h */,
+				26AD333E1D58708000891D9B /* XPPushController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -481,6 +587,14 @@
 		26D6BD3F1D42440C00CFBB01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				26AD33451D58708B00891D9B /* XPDetailModel.h */,
+				26AD33461D58708B00891D9B /* XPDetailModel.m */,
+				26AD33471D58708B00891D9B /* XPDrugNexineModel.h */,
+				26AD33481D58708B00891D9B /* XPDrugNexineModel.m */,
+				26AD33491D58708B00891D9B /* XPDrugsModel.h */,
+				26AD334A1D58708B00891D9B /* XPDrugsModel.m */,
+				26AD334B1D58708B00891D9B /* XPListModel.h */,
+				26AD334C1D58708B00891D9B /* XPListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -488,6 +602,11 @@
 		26D6BD401D42440C00CFBB01 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				26ACAB1E1D58CB39002E4630 /* kk */,
+				26AD33511D58709200891D9B /* XPDetailCell.h */,
+				26AD33521D58709200891D9B /* XPDetailCell.m */,
+				26AD33531D58709200891D9B /* XPListViewCell.h */,
+				26AD33541D58709200891D9B /* XPListViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -712,6 +831,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26ACAB1D1D58C28E002E4630 /* kk.medi.plist in Resources */,
 				268F4C991D41A69200B8AD32 /* LaunchScreen.storyboard in Resources */,
 				268F4C961D41A69200B8AD32 /* Assets.xcassets in Resources */,
 			);
@@ -789,35 +909,53 @@
 				26AD7A121D4A44B6009217B5 /* KKMapView.m in Sources */,
 				26D6BD5D1D42456F00CFBB01 /* UIView+HUD.m in Sources */,
 				26D6BD641D42482E00CFBB01 /* BaseViewModel.m in Sources */,
+				26AD335A1D5870B500891D9B /* XPNetManager.m in Sources */,
 				26D6BD611D4247EE00CFBB01 /* BaseNetworking.m in Sources */,
 				26E582851D52C7D8007FB00E /* KKSetViewModel.m in Sources */,
 				26AE8F491D48D5C300E5E763 /* KKLocationVModel.m in Sources */,
 				26D6BD4D1D4244AB00CFBB01 /* AppDelegate.m in Sources */,
 				26D6BD5C1D42456F00CFBB01 /* UIScrollView+Refresh.m in Sources */,
 				26D6BD711D4252CB00CFBB01 /* KKFrameTabC.m in Sources */,
+				26ACAB211D58CB9F002E4630 /* KKMediHClassTVCell.m in Sources */,
 				26A8A16B1D5051FC007894CD /* KKColumnButtons.m in Sources */,
 				26D6BD5A1D42456F00CFBB01 /* NSObject+Parse.m in Sources */,
+				26AD33411D58708000891D9B /* XPDrugController.m in Sources */,
 				26E5D7DC1D49AA8800B6CCC1 /* KKAnno.m in Sources */,
 				26D6BD6A1D424B3A00CFBB01 /* NSDate+Extension.m in Sources */,
 				26D6BD7D1D42536700CFBB01 /* KKSetVCtrl.m in Sources */,
+				26ACAB2A1D596A0F002E4630 /* KKMedClassVC.m in Sources */,
 				26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */,
+				26AD33501D58708B00891D9B /* XPListModel.m in Sources */,
 				2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */,
-				26D6BD741D42531200CFBB01 /* KKMediVCtrl.m in Sources */,
 				265E62361D53658B00D65A37 /* KKFeedBackVC.m in Sources */,
+				26AD33431D58708000891D9B /* XPNexineController.m in Sources */,
 				26D6BD7A1D42534400CFBB01 /* KKNearVCtrl.m in Sources */,
+				26ACAB241D58CC02002E4630 /* KKMediMClassTVCell.m in Sources */,
 				26FBBD501D54828F00EAAAA9 /* KKPlaceholderTextView.m in Sources */,
 				26E5828C1D52ED7E007FB00E /* KKAboutViewC.m in Sources */,
+				26AD33401D58708000891D9B /* XPDetailController.m in Sources */,
+				26AD333F1D58708000891D9B /* KKMediVCtrl.m in Sources */,
 				26D6BD5B1D42456F00CFBB01 /* NSString+YX.m in Sources */,
+				26AD33551D58709200891D9B /* XPDetailCell.m in Sources */,
+				26AD33421D58708000891D9B /* XPListController.m in Sources */,
+				26AD334D1D58708B00891D9B /* XPDetailModel.m in Sources */,
+				26AD334E1D58708B00891D9B /* XPDrugNexineModel.m in Sources */,
 				26E582A31D5315EC007FB00E /* KKCustomNavigationC.m in Sources */,
 				26E5828F1D531493007FB00E /* KKLoginViewC.m in Sources */,
+				26ACAB2D1D596DA1002E4630 /* KKMenuBarButton.m in Sources */,
 				26D6BD771D42532F00CFBB01 /* KKDisVCtrl.m in Sources */,
+				26ACAB271D58CC19002E4630 /* KKMediTClassTVCell.m in Sources */,
 				26E582A21D5315EC007FB00E /* KKCustomNavBarV.m in Sources */,
 				265E62331D53297200D65A37 /* UIButton+KKNavBack.m in Sources */,
 				26E582881D52CF83007FB00E /* KKSetTViewCell.m in Sources */,
 				26AD7A021D4A2B01009217B5 /* KKCenterAnno.m in Sources */,
+				26AD33561D58709200891D9B /* XPListViewCell.m in Sources */,
+				26AD33441D58708000891D9B /* XPPushController.m in Sources */,
+				26AD335F1D58AE7B00891D9B /* KKMediTVC.m in Sources */,
 				26A8A1681D503AC8007894CD /* KKNearbyTViewCell.m in Sources */,
 				26D6BD6D1D42503400CFBB01 /* UIView+Frame.m in Sources */,
 				2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */,
+				26AD334F1D58708B00891D9B /* XPDrugsModel.m in Sources */,
 				26E582A41D5315EC007FB00E /* KKCustomVC.m in Sources */,
 				2654FE1A1D517AA40051FA41 /* KKMedicineChestModel.m in Sources */,
 				268F4C8B1D41A69100B8AD32 /* main.m in Sources */,

@@ -16,15 +16,6 @@
 
 
 
-// 弹出分享菜单需要导入的头文件
-#import <ShareSDKUI/ShareSDK+SSUI.h>
-// 自定义分享菜单栏需要导入的头文件
-#import <ShareSDKUI/SSUIShareActionSheetStyle.h>
-// 自定义分享编辑界面所需要导入的头文件
-#import <ShareSDKUI/SSUIEditorViewStyle.h>
-
-
-#import <ShareSDKUI/SSUIShareActionSheetCustomItem.h>
 
 
 @interface KKSetViewModel()
@@ -59,7 +50,13 @@
 }
 
 - (NSString *)getAssistByIndexPath:(NSIndexPath *)indexPath {
-    return self.dataList[indexPath.section][indexPath.row][@"assist"];
+    typedef NSString*(^cacheBlock)(void);
+    cacheBlock cachec = self.dataList[indexPath.section][indexPath.row][@"assist"];
+    if (cachec) {
+        return cachec();;
+    }
+    
+    return nil;
 }
 
 - (UIViewController *)getViewCtrlByIndexPath:(NSIndexPath *)indexPath {
@@ -82,7 +79,14 @@
               @"title":@"收藏"}],
           
           @[@{@"icon":@"set_icon",  //1-0
-              @"title":@"清除缓存"}],
+              @"title":@"清除缓存",
+              @"assist":^(void){
+                  return [self getCacheRoom];
+              },
+              @"block":^(UITableViewController *obj){
+                  [self deleteCache];
+                  [obj.tableView reloadData];
+              }}],
           
           @[@{@"icon":@"set_icon",  //2-1
               @"title":@"推荐给朋友",
@@ -112,6 +116,48 @@
     toVC.view.backgroundColor = KKGLOBAL;
     [fromVC.navigationController pushViewController:toVC animated:YES];
     fromVC.hidesBottomBarWhenPushed = NO;
+}
+
+- (NSString *)getCacheRoom {
+    NSInteger totalSize = 0;
+    NSFileManager *manager = [NSFileManager defaultManager];
+    // 拼接缓存路径文件
+    NSString *cachePath = KKCACHEPATH;
+    NSLog(@"缓存路径%@", cachePath);
+    
+    // 计算指定目录所有文件总大小
+    // 遍历指定目录所有文件(包括子目录)
+    NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:cachePath];
+    for (NSString *filename in enumerator) {
+        NSString *path = [cachePath stringByAppendingPathComponent:filename];
+        
+        // 获取文件信息
+        NSDictionary *fileInfo = [manager attributesOfItemAtPath:path error:nil];
+        // 判断是否为目录
+        if ([fileInfo[NSFileType] isEqualToString:NSFileTypeDirectory]) {
+            continue;
+        }
+        NSInteger size = [fileInfo[NSFileSize] integerValue];
+        totalSize += size;
+    }
+    
+    // 获取的大小按1000进位，而不是1024
+    NSLog(@"准确计算所有文件缓存大小%zd", totalSize);
+    return [NSString stringWithFormat:@"%.2lfM", totalSize/1000/1000.0];
+}
+
+- (void)deleteCache {
+    NSError *error;
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:KKCACHEPATH];
+    for (NSString *filename in enumerator) {
+        NSString *path = [KKCACHEPATH stringByAppendingPathComponent:filename];
+        [manager removeItemAtPath:path error:&error];
+        if (error) {
+            NSLog(@"%s: %@", __func__, error);
+            break;
+        }
+    }
 }
 
 - (void)shareToFriends {
