@@ -10,13 +10,14 @@
 		2654FE1A1D517AA40051FA41 /* KKMedicineChestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE191D517AA40051FA41 /* KKMedicineChestModel.m */; };
 		2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */; };
 		2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1F1D5189BD0051FA41 /* KKSanBox.m */; };
-		265E62331D53297200D65A37 /* UIButton+KKNavBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 265E62321D53297200D65A37 /* UIButton+KKNavBack.m */; };
 		265E62361D53658B00D65A37 /* KKFeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265E62351D53658B00D65A37 /* KKFeedBackVC.m */; };
+		268A10AF1D5A2788009E8962 /* UIImageView+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 268A10AE1D5A2788009E8962 /* UIImageView+KKExtension.m */; };
 		268F4C8B1D41A69100B8AD32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4C8A1D41A69100B8AD32 /* main.m */; };
 		268F4C961D41A69200B8AD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 268F4C951D41A69200B8AD32 /* Assets.xcassets */; };
 		268F4C991D41A69200B8AD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268F4C971D41A69200B8AD32 /* LaunchScreen.storyboard */; };
 		268F4CA41D41A69200B8AD32 /* DePointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4CA31D41A69200B8AD32 /* DePointTests.m */; };
 		268F4CAF1D41A69200B8AD32 /* DePointUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4CAE1D41A69200B8AD32 /* DePointUITests.m */; };
+		268FB8371D5AB29100FA35F2 /* KKSquareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 268FB8361D5AB29100FA35F2 /* KKSquareButton.m */; };
 		26A8A1681D503AC8007894CD /* KKNearbyTViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8A1671D503AC8007894CD /* KKNearbyTViewCell.m */; };
 		26A8A16B1D5051FC007894CD /* KKColumnButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8A16A1D5051FC007894CD /* KKColumnButtons.m */; };
 		26ACAB1D1D58C28E002E4630 /* kk.medi.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26ACAB1C1D58C28E002E4630 /* kk.medi.plist */; };
@@ -24,7 +25,6 @@
 		26ACAB241D58CC02002E4630 /* KKMediMClassTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ACAB231D58CC02002E4630 /* KKMediMClassTVCell.m */; };
 		26ACAB271D58CC19002E4630 /* KKMediTClassTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ACAB261D58CC19002E4630 /* KKMediTClassTVCell.m */; };
 		26ACAB2A1D596A0F002E4630 /* KKMedClassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ACAB291D596A0F002E4630 /* KKMedClassVC.m */; };
-		26ACAB2D1D596DA1002E4630 /* KKMenuBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ACAB2C1D596DA1002E4630 /* KKMenuBarButton.m */; };
 		26AD333F1D58708000891D9B /* KKMediVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD33341D58708000891D9B /* KKMediVCtrl.m */; };
 		26AD33401D58708000891D9B /* XPDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD33361D58708000891D9B /* XPDetailController.m */; };
 		26AD33411D58708000891D9B /* XPDrugController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD33381D58708000891D9B /* XPDrugController.m */; };
@@ -94,11 +94,11 @@
 		2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCollectionModel.m; sourceTree = "<group>"; };
 		2654FE1E1D5189BD0051FA41 /* KKSanBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSanBox.h; sourceTree = "<group>"; };
 		2654FE1F1D5189BD0051FA41 /* KKSanBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSanBox.m; sourceTree = "<group>"; };
-		265E62311D53297200D65A37 /* UIButton+KKNavBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+KKNavBack.h"; sourceTree = "<group>"; };
-		265E62321D53297200D65A37 /* UIButton+KKNavBack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+KKNavBack.m"; sourceTree = "<group>"; };
 		265E62341D53658B00D65A37 /* KKFeedBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFeedBackVC.h; sourceTree = "<group>"; };
 		265E62351D53658B00D65A37 /* KKFeedBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFeedBackVC.m; sourceTree = "<group>"; };
 		2660E02D1D5859F900C651FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		268A10AD1D5A2788009E8962 /* UIImageView+KKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+KKExtension.h"; sourceTree = "<group>"; };
+		268A10AE1D5A2788009E8962 /* UIImageView+KKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+KKExtension.m"; sourceTree = "<group>"; };
 		268F4C861D41A69100B8AD32 /* DePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		268F4C8A1D41A69100B8AD32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		268F4C951D41A69200B8AD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +110,8 @@
 		268F4CAA1D41A69200B8AD32 /* DePointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DePointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		268F4CAE1D41A69200B8AD32 /* DePointUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DePointUITests.m; sourceTree = "<group>"; };
 		268F4CB01D41A69200B8AD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		268FB8351D5AB29100FA35F2 /* KKSquareButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSquareButton.h; sourceTree = "<group>"; };
+		268FB8361D5AB29100FA35F2 /* KKSquareButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSquareButton.m; sourceTree = "<group>"; };
 		26A8A1661D503AC8007894CD /* KKNearbyTViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNearbyTViewCell.h; sourceTree = "<group>"; };
 		26A8A1671D503AC8007894CD /* KKNearbyTViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNearbyTViewCell.m; sourceTree = "<group>"; };
 		26A8A1691D5051FC007894CD /* KKColumnButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKColumnButtons.h; sourceTree = "<group>"; };
@@ -123,8 +125,6 @@
 		26ACAB261D58CC19002E4630 /* KKMediTClassTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMediTClassTVCell.m; sourceTree = "<group>"; };
 		26ACAB281D596A0F002E4630 /* KKMedClassVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMedClassVC.h; sourceTree = "<group>"; };
 		26ACAB291D596A0F002E4630 /* KKMedClassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMedClassVC.m; sourceTree = "<group>"; };
-		26ACAB2B1D596DA1002E4630 /* KKMenuBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMenuBarButton.h; sourceTree = "<group>"; };
-		26ACAB2C1D596DA1002E4630 /* KKMenuBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMenuBarButton.m; sourceTree = "<group>"; };
 		26AD33331D58708000891D9B /* KKMediVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMediVCtrl.h; sourceTree = "<group>"; };
 		26AD33341D58708000891D9B /* KKMediVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMediVCtrl.m; sourceTree = "<group>"; };
 		26AD33351D58708000891D9B /* XPDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPDetailController.h; sourceTree = "<group>"; };
@@ -319,8 +319,6 @@
 				26ACAB231D58CC02002E4630 /* KKMediMClassTVCell.m */,
 				26ACAB251D58CC19002E4630 /* KKMediTClassTVCell.h */,
 				26ACAB261D58CC19002E4630 /* KKMediTClassTVCell.m */,
-				26ACAB2B1D596DA1002E4630 /* KKMenuBarButton.h */,
-				26ACAB2C1D596DA1002E4630 /* KKMenuBarButton.m */,
 			);
 			name = kk;
 			sourceTree = "<group>";
@@ -451,8 +449,8 @@
 				26D6BD6C1D42503400CFBB01 /* UIView+Frame.m */,
 				26D6BD681D424B3A00CFBB01 /* NSDate+Extension.h */,
 				26D6BD691D424B3A00CFBB01 /* NSDate+Extension.m */,
-				265E62311D53297200D65A37 /* UIButton+KKNavBack.h */,
-				265E62321D53297200D65A37 /* UIButton+KKNavBack.m */,
+				268A10AD1D5A2788009E8962 /* UIImageView+KKExtension.h */,
+				268A10AE1D5A2788009E8962 /* UIImageView+KKExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -507,6 +505,8 @@
 				26E582871D52CF83007FB00E /* KKSetTViewCell.m */,
 				26FBBD4E1D54828E00EAAAA9 /* KKPlaceholderTextView.h */,
 				26FBBD4F1D54828F00EAAAA9 /* KKPlaceholderTextView.m */,
+				268FB8351D5AB29100FA35F2 /* KKSquareButton.h */,
+				268FB8361D5AB29100FA35F2 /* KKSquareButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -914,6 +914,7 @@
 				26E582851D52C7D8007FB00E /* KKSetViewModel.m in Sources */,
 				26AE8F491D48D5C300E5E763 /* KKLocationVModel.m in Sources */,
 				26D6BD4D1D4244AB00CFBB01 /* AppDelegate.m in Sources */,
+				268FB8371D5AB29100FA35F2 /* KKSquareButton.m in Sources */,
 				26D6BD5C1D42456F00CFBB01 /* UIScrollView+Refresh.m in Sources */,
 				26D6BD711D4252CB00CFBB01 /* KKFrameTabC.m in Sources */,
 				26ACAB211D58CB9F002E4630 /* KKMediHClassTVCell.m in Sources */,
@@ -925,6 +926,7 @@
 				26D6BD7D1D42536700CFBB01 /* KKSetVCtrl.m in Sources */,
 				26ACAB2A1D596A0F002E4630 /* KKMedClassVC.m in Sources */,
 				26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */,
+				268A10AF1D5A2788009E8962 /* UIImageView+KKExtension.m in Sources */,
 				26AD33501D58708B00891D9B /* XPListModel.m in Sources */,
 				2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */,
 				265E62361D53658B00D65A37 /* KKFeedBackVC.m in Sources */,
@@ -942,11 +944,9 @@
 				26AD334E1D58708B00891D9B /* XPDrugNexineModel.m in Sources */,
 				26E582A31D5315EC007FB00E /* KKCustomNavigationC.m in Sources */,
 				26E5828F1D531493007FB00E /* KKLoginViewC.m in Sources */,
-				26ACAB2D1D596DA1002E4630 /* KKMenuBarButton.m in Sources */,
 				26D6BD771D42532F00CFBB01 /* KKDisVCtrl.m in Sources */,
 				26ACAB271D58CC19002E4630 /* KKMediTClassTVCell.m in Sources */,
 				26E582A21D5315EC007FB00E /* KKCustomNavBarV.m in Sources */,
-				265E62331D53297200D65A37 /* UIButton+KKNavBack.m in Sources */,
 				26E582881D52CF83007FB00E /* KKSetTViewCell.m in Sources */,
 				26AD7A021D4A2B01009217B5 /* KKCenterAnno.m in Sources */,
 				26AD33561D58709200891D9B /* XPListViewCell.m in Sources */,

@@ -30,7 +30,7 @@
 #import "UIView+Frame.h"
 #import "UIView+HUD.h"
 #import "KKSanBox.h"   // 沙盒处理
-#import "UIButton+KKNavBack.h"
+#import "UIImageView+KKExtension.h"
 
 
 #import "Constant.h"
