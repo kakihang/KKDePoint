@@ -25,6 +25,8 @@
 #define KKSCREENBOUNDSIZE [UIScreen mainScreen].bounds.size
 // bounds.size.width 的百分比
 #define KKBWIDTHPRECENT(x)  KKSCREENBOUNDSIZE.width * x * 1.0/375
+#define KKScreenWidthPrecent(x) KKSCREENBOUNDSIZE.width * x
+#define KKScreenHeightPrecent(x) KKSCREENBOUNDSIZE.height * x
 
 // 缓存地址
 #define KKCACHEPATH [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]

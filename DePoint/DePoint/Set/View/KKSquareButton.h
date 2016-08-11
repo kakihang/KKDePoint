@@ -11,6 +11,7 @@
 @interface KKSquareButton : UIButton
 
 + (instancetype)buttonWithTitle:(NSString *)title;
++ (instancetype)buttonWithTitle:(NSString *)title imgName:(NSString *)imgName;
 + (instancetype)buttonWithFrame:(CGRect)frame title:(NSString *)title;
 
 @end

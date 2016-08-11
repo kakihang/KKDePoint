@@ -15,11 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNabbarBackgroundColor:KKGLOBARCOLOR];
-    [self setNavBarTitle:@"关于"];
-    
-    // 设置导航栏返回按钮 渲染颜色
-    [self setNavBarTintColor:KKGLOTINTCOLOR];
+    [self setNavTitle:@"关于" tintColor:KKGLOTINTCOLOR backgroundColor:KKGLOBARCOLOR];
     
     // 中间图标
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icon-512"]];

@@ -16,4 +16,6 @@
 + (instancetype)kk_imageWithImageName:(NSString *)image
                                 frame:(CGRect)frame
                                  mode:(UIViewContentMode)mode;
+
+
 @end

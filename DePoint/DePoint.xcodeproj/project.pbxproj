@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2635A9F81D5C239900BF181F /* UITextField+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2635A9F71D5C239900BF181F /* UITextField+KKExtension.m */; };
+		2635A9FB1D5C2C2D00BF181F /* UILabel+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2635A9FA1D5C2C2D00BF181F /* UILabel+KKExtension.m */; };
+		264B33401D5B0A67000C8911 /* UIView+KKVisualEff.m in Sources */ = {isa = PBXBuildFile; fileRef = 264B333F1D5B0A67000C8911 /* UIView+KKVisualEff.m */; };
+		264B33431D5B1418000C8911 /* KKLoginShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 264B33421D5B1418000C8911 /* KKLoginShowView.m */; };
+		264B33481D5B5D58000C8911 /* UIButton+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 264B33471D5B5D58000C8911 /* UIButton+KKExtension.m */; };
 		2654FE1A1D517AA40051FA41 /* KKMedicineChestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE191D517AA40051FA41 /* KKMedicineChestModel.m */; };
 		2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */; };
 		2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1F1D5189BD0051FA41 /* KKSanBox.m */; };
@@ -88,6 +93,16 @@
 
 /* Begin PBXFileReference section */
 		13AE236248656BA1E762C9AC /* Pods-DePoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DePoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-DePoint/Pods-DePoint.release.xcconfig"; sourceTree = "<group>"; };
+		2635A9F61D5C239900BF181F /* UITextField+KKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+KKExtension.h"; sourceTree = "<group>"; };
+		2635A9F71D5C239900BF181F /* UITextField+KKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+KKExtension.m"; sourceTree = "<group>"; };
+		2635A9F91D5C2C2D00BF181F /* UILabel+KKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+KKExtension.h"; sourceTree = "<group>"; };
+		2635A9FA1D5C2C2D00BF181F /* UILabel+KKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+KKExtension.m"; sourceTree = "<group>"; };
+		264B333E1D5B0A67000C8911 /* UIView+KKVisualEff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KKVisualEff.h"; sourceTree = "<group>"; };
+		264B333F1D5B0A67000C8911 /* UIView+KKVisualEff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KKVisualEff.m"; sourceTree = "<group>"; };
+		264B33411D5B1418000C8911 /* KKLoginShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLoginShowView.h; sourceTree = "<group>"; };
+		264B33421D5B1418000C8911 /* KKLoginShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLoginShowView.m; sourceTree = "<group>"; };
+		264B33461D5B5D58000C8911 /* UIButton+KKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+KKExtension.h"; sourceTree = "<group>"; };
+		264B33471D5B5D58000C8911 /* UIButton+KKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+KKExtension.m"; sourceTree = "<group>"; };
 		2654FE181D517AA40051FA41 /* KKMedicineChestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMedicineChestModel.h; sourceTree = "<group>"; };
 		2654FE191D517AA40051FA41 /* KKMedicineChestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMedicineChestModel.m; sourceTree = "<group>"; };
 		2654FE1B1D517ACB0051FA41 /* KKCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCollectionModel.h; sourceTree = "<group>"; };
@@ -447,10 +462,18 @@
 				26D6BD581D42456F00CFBB01 /* UIView+HUD.m */,
 				26D6BD6B1D42503400CFBB01 /* UIView+Frame.h */,
 				26D6BD6C1D42503400CFBB01 /* UIView+Frame.m */,
+				264B333E1D5B0A67000C8911 /* UIView+KKVisualEff.h */,
+				264B333F1D5B0A67000C8911 /* UIView+KKVisualEff.m */,
 				26D6BD681D424B3A00CFBB01 /* NSDate+Extension.h */,
 				26D6BD691D424B3A00CFBB01 /* NSDate+Extension.m */,
 				268A10AD1D5A2788009E8962 /* UIImageView+KKExtension.h */,
 				268A10AE1D5A2788009E8962 /* UIImageView+KKExtension.m */,
+				264B33461D5B5D58000C8911 /* UIButton+KKExtension.h */,
+				264B33471D5B5D58000C8911 /* UIButton+KKExtension.m */,
+				2635A9F61D5C239900BF181F /* UITextField+KKExtension.h */,
+				2635A9F71D5C239900BF181F /* UITextField+KKExtension.m */,
+				2635A9F91D5C2C2D00BF181F /* UILabel+KKExtension.h */,
+				2635A9FA1D5C2C2D00BF181F /* UILabel+KKExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -507,6 +530,8 @@
 				26FBBD4F1D54828F00EAAAA9 /* KKPlaceholderTextView.m */,
 				268FB8351D5AB29100FA35F2 /* KKSquareButton.h */,
 				268FB8361D5AB29100FA35F2 /* KKSquareButton.m */,
+				264B33411D5B1418000C8911 /* KKLoginShowView.h */,
+				264B33421D5B1418000C8911 /* KKLoginShowView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -919,6 +944,7 @@
 				26D6BD711D4252CB00CFBB01 /* KKFrameTabC.m in Sources */,
 				26ACAB211D58CB9F002E4630 /* KKMediHClassTVCell.m in Sources */,
 				26A8A16B1D5051FC007894CD /* KKColumnButtons.m in Sources */,
+				2635A9FB1D5C2C2D00BF181F /* UILabel+KKExtension.m in Sources */,
 				26D6BD5A1D42456F00CFBB01 /* NSObject+Parse.m in Sources */,
 				26AD33411D58708000891D9B /* XPDrugController.m in Sources */,
 				26E5D7DC1D49AA8800B6CCC1 /* KKAnno.m in Sources */,
@@ -931,12 +957,15 @@
 				2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */,
 				265E62361D53658B00D65A37 /* KKFeedBackVC.m in Sources */,
 				26AD33431D58708000891D9B /* XPNexineController.m in Sources */,
+				2635A9F81D5C239900BF181F /* UITextField+KKExtension.m in Sources */,
 				26D6BD7A1D42534400CFBB01 /* KKNearVCtrl.m in Sources */,
 				26ACAB241D58CC02002E4630 /* KKMediMClassTVCell.m in Sources */,
+				264B33401D5B0A67000C8911 /* UIView+KKVisualEff.m in Sources */,
 				26FBBD501D54828F00EAAAA9 /* KKPlaceholderTextView.m in Sources */,
 				26E5828C1D52ED7E007FB00E /* KKAboutViewC.m in Sources */,
 				26AD33401D58708000891D9B /* XPDetailController.m in Sources */,
 				26AD333F1D58708000891D9B /* KKMediVCtrl.m in Sources */,
+				264B33481D5B5D58000C8911 /* UIButton+KKExtension.m in Sources */,
 				26D6BD5B1D42456F00CFBB01 /* NSString+YX.m in Sources */,
 				26AD33551D58709200891D9B /* XPDetailCell.m in Sources */,
 				26AD33421D58708000891D9B /* XPListController.m in Sources */,
@@ -944,6 +973,7 @@
 				26AD334E1D58708B00891D9B /* XPDrugNexineModel.m in Sources */,
 				26E582A31D5315EC007FB00E /* KKCustomNavigationC.m in Sources */,
 				26E5828F1D531493007FB00E /* KKLoginViewC.m in Sources */,
+				264B33431D5B1418000C8911 /* KKLoginShowView.m in Sources */,
 				26D6BD771D42532F00CFBB01 /* KKDisVCtrl.m in Sources */,
 				26ACAB271D58CC19002E4630 /* KKMediTClassTVCell.m in Sources */,
 				26E582A21D5315EC007FB00E /* KKCustomNavBarV.m in Sources */,
@@ -1094,7 +1124,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = DePoint/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -1141,7 +1171,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = DePoint/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = (
 					"$(inherited)",

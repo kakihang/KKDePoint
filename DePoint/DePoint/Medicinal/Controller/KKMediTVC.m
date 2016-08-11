@@ -64,7 +64,7 @@ static NSString *tID_ = @"TKKMediTVCCellIDT";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s", __func__);
+    //    NSLog(@"%s", __func__);
     if (indexPath.section == 0) {
         KKMediHClassTVCell *cell = [tableView dequeueReusableCellWithIdentifier:hID_ forIndexPath:indexPath];
         [cell.medFirstBt setTitle:self.medArr[0][@"name"] forState:UIControlStateNormal];
@@ -101,7 +101,7 @@ static NSString *tID_ = @"TKKMediTVCCellIDT";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s %zd %zd", __func__, indexPath.section, indexPath.row);
+    //    NSLog(@"%s %zd %zd", __func__, indexPath.section, indexPath.row);
     if (indexPath.section == 0) {
         return [tableView fd_heightForCellWithIdentifier:hID_ configuration:^(KKMediHClassTVCell *cell) {
             [cell.medFirstBt setTitle:self.medArr[0][@"name"] forState:UIControlStateNormal];

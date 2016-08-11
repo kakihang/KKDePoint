@@ -31,6 +31,7 @@
 - (void)setLeftBtn:(UIButton *)btn;
 - (void)setRightBtn:(UIButton *)btn;
 - (void)setTitle:(NSString *)strTitle;
+- (void)setNavBottomLineHidde:(BOOL)hide;
 // add by kaki 增加夜间颜色设置
 //- (void)setTitleDKColor:(DKColorPicker)dkColor;
 - (void)setNavTintColor:(UIColor *)color;

@@ -91,15 +91,21 @@
     if(_imageView == nil) {
         _imageView = [UIImageView kk_imageWithImageName:@"set_login_head" frame:CGRectMake(0, 0, KKSCREENBOUNDSIZE.width, KKSCREENBOUNDSIZE.height * 0.3) mode:UIViewContentModeCenter];
         [self.view addSubview:_imageView];
+        _imageView.userInteractionEnabled = YES;
         
-        CGFloat width = KKSCREENBOUNDSIZE.height * 0.18;
+        CGFloat width = KKSCREENBOUNDSIZE.height * 0.15;
         CGFloat height = width + 30;
-        KKSquareButton *loginBtn = [KKSquareButton buttonWithTitle:@"点击登录"];
+        KKSquareButton *loginBtn = [KKSquareButton buttonWithTitle:@"点击登录" imgName:@"set_head_login_user"];
         [_imageView addSubview:loginBtn];
         [loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.mas_equalTo(_imageView);
             make.size.mas_equalTo(CGSizeMake(width, height));
         }];
+        [loginBtn bk_addEventHandler:^(id sender) {
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:[[KKLoginViewC alloc] init] animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        } forControlEvents:UIControlEventTouchUpInside];
     }
     return _imageView;
 }

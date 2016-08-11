@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIButton *leftBtn;              //左侧按钮
 @property (nonatomic, strong) UIButton *rightBtn;             //右侧按钮
 
+@property (nonatomic, weak) UILabel *lineV;             //底部线条 _kk
 @end
 
 
@@ -139,6 +140,7 @@
     //线条
     UILabel *lineV = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.frame)-0.5, CGRectGetWidth(self.frame), 0.5)];
     [lineV setBackgroundColor:[UIColor grayColor]];
+    self.lineV = lineV;
     [self addSubview:lineV];
     
     _titleLabel = [[UILabel alloc] initWithFrame:[[self class] titleViewFrame]];
@@ -157,6 +159,11 @@
     
 }
 
+- (void)setNavBottomLineHidde:(BOOL)hide {
+    if (self.lineV) {
+        self.lineV.hidden = hide;
+    }
+}
 
 - (void)setTitle:(NSString *)strTitle
 {

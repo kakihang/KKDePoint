@@ -26,7 +26,7 @@ target 'DePoint' do
     #pod 'AMap2DMap' #2D地图SDK(2D地图和3D地图不能同时使用)
     pod 'AMapSearch' #搜索服务SDK
     
-    pod 'BmobSDK' #意见反馈
+    pod 'BmobSDK' #后台数据存储
     
     
     # Mob 分享

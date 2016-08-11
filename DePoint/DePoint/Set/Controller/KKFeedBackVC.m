@@ -25,8 +25,7 @@ static NSString *cellID_ = @"KKFeedBackVCCellId";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setNabbarBackgroundColor:KKGLOBARCOLOR];
-    [self setNavBarTitle:@"意见反馈"];
+    [self setNavTitle:@"意见反馈" tintColor:KKGLOTINTCOLOR backgroundColor:KKGLOBARCOLOR];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID_];
     self.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
     
@@ -37,9 +36,6 @@ static NSString *cellID_ = @"KKFeedBackVCCellId";
     [sendBt setTitle:@"发送" forState:UIControlStateNormal];
     [sendBt addTarget:self action:@selector(sendMsg:) forControlEvents:UIControlEventTouchUpInside];
     [self setNavBarRightBtn:sendBt];
-    
-    // 设置导航栏返回按钮 渲染颜色
-    [self setNavBarTintColor:KKGLOTINTCOLOR];
 }
 
 - (void)didReceiveMemoryWarning {

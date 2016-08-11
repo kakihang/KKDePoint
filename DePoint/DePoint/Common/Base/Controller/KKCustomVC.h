@@ -22,6 +22,10 @@
 
 // 设置STNavBarView 颜色 _kk
 - (void)setNabbarBackgroundColor:(UIColor *)color;
+- (void)setNavTitle:(NSString *)title tintColor:(UIColor *)tintColor backgroundColor:(UIColor *)bgColor;
+
+// 隐藏导航栏分割线
+- (void)setNavBottmLinehidden:(BOOL)hide;
 
 // 设置导航栏渲染颜色
 - (void)setNavBarTintColor:(UIColor *)color;

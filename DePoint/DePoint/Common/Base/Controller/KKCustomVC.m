@@ -75,17 +75,34 @@
         [_navbar setBackgroundColor:color];
     }
 }
-
 // _kk
 - (void)setNavBarTintColor:(UIColor *)color {
     if (_navbar) {
         [_navbar setNavTintColor:color];
     }
 }
+// _kk
+- (void)setNavBottmLinehidden:(BOOL)hide {
+    if (_navbar) {
+        [_navbar setNavBottomLineHidde:hide];
+    }
+}
 
 - (void)hideNavBar:(BOOL)bIsHide
 {
     _navbar.hidden = bIsHide;
+}
+// _kk
+- (void)setNavTitle:(NSString *)title tintColor:(UIColor *)tintColor backgroundColor:(UIColor *)bgColor {
+    if (title) {
+        [self setNavBarTitle:title];
+    }
+    if (tintColor) {
+        [self setNavBarTintColor:tintColor];
+    }
+    if (bgColor) {
+        [self setNabbarBackgroundColor:bgColor];
+    }
 }
 
 - (void)setNavBarTitle:(NSString *)strTitle
