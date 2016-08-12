@@ -8,9 +8,10 @@
 
 #import "KKLoginViewC.h"
 #import "KKLoginShowView.h"
+#import "KKRegisterViewC.h"
 
 @interface KKLoginViewC()
-@property (nonatomic, strong) KKLoginShowView *showView; //
+@property (nonatomic, weak) KKLoginShowView *showView; //
 @end
 
 
@@ -23,6 +24,15 @@
     [self.view kk_viewWithVisualEffName:@"130313604324531250"];
     
     [self showView];
+    
+    UIButton *registerButton = [UIButton kk_buttonWithTitle:@"注册"];
+    [self setNavBarRightBtn:registerButton];
+    
+    __weak typeof(self) weakSelf = self;
+    [registerButton bk_addEventHandler:^(id sender) {
+        weakSelf.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:[[KKRegisterViewC alloc] init] animated:YES];
+    } forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (KKLoginShowView *)showView {
@@ -30,6 +40,11 @@
         _showView = [KKLoginShowView loginShowOnView:self.view];
     }
     return _showView;
+}
+
+- (void)dealloc {
+    
+    NSLog(@"%s", __func__);
 }
 
 @end

@@ -37,12 +37,17 @@
 
 
 /** apiKey **/
-// 高德地图key
-#define KKGDMAPAPIKEY @"19d7dfa2a4734ca4f150e15db60d3dd3"
-// 友盟数据统计
-#define KKUMAPIKEY @"579dfeb7e0f55a2aa7000b56"
-// bmob
-#define KKBMOBAPIKEY @"9e266ba3adf895e8b4c40bacb3d461ec"
+
+#define KKGDMAPAPIKEY @""
+#define KKUMAPIKEY @""
+#define KKBMOBAPIKEY @""
+#define KKSHAREAPIKEY @""
+#define KKQQAPIID @""
+#define KKQQAPIKEY @""
+#define KKWXAPIID @""
+#define KKWXAPIKEY @""
+
+
 
 
 // 评分地址

@@ -10,4 +10,5 @@
 
 @interface UITextField (KKExtension)
 + (instancetype)kk_createWithPlaceholder:(NSString *)placeholder;
++ (instancetype)kk_createPwdWithPlaceholder:(NSString *)placeholder;
 @end

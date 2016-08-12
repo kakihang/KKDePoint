@@ -14,4 +14,10 @@
     tf.placeholder = placeholder;
     return tf;
 }
++ (instancetype)kk_createPwdWithPlaceholder:(NSString *)placeholder {
+    UITextField *tf = [[UITextField alloc] init];
+    tf.placeholder = placeholder;
+    tf.secureTextEntry = YES;
+    return tf;
+}
 @end

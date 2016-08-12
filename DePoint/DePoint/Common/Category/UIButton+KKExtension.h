@@ -10,6 +10,7 @@
 
 @interface UIButton (KKExtension)
 
-+ (instancetype)buttonWithType:(UIButtonType)buttonType title:(NSString *)title;
++ (instancetype)kk_buttonWithType:(UIButtonType)buttonType title:(NSString *)title;
++ (instancetype)kk_buttonWithTitle:(NSString *)title;
 
 @end

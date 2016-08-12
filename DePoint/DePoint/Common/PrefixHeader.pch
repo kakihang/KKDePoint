@@ -35,7 +35,7 @@
 #import "UIButton+KKExtension.h"
 #import "UITextField+KKExtension.h"
 #import "UILabel+KKExtension.h"
-
+#import "KKJustifiedLabel.h"
 
 #import "Constant.h"
 #import "FrameConstant.h"

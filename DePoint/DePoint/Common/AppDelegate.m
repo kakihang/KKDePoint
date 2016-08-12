@@ -29,6 +29,9 @@
 /*#import "WeiboSDK.h"*/
 //新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"
 
+/** 测试 **/
+#import "KKRegisterViewC.h"
+
 @interface AppDelegate ()
 
 @end
@@ -59,7 +62,7 @@
      *  在此事件中写入连接代码。第四个参数则为配置本地社交平台时触发，根据返回的平台类型来配置平台信息。
      *  如果您使用的时服务端托管平台信息时，第二、四项参数可以传入nil，第三项参数则根据服务端托管平台来决定要连接的社交SDK。
      */
-    [ShareSDK registerApp:@"155157a41f54c"
+    [ShareSDK registerApp:KKSHAREAPIKEY
      
           activePlatforms:@[
                             /*@(SSDKPlatformTypeSinaWeibo),*/
@@ -92,19 +95,19 @@
          {
              case SSDKPlatformTypeSinaWeibo:
                  //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                 /*[appInfo SSDKSetupSinaWeiboByAppKey:@"3139835724"
-                  appSecret:@"3bef9112cd492fd18ce283a9c53045df"
+                 /*[appInfo SSDKSetupSinaWeiboByAppKey:@"3139"
+                  appSecret:@"3bef9112cd492fd18ce283a"
                   redirectUri:@"http://sns.whalecloud.com/sina2/callback"
                   authType:SSDKAuthTypeBoth];
                   break;*/
              case SSDKPlatformTypeQQ:
-                 [appInfo SSDKSetupQQByAppId:@"100371282"
-                                      appKey:@"aed9b0303e3ed1e27bae87c33761161d"
+                 [appInfo SSDKSetupQQByAppId:KKQQAPIID
+                                      appKey:KKQQAPIKEY
                                     authType:SSDKAuthTypeBoth];
                  break;
              case SSDKPlatformTypeWechat:
-                 [appInfo SSDKSetupWeChatByAppId:@"wx80106443bd33626d"
-                                       appSecret:@"edaaa1793dfc4d8ff6c5561ae09ddd3f"];
+                 [appInfo SSDKSetupWeChatByAppId:KKWXAPIID
+                                       appSecret:KKWXAPIKEY];
                  break;
              default:
                  break;
@@ -124,8 +127,11 @@
     
     /*****************************************************************/
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[KKFrameTabC alloc] init];
+    //    self.window.rootViewController = [[KKFrameTabC alloc] init];
+    self.window.rootViewController = [[KKRegisterViewC alloc] init];
     [self.window makeKeyAndVisible];
+    NSLog(@"%@", NSStringFromCGRect([UIScreen mainScreen].bounds));
+    
     
     return YES;
 }

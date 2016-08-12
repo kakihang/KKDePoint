@@ -10,8 +10,13 @@
 
 @implementation UIButton (KKExtension)
 
-+ (instancetype)buttonWithType:(UIButtonType)buttonType title:(NSString *)title {
++ (instancetype)kk_buttonWithType:(UIButtonType)buttonType title:(NSString *)title {
     UIButton *button = [UIButton buttonWithType:buttonType];
+    [button setTitle:title forState:UIControlStateNormal];
+    return button;
+}
++ (instancetype)kk_buttonWithTitle:(NSString *)title {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button setTitle:title forState:UIControlStateNormal];
     return button;
 }

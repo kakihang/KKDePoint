@@ -1,5 +1,5 @@
 //
-//  UILabel+KKExtension.h
+//  KKJustifiedLabel.h
 //  DePoint
 //
 //  Created by kaki on 16/8/11.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UILabel (KKExtension)
-+ (instancetype)kk_labelWithText:(NSString *)text;
+@interface KKJustifiedLabel : UILabel
 
 @end
