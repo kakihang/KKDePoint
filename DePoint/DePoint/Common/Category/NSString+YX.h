@@ -10,6 +10,8 @@
 
 @interface NSString (YX)
 @property (nonatomic, readonly) NSURL *yx_URL;
+@property (nonatomic, readonly) NSString *loginString;
+@property (nonatomic, readonly) NSString *kk_phoneEncrypt;
 @end
 
 

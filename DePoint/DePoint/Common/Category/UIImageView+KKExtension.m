@@ -28,6 +28,13 @@
     imageView.clipsToBounds = YES;
     return imageView;
 }
++ (instancetype)kk_imageWithImage:(UIImage *)image mode:(UIViewContentMode)mode radius:(CGFloat)radius {
+    UIImageView *imageView = [UIImageView kk_imageWithImage:image mode:mode];
+    imageView.layer.cornerRadius = radius;
+    imageView.layer.masksToBounds = YES;
+    return imageView;
+}
+
 + (instancetype)kk_imageWithImageName:(NSString *)image mode:(UIViewContentMode)mode {
     return [self kk_imageWithImage:[UIImage imageNamed:image] mode:mode];
 }

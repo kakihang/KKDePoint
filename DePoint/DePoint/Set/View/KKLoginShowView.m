@@ -7,28 +7,19 @@
 //
 
 #import "KKLoginShowView.h"
-#import "KKSquareButton.h"
 
 
 @interface KKLoginShowView()
 @property (nonatomic, weak) UIView *mainView;
 @property (nonatomic, strong) UIView *loginBgView; // 登录背景的view
 @property (nonatomic, strong) UIView *oneKeyLoginBgView; // 一键登录背景view
-@property (nonatomic, strong) UIButton *sendMag; // 发送验证码
 
 @property (nonatomic, strong) KKJustifiedLabel *userLa; // 用户
-@property (nonatomic, strong) UITextField *userTf; // 用户输入框
 @property (nonatomic, strong) KKJustifiedLabel *passLa; // 密码
-@property (nonatomic, strong) UITextField *passTf; // 密码输入框
-@property (nonatomic, strong) UIButton *quickLoginBtn; // 快速登录按钮
-@property (nonatomic, strong) UIButton *accLoginBtn; // 账号登录按钮
-@property (nonatomic, strong) UIButton *loginBtn; // 登录按钮
 @property (nonatomic, strong) UIButton *forgetBtn; // 忘记密码
 @property (nonatomic, strong) UIButton *registerBtn; // 注册按钮
 @property (nonatomic, strong) UIView *tagView; //标签
 
-@property (nonatomic, strong) KKSquareButton *qqLoginBtn; // qq登录
-@property (nonatomic, strong) KKSquareButton *wxLoginBtn; // 微信登录
 @end
 
 
@@ -43,7 +34,7 @@
     return loginView;
 }
 
-
+#pragma mark - 登录
 
 - (UIView *)loginBgView {
     if(_loginBgView == nil) {
@@ -117,7 +108,12 @@
             make.top.mas_equalTo(_userLa);
         }];
         
-        _sendMag = [UIButton kk_buttonWithType:UIButtonTypeRoundedRect title:@"发送验证码"];
+        _sendMag = [UIButton buttonWithType:UIButtonTypeCustom];
+        _sendMag.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_sendMag setTitleColor:KKButtonNormalColor forState:UIControlStateNormal];
+        [_sendMag setTitleColor:KKButtonDisableColor forState:UIControlStateDisabled];
+        [_sendMag setTitle:@"发送验证码" forState:UIControlStateNormal];
+        _sendMag.enabled = NO;
         _sendMag.backgroundColor = [UIColor clearColor];
         [_loginBgView addSubview:_sendMag];
         [_sendMag mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -137,7 +133,7 @@
             make.size.mas_equalTo(_userLa);
         }];
         
-        _passTf = [UITextField kk_createPwdWithPlaceholder:@"请输入密码"];
+        _passTf = [UITextField kk_createWithPlaceholder:@"请输入验证码"];
         _passTf.backgroundColor = [UIColor clearColor];
         [_loginBgView addSubview:_passTf];
         [_passTf mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -155,8 +151,8 @@
             make.right.mas_equalTo(_accLoginBtn);
         }];
         
-        _loginBtn = [UIButton kk_buttonWithType:UIButtonTypeRoundedRect title:@"登录"];
-        _loginBtn.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.6];
+        _loginBtn = [KKLoginRegisButton kk_buttonWithType:UIButtonTypeRoundedRect title:@"登录"];
+        _loginBtn.enabled = NO;
         [_loginBgView addSubview:_loginBtn];
         [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(_passLa);
@@ -168,7 +164,7 @@
     return _loginBgView;
 }
 
-
+#pragma mark - 第三方登录
 - (UIView *)oneKeyLoginBgView {
     if(_oneKeyLoginBgView == nil) {
         _oneKeyLoginBgView = [[UIView alloc] init];
@@ -231,19 +227,40 @@
     return _oneKeyLoginBgView;
 }
 
+#pragma mark - 快速登录/账号登录设置
+
 - (void)setQuickAndAccountLoginButton {
-    [self.quickLoginBtn bk_addEventHandler:^(id sender) {
-        self.passLa.text = @"验证码：";
-        self.sendMag.hidden = NO;
-        [self changeTagCenterX:_quickLoginBtn.centerX];
-    } forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.accLoginBtn bk_addEventHandler:^(id sender) {
-        self.passLa.text = @"密码：";
-        self.sendMag.hidden = YES;
-        [self changeTagCenterX:_accLoginBtn.centerX];
-    } forControlEvents:UIControlEventTouchUpInside];
+    [self.quickLoginBtn addTarget:self action:@selector(clickQuickLoginButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.accLoginBtn addTarget:self action:@selector(clickAccountLoginButton) forControlEvents:UIControlEventTouchUpInside];
 }
+
+- (void)clickQuickLoginButton {
+    self.passTf.text = @"";
+    self.passTf.secureTextEntry = NO;
+    self.passTf.placeholder = @"请输入验证码";
+    self.passTf.keyboardType = UIKeyboardTypeNumberPad;
+    self.passLa.text = @"验证码：";
+    self.sendMag.hidden = NO;
+    self.userLa.text = @"手机号码：";
+    self.userTf.placeholder = @"请输入手机号码";
+    self.userTf.keyboardType = UIKeyboardTypeNumberPad;
+    [self changeTagCenterX:_quickLoginBtn.centerX];
+}
+
+- (void)clickAccountLoginButton {;
+    self.passTf.text = @"";
+    self.passTf.secureTextEntry = YES;
+    self.passTf.placeholder = @"请输入密码";
+    self.passTf.keyboardType = UIKeyboardTypeDefault;
+    self.passLa.text = @"密码：";
+    self.sendMag.hidden = YES;
+    self.userLa.text = @"账号：";
+    self.userTf.placeholder = @"输入账号或手机号";
+    self.userTf.keyboardType = UIKeyboardTypeDefault;
+    [self changeTagCenterX:_accLoginBtn.centerX];
+}
+
+#pragma mark - tag
 
 - (void)changeTagCenterX:(CGFloat)centerX {
     if (_tagView.centerX != centerX) {

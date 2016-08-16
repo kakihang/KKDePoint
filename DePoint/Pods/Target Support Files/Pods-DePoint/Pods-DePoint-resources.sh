@@ -81,12 +81,14 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "SMSSDK/SMSSDKUI.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/Required/ShareSDK.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/Optional/ShareSDKUI.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "SMSSDK/SMSSDKUI.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/Required/ShareSDK.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle"
   install_resource "ShareSDK3/ShareSDK/Support/Optional/ShareSDKUI.bundle"

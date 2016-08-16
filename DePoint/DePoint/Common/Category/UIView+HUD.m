@@ -28,6 +28,15 @@
 }
 
 
+- (void) kk_showAlertWithMessage:(NSString*)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+}
+- (void) kk_showAlertNoTitleWithMessage:(NSString*)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
 @end
 
 

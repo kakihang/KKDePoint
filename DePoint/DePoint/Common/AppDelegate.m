@@ -20,8 +20,9 @@
 // shareSDK
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKConnector/ShareSDKConnector.h>
+#import <SMS_SDK/SMSSDK.h>
 //腾讯开放平台（对应QQ和QQ空间）SDK头文件
-#import <TencentOpenAPI/TencentOAuth.h>
+#import "TencentOpenAPI/TencentOAuth.h"
 #import <TencentOpenAPI/QQApiInterface.h>
 //微信SDK头文件
 #import "WXApi.h"
@@ -29,8 +30,6 @@
 /*#import "WeiboSDK.h"*/
 //新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"
 
-/** 测试 **/
-#import "KKRegisterViewC.h"
 
 @interface AppDelegate ()
 
@@ -55,6 +54,9 @@
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     /*****************************************************************/
+    [SMSSDK registerApp:KKSMSAPIKEY withSecret:KKSMSSCREKEY];
+    
+    /*****************************************************************/
     /**
      *  设置ShareSDK的appKey，如果尚未在ShareSDK官网注册过App，请移步到http://mob.com/login 登录后台进行应用注册，
      *  在将生成的AppKey传入到此方法中。
@@ -63,7 +65,6 @@
      *  如果您使用的时服务端托管平台信息时，第二、四项参数可以传入nil，第三项参数则根据服务端托管平台来决定要连接的社交SDK。
      */
     [ShareSDK registerApp:KKSHAREAPIKEY
-     
           activePlatforms:@[
                             /*@(SSDKPlatformTypeSinaWeibo),*/
                             @(SSDKPlatformTypeMail),
@@ -87,16 +88,12 @@
              default:
                  break;
          }
-     }
-          onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo)
-     {
-         
-         switch (platformType)
-         {
+     } onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+         switch (platformType) {
              case SSDKPlatformTypeSinaWeibo:
                  //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                 /*[appInfo SSDKSetupSinaWeiboByAppKey:@"3139"
-                  appSecret:@"3bef9112cd492fd18ce283a"
+                 /*[appInfo SSDKSetupSinaWeiboByAppKey:@""
+                  appSecret:@""
                   redirectUri:@"http://sns.whalecloud.com/sina2/callback"
                   authType:SSDKAuthTypeBoth];
                   break;*/
@@ -127,14 +124,26 @@
     
     /*****************************************************************/
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    //    self.window.rootViewController = [[KKFrameTabC alloc] init];
-    self.window.rootViewController = [[KKRegisterViewC alloc] init];
+    self.window.rootViewController = [[KKFrameTabC alloc] init];
     [self.window makeKeyAndVisible];
     NSLog(@"%@", NSStringFromCGRect([UIScreen mainScreen].bounds));
     
     
     return YES;
 }
+
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+//    return [TencentOAuth HandleOpenURL:url]/* ||
+//                                            [WeiboSDK handleOpenURL:url delegate:self] ||
+//                                            [WXApi handleOpenURL:url delegate:self]*/;
+//}
+//
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+//    return [TencentOAuth HandleOpenURL:url]/* ||
+//                                            [WeiboSDK handleOpenURL:url delegate:self] ||
+//                                            [WXApi handleOpenURL:url delegate:self]*/;
+//}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -157,5 +166,22 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [TencentOAuth HandleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<NSString *,id> *)options
+{
+    return [TencentOAuth HandleOpenURL:url];
+}
+
 
 @end

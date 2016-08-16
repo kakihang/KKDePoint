@@ -8,6 +8,6 @@
 
 #import "KKCustomVC.h"
 
-@interface KKLoginViewC : KKCustomVC
 
+@interface KKLoginViewC : KKCustomVC 
 @end

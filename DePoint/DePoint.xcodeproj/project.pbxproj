@@ -11,6 +11,9 @@
 		2635A9FB1D5C2C2D00BF181F /* UILabel+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2635A9FA1D5C2C2D00BF181F /* UILabel+KKExtension.m */; };
 		2635A9FD1D5C536B00BF181F /* 测试方法使用.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2635A9FC1D5C536B00BF181F /* 测试方法使用.xib */; };
 		2635AA061D5C78D700BF181F /* KKJustifiedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2635AA051D5C78D700BF181F /* KKJustifiedLabel.m */; };
+		264590B11D5DB418005A42D5 /* KKTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 264590B01D5DB418005A42D5 /* KKTest.m */; };
+		264590B41D5DB84B005A42D5 /* KKRegisterMsgViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 264590B31D5DB84B005A42D5 /* KKRegisterMsgViewC.m */; };
+		264590B71D5DCA04005A42D5 /* KKRegisterPassViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 264590B61D5DCA04005A42D5 /* KKRegisterPassViewC.m */; };
 		264B33401D5B0A67000C8911 /* UIView+KKVisualEff.m in Sources */ = {isa = PBXBuildFile; fileRef = 264B333F1D5B0A67000C8911 /* UIView+KKVisualEff.m */; };
 		264B33431D5B1418000C8911 /* KKLoginShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 264B33421D5B1418000C8911 /* KKLoginShowView.m */; };
 		264B33481D5B5D58000C8911 /* UIButton+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 264B33471D5B5D58000C8911 /* UIButton+KKExtension.m */; };
@@ -25,6 +28,9 @@
 		268F4CA41D41A69200B8AD32 /* DePointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4CA31D41A69200B8AD32 /* DePointTests.m */; };
 		268F4CAF1D41A69200B8AD32 /* DePointUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4CAE1D41A69200B8AD32 /* DePointUITests.m */; };
 		268FB8371D5AB29100FA35F2 /* KKSquareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 268FB8361D5AB29100FA35F2 /* KKSquareButton.m */; };
+		2697020C1D629C3C00EF59E5 /* UIImage+KKUserHeadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2697020B1D629C3C00EF59E5 /* UIImage+KKUserHeadImage.m */; };
+		269702101D62ADE300EF59E5 /* UIButton+KKLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2697020F1D62ADE300EF59E5 /* UIButton+KKLoginButton.m */; };
+		26A657BA1D61E6C000EAC5C1 /* KKLoginInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A657B91D61E6C000EAC5C1 /* KKLoginInfoVC.m */; };
 		26A8A1681D503AC8007894CD /* KKNearbyTViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8A1671D503AC8007894CD /* KKNearbyTViewCell.m */; };
 		26A8A16B1D5051FC007894CD /* KKColumnButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8A16A1D5051FC007894CD /* KKColumnButtons.m */; };
 		26ACAB1D1D58C28E002E4630 /* kk.medi.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26ACAB1C1D58C28E002E4630 /* kk.medi.plist */; };
@@ -51,6 +57,10 @@
 		26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A0D1D4A447D009217B5 /* CLLocationManager+KKModel.m */; };
 		26AD7A121D4A44B6009217B5 /* KKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD7A111D4A44B6009217B5 /* KKMapView.m */; };
 		26AE8F491D48D5C300E5E763 /* KKLocationVModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE8F481D48D5C300E5E763 /* KKLocationVModel.m */; };
+		26B9D42B1D5E27D100BBEBE0 /* KKLoginRegisButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9D42A1D5E27D100BBEBE0 /* KKLoginRegisButton.m */; };
+		26B9D42E1D5E9D1F00BBEBE0 /* KKCheckUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9D42D1D5E9D1F00BBEBE0 /* KKCheckUtil.m */; };
+		26B9D4511D6014D800BBEBE0 /* KKSmsProc.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9D4501D6014D800BBEBE0 /* KKSmsProc.m */; };
+		26B9D4541D60A5F900BBEBE0 /* KKLoginProc.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9D4531D60A5F900BBEBE0 /* KKLoginProc.m */; };
 		26D695AF1D5CBF290010A025 /* KKRegisterViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D695AE1D5CBF290010A025 /* KKRegisterViewC.m */; };
 		26D695B21D5CC61B0010A025 /* KKRegisterShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D695B11D5CC61B0010A025 /* KKRegisterShowView.m */; };
 		26D6BD4D1D4244AB00CFBB01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD4C1D4244AB00CFBB01 /* AppDelegate.m */; };
@@ -104,6 +114,12 @@
 		2635A9FC1D5C536B00BF181F /* 测试方法使用.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "测试方法使用.xib"; sourceTree = "<group>"; };
 		2635AA041D5C78D700BF181F /* KKJustifiedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKJustifiedLabel.h; sourceTree = "<group>"; };
 		2635AA051D5C78D700BF181F /* KKJustifiedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKJustifiedLabel.m; sourceTree = "<group>"; };
+		264590AF1D5DB418005A42D5 /* KKTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKTest.h; sourceTree = "<group>"; };
+		264590B01D5DB418005A42D5 /* KKTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTest.m; sourceTree = "<group>"; };
+		264590B21D5DB84B005A42D5 /* KKRegisterMsgViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKRegisterMsgViewC.h; sourceTree = "<group>"; };
+		264590B31D5DB84B005A42D5 /* KKRegisterMsgViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKRegisterMsgViewC.m; sourceTree = "<group>"; };
+		264590B51D5DCA04005A42D5 /* KKRegisterPassViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKRegisterPassViewC.h; sourceTree = "<group>"; };
+		264590B61D5DCA04005A42D5 /* KKRegisterPassViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKRegisterPassViewC.m; sourceTree = "<group>"; };
 		264B333E1D5B0A67000C8911 /* UIView+KKVisualEff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KKVisualEff.h"; sourceTree = "<group>"; };
 		264B333F1D5B0A67000C8911 /* UIView+KKVisualEff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KKVisualEff.m"; sourceTree = "<group>"; };
 		264B33411D5B1418000C8911 /* KKLoginShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLoginShowView.h; sourceTree = "<group>"; };
@@ -134,6 +150,12 @@
 		268F4CB01D41A69200B8AD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		268FB8351D5AB29100FA35F2 /* KKSquareButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSquareButton.h; sourceTree = "<group>"; };
 		268FB8361D5AB29100FA35F2 /* KKSquareButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSquareButton.m; sourceTree = "<group>"; };
+		2697020A1D629C3C00EF59E5 /* UIImage+KKUserHeadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KKUserHeadImage.h"; sourceTree = "<group>"; };
+		2697020B1D629C3C00EF59E5 /* UIImage+KKUserHeadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KKUserHeadImage.m"; sourceTree = "<group>"; };
+		2697020E1D62ADE300EF59E5 /* UIButton+KKLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+KKLoginButton.h"; sourceTree = "<group>"; };
+		2697020F1D62ADE300EF59E5 /* UIButton+KKLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+KKLoginButton.m"; sourceTree = "<group>"; };
+		26A657B81D61E6C000EAC5C1 /* KKLoginInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLoginInfoVC.h; sourceTree = "<group>"; };
+		26A657B91D61E6C000EAC5C1 /* KKLoginInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLoginInfoVC.m; sourceTree = "<group>"; };
 		26A8A1661D503AC8007894CD /* KKNearbyTViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNearbyTViewCell.h; sourceTree = "<group>"; };
 		26A8A1671D503AC8007894CD /* KKNearbyTViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNearbyTViewCell.m; sourceTree = "<group>"; };
 		26A8A1691D5051FC007894CD /* KKColumnButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKColumnButtons.h; sourceTree = "<group>"; };
@@ -188,6 +210,14 @@
 		26AE8F461D48D3D800E5E763 /* FrameConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameConstant.h; sourceTree = "<group>"; };
 		26AE8F471D48D5C300E5E763 /* KKLocationVModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLocationVModel.h; sourceTree = "<group>"; };
 		26AE8F481D48D5C300E5E763 /* KKLocationVModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLocationVModel.m; sourceTree = "<group>"; };
+		26B9D4291D5E27D100BBEBE0 /* KKLoginRegisButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLoginRegisButton.h; sourceTree = "<group>"; };
+		26B9D42A1D5E27D100BBEBE0 /* KKLoginRegisButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLoginRegisButton.m; sourceTree = "<group>"; };
+		26B9D42C1D5E9D1F00BBEBE0 /* KKCheckUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCheckUtil.h; sourceTree = "<group>"; };
+		26B9D42D1D5E9D1F00BBEBE0 /* KKCheckUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCheckUtil.m; sourceTree = "<group>"; };
+		26B9D44F1D6014D700BBEBE0 /* KKSmsProc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSmsProc.h; sourceTree = "<group>"; };
+		26B9D4501D6014D800BBEBE0 /* KKSmsProc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSmsProc.m; sourceTree = "<group>"; };
+		26B9D4521D60A5F900BBEBE0 /* KKLoginProc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLoginProc.h; sourceTree = "<group>"; };
+		26B9D4531D60A5F900BBEBE0 /* KKLoginProc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLoginProc.m; sourceTree = "<group>"; };
 		26D695AD1D5CBF290010A025 /* KKRegisterViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKRegisterViewC.h; sourceTree = "<group>"; };
 		26D695AE1D5CBF290010A025 /* KKRegisterViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKRegisterViewC.m; sourceTree = "<group>"; };
 		26D695B01D5CC61B0010A025 /* KKRegisterShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKRegisterShowView.h; sourceTree = "<group>"; };
@@ -336,6 +366,17 @@
 			path = DePointUITests;
 			sourceTree = "<group>";
 		};
+		2697020D1D629C4000EF59E5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2697020A1D629C3C00EF59E5 /* UIImage+KKUserHeadImage.h */,
+				2697020B1D629C3C00EF59E5 /* UIImage+KKUserHeadImage.m */,
+				2697020E1D62ADE300EF59E5 /* UIButton+KKLoginButton.h */,
+				2697020F1D62ADE300EF59E5 /* UIButton+KKLoginButton.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		26ACAB1E1D58CB39002E4630 /* kk */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				26E582891D52D84F007FB00E /* KKSetConstant.h */,
+				2697020D1D629C4000EF59E5 /* Category */,
 				26D6BD371D4243DF00CFBB01 /* Model */,
 				26D6BD381D4243DF00CFBB01 /* View */,
 				26D6BD391D4243DF00CFBB01 /* ViewModel */,
@@ -494,6 +536,8 @@
 			children = (
 				26ACAB1C1D58C28E002E4630 /* kk.medi.plist */,
 				2635A9FC1D5C536B00BF181F /* 测试方法使用.xib */,
+				264590AF1D5DB418005A42D5 /* KKTest.h */,
+				264590B01D5DB418005A42D5 /* KKTest.m */,
 			);
 			name = "Resource-资源";
 			path = Resource;
@@ -518,6 +562,12 @@
 				26E5828E1D531493007FB00E /* KKLoginViewC.m */,
 				26D695AD1D5CBF290010A025 /* KKRegisterViewC.h */,
 				26D695AE1D5CBF290010A025 /* KKRegisterViewC.m */,
+				264590B21D5DB84B005A42D5 /* KKRegisterMsgViewC.h */,
+				264590B31D5DB84B005A42D5 /* KKRegisterMsgViewC.m */,
+				264590B51D5DCA04005A42D5 /* KKRegisterPassViewC.h */,
+				264590B61D5DCA04005A42D5 /* KKRegisterPassViewC.m */,
+				26A657B81D61E6C000EAC5C1 /* KKLoginInfoVC.h */,
+				26A657B91D61E6C000EAC5C1 /* KKLoginInfoVC.m */,
 				265E62341D53658B00D65A37 /* KKFeedBackVC.h */,
 				265E62351D53658B00D65A37 /* KKFeedBackVC.m */,
 			);
@@ -550,6 +600,8 @@
 				26D695B11D5CC61B0010A025 /* KKRegisterShowView.m */,
 				2635AA041D5C78D700BF181F /* KKJustifiedLabel.h */,
 				2635AA051D5C78D700BF181F /* KKJustifiedLabel.m */,
+				26B9D4291D5E27D100BBEBE0 /* KKLoginRegisButton.h */,
+				26B9D42A1D5E27D100BBEBE0 /* KKLoginRegisButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -561,6 +613,12 @@
 				2654FE1F1D5189BD0051FA41 /* KKSanBox.m */,
 				26E582831D52C7D8007FB00E /* KKSetViewModel.h */,
 				26E582841D52C7D8007FB00E /* KKSetViewModel.m */,
+				26B9D42C1D5E9D1F00BBEBE0 /* KKCheckUtil.h */,
+				26B9D42D1D5E9D1F00BBEBE0 /* KKCheckUtil.m */,
+				26B9D44F1D6014D700BBEBE0 /* KKSmsProc.h */,
+				26B9D4501D6014D800BBEBE0 /* KKSmsProc.m */,
+				26B9D4521D60A5F900BBEBE0 /* KKLoginProc.h */,
+				26B9D4531D60A5F900BBEBE0 /* KKLoginProc.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -955,23 +1013,29 @@
 				26D6BD641D42482E00CFBB01 /* BaseViewModel.m in Sources */,
 				26AD335A1D5870B500891D9B /* XPNetManager.m in Sources */,
 				26D6BD611D4247EE00CFBB01 /* BaseNetworking.m in Sources */,
+				2697020C1D629C3C00EF59E5 /* UIImage+KKUserHeadImage.m in Sources */,
 				26E582851D52C7D8007FB00E /* KKSetViewModel.m in Sources */,
 				26AE8F491D48D5C300E5E763 /* KKLocationVModel.m in Sources */,
 				26D6BD4D1D4244AB00CFBB01 /* AppDelegate.m in Sources */,
 				268FB8371D5AB29100FA35F2 /* KKSquareButton.m in Sources */,
 				26D6BD5C1D42456F00CFBB01 /* UIScrollView+Refresh.m in Sources */,
 				26D6BD711D4252CB00CFBB01 /* KKFrameTabC.m in Sources */,
+				26B9D4511D6014D800BBEBE0 /* KKSmsProc.m in Sources */,
 				26ACAB211D58CB9F002E4630 /* KKMediHClassTVCell.m in Sources */,
 				26A8A16B1D5051FC007894CD /* KKColumnButtons.m in Sources */,
 				2635A9FB1D5C2C2D00BF181F /* UILabel+KKExtension.m in Sources */,
 				26D6BD5A1D42456F00CFBB01 /* NSObject+Parse.m in Sources */,
+				264590B41D5DB84B005A42D5 /* KKRegisterMsgViewC.m in Sources */,
 				26AD33411D58708000891D9B /* XPDrugController.m in Sources */,
+				264590B11D5DB418005A42D5 /* KKTest.m in Sources */,
+				26B9D42E1D5E9D1F00BBEBE0 /* KKCheckUtil.m in Sources */,
 				26E5D7DC1D49AA8800B6CCC1 /* KKAnno.m in Sources */,
 				26D6BD6A1D424B3A00CFBB01 /* NSDate+Extension.m in Sources */,
 				2635AA061D5C78D700BF181F /* KKJustifiedLabel.m in Sources */,
 				26D6BD7D1D42536700CFBB01 /* KKSetVCtrl.m in Sources */,
 				26ACAB2A1D596A0F002E4630 /* KKMedClassVC.m in Sources */,
 				26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */,
+				269702101D62ADE300EF59E5 /* UIButton+KKLoginButton.m in Sources */,
 				268A10AF1D5A2788009E8962 /* UIImageView+KKExtension.m in Sources */,
 				26AD33501D58708B00891D9B /* XPListModel.m in Sources */,
 				2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */,
@@ -982,12 +1046,15 @@
 				26ACAB241D58CC02002E4630 /* KKMediMClassTVCell.m in Sources */,
 				264B33401D5B0A67000C8911 /* UIView+KKVisualEff.m in Sources */,
 				26FBBD501D54828F00EAAAA9 /* KKPlaceholderTextView.m in Sources */,
+				26B9D42B1D5E27D100BBEBE0 /* KKLoginRegisButton.m in Sources */,
 				26E5828C1D52ED7E007FB00E /* KKAboutViewC.m in Sources */,
 				26AD33401D58708000891D9B /* XPDetailController.m in Sources */,
 				26AD333F1D58708000891D9B /* KKMediVCtrl.m in Sources */,
 				264B33481D5B5D58000C8911 /* UIButton+KKExtension.m in Sources */,
 				26D6BD5B1D42456F00CFBB01 /* NSString+YX.m in Sources */,
+				26A657BA1D61E6C000EAC5C1 /* KKLoginInfoVC.m in Sources */,
 				26AD33551D58709200891D9B /* XPDetailCell.m in Sources */,
+				26B9D4541D60A5F900BBEBE0 /* KKLoginProc.m in Sources */,
 				26AD33421D58708000891D9B /* XPListController.m in Sources */,
 				26AD334D1D58708B00891D9B /* XPDetailModel.m in Sources */,
 				26AD334E1D58708B00891D9B /* XPDrugNexineModel.m in Sources */,
@@ -1004,6 +1071,7 @@
 				26AD33441D58708000891D9B /* XPPushController.m in Sources */,
 				26AD335F1D58AE7B00891D9B /* KKMediTVC.m in Sources */,
 				26A8A1681D503AC8007894CD /* KKNearbyTViewCell.m in Sources */,
+				264590B71D5DCA04005A42D5 /* KKRegisterPassViewC.m in Sources */,
 				26D6BD6D1D42503400CFBB01 /* UIView+Frame.m in Sources */,
 				2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */,
 				26AD334F1D58708B00891D9B /* XPDrugsModel.m in Sources */,
@@ -1145,6 +1213,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DePoint/Resource",
+				);
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = DePoint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1182,6 +1254,89 @@
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/YYKit\"",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"BlocksKit\"",
+					"-l\"CocoaLumberjack\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJRefresh\"",
+					"-l\"MLTransition\"",
+					"-l\"Masonry\"",
+					"-l\"RESideMenu\"",
+					"-l\"SDWebImage\"",
+					"-l\"UITableView+FDTemplateLayoutCell\"",
+					"-l\"WMPageController\"",
+					"-l\"WeChatSDK\"",
+					"-l\"YYKit\"",
+					"-l\"hpple\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-l\"z.1.2.5\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapSearchKit\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"BmobSDK\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"MOBFoundation\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"ShareSDK\"",
+					"-framework",
+					"\"ShareSDKConnector\"",
+					"-framework",
+					"\"ShareSDKExtension\"",
+					"-framework",
+					"\"ShareSDKUI\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TencentOpenAPI\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UMMobClick\"",
+					"-framework",
+					"\"WebP\"",
+					"-fobjc-arc",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = IOS1604.kk.dp.win;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1193,6 +1348,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DePoint/Resource",
+				);
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Common/PrefixHeader.pch";
 				INFOPLIST_FILE = DePoint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1229,6 +1388,89 @@
 					"\"${PODS_ROOT}/Headers/Public/WMPageController\"",
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/YYKit\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"BlocksKit\"",
+					"-l\"CocoaLumberjack\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJRefresh\"",
+					"-l\"MLTransition\"",
+					"-l\"Masonry\"",
+					"-l\"RESideMenu\"",
+					"-l\"SDWebImage\"",
+					"-l\"UITableView+FDTemplateLayoutCell\"",
+					"-l\"WMPageController\"",
+					"-l\"WeChatSDK\"",
+					"-l\"YYKit\"",
+					"-l\"hpple\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-l\"z.1.2.5\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapSearchKit\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"BmobSDK\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"MOBFoundation\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"ShareSDK\"",
+					"-framework",
+					"\"ShareSDKConnector\"",
+					"-framework",
+					"\"ShareSDKExtension\"",
+					"-framework",
+					"\"ShareSDKUI\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TencentOpenAPI\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UMMobClick\"",
+					"-framework",
+					"\"WebP\"",
+					"-fobjc-arc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = IOS1604.kk.dp.win;
 				PRODUCT_NAME = "$(TARGET_NAME)";

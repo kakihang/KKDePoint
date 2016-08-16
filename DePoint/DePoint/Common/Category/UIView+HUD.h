@@ -15,6 +15,9 @@
 
 - (void)showWarning:(NSString *)msg;
 
+
+- (void)kk_showAlertWithMessage:(NSString*)message;
+- (void)kk_showAlertNoTitleWithMessage:(NSString*)message;
 @end
 
 

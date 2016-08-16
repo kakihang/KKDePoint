@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KKLoginRegisButton.h"
 
 @interface KKRegisterShowView : UIView
-+ (instancetype)registerShowOnView:(UIView *)view;
+
+@property (nonatomic, weak) KKLoginRegisButton *registerButton; //
+@property (nonatomic, weak) UITextField *phoneTf; //
+@property (nonatomic, weak) UILabel *showPhoneLa; //
+@property (nonatomic, weak) UIButton *sendAgain; //
+@property (nonatomic, weak) UITextField *passVerifyTf; //
+
++ (instancetype)registerShowOnView:(UIView *)view index:(NSInteger)index;
 @end

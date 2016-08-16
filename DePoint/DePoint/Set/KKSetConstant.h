@@ -9,6 +9,6 @@
 #ifndef KKSetConstant_h
 #define KKSetConstant_h
 
-
+#define KKSendMsgWaitSec 60
 
 #endif /* KKSetConstant_h */

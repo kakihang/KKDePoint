@@ -11,11 +11,13 @@
 @implementation UITextField (KKExtension)
 + (instancetype)kk_createWithPlaceholder:(NSString *)placeholder {
     UITextField *tf = [[UITextField alloc] init];
+    tf.clearButtonMode = UITextFieldViewModeWhileEditing;
     tf.placeholder = placeholder;
     return tf;
 }
 + (instancetype)kk_createPwdWithPlaceholder:(NSString *)placeholder {
     UITextField *tf = [[UITextField alloc] init];
+    tf.clearButtonMode = UITextFieldViewModeWhileEditing;
     tf.placeholder = placeholder;
     tf.secureTextEntry = YES;
     return tf;

@@ -7,68 +7,136 @@
 //
 
 #import "KKRegisterShowView.h"
-#import "KKSquareButton.h"
 
-@interface KKRegisterShowView()
-@property (nonatomic, strong) KKSquareButton *headIconButton; //
+@interface KKRegisterShowView()  
 @property (nonatomic, weak) UIView *view; //
+@property (nonatomic, assign) NSInteger index; //
 @end
 
 
 @implementation KKRegisterShowView
 
-+ (instancetype)registerShowOnView:(UIView *)view{
++ (instancetype)registerShowOnView:(UIView *)view index:(NSInteger)index{
     KKRegisterShowView *registerView = [[KKRegisterShowView alloc] init];
+    [view bk_whenTapped:^{
+        [view endEditing:YES];
+    }];
     registerView.view = view;
+    registerView.index = index;
     [registerView setupView];
     return registerView;
 }
 
+
 - (void)setupView {
-    _headIconButton = [KKSquareButton buttonWithTitle:@"选择头像" imgName:@"set_head_login_user"];
-    _headIconButton.backgroundColor = [UIColor orangeColor];
-    [_view addSubview:_headIconButton];
-    [_headIconButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(64 + KKScreenHeightPrecent(0.05));
-        make.centerX.mas_equalTo(0);
-        make.height.mas_equalTo(KKScreenHeightPrecent(0.1));
-        make.width.mas_equalTo(_headIconButton.mas_height).mas_equalTo(-25);
-    }];
-    
     CGFloat height = KKScreenHeightPrecent(0.05);
-    CGFloat labelWidth = KKScreenWidthPrecent(0.2);
-    CGFloat margin = KKScreenWidthPrecent(0.15);
-    CGFloat phoneTfWidth = KKScreenWidthPrecent(0.3);
-    CGFloat sendMsgWidth = KKScreenWidthPrecent(0.2);
+    CGFloat topMargin = KKScreenHeightPrecent(0.001) + 64;
+    CGFloat width = KKSCREENBOUNDSIZE.width/3.0;
+    CGFloat labelWidth = width * 0.9;
     
-    KKJustifiedLabel *phoneLa = [KKJustifiedLabel kk_labelWithText:@"手机号码"];
-    phoneLa.backgroundColor = [UIColor orangeColor];
-    [_view addSubview:phoneLa];
-    [phoneLa mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(margin);
-        make.top.mas_equalTo(_headIconButton.mas_bottom).mas_equalTo(margin);
+    CGFloat sideMargin = KKScreenHeightPrecent(0.05);
+    CGFloat heightMargin = KKScreenHeightPrecent(0.03);
+    CGFloat sendAgainWidth = KKScreenWidthPrecent(0.28);
+    CGFloat minMargin = KKScreenHeightPrecent(0.01);
+    
+    for (NSInteger i=0; i<3; i++) {
+        UILabel *label = [[UILabel alloc] init];
+        label.font = [UIFont systemFontOfSize:14];
+        [self.view addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(topMargin);
+            make.left.mas_equalTo(i * width);
+            make.size.mas_equalTo(CGSizeMake(labelWidth, height));
+        }];
+        
+        UIImageView *icon = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"right_parenthesis_16"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        [self.view addSubview:icon];
+        [icon mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(label.mas_right);
+            make.centerY.mas_equalTo(label);
+        }];
+        
+        if (i == 0) {
+            label.text = @"  1.输入手机号";
+        } else if (i == 1) {
+            label.text = @"  2.输入验证码";
+        } else {
+            label.text = @"  3.设置密码";
+        }
+        if (i == _index) {
+            label.textColor = [UIColor redColor];
+        }
+    }
+    
+    if (self.index == 1) {
+        UILabel *prompt = [UILabel kk_labelWithText:@"验证码短信已经发送到"];
+        prompt.font = [UIFont systemFontOfSize:12];
+        prompt.textColor = [UIColor grayColor];
+        [self.view addSubview:prompt];
+        [prompt mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(0);
+            make.top.mas_equalTo(topMargin + height);
+            make.height.mas_equalTo(height);
+        }];
+        self.showPhoneLa = prompt;
+        topMargin = topMargin + 10;
+    }
+    
+    UITextField *textField = [UITextField kk_createWithPlaceholder:@"请输入您的手机号码"];
+    textField.font = [UIFont systemFontOfSize:15];
+    textField.keyboardType = UIKeyboardTypeNumberPad;
+    [self.view addSubview:textField];
+    [textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(topMargin + height + heightMargin);
+        make.left.mas_equalTo(sideMargin);
+        make.right.mas_equalTo(-sideMargin);
         make.height.mas_equalTo(height);
-        make.width.mas_equalTo(labelWidth);
     }];
+    self.phoneTf = textField;
     
-    UITextField *phoneTf = [UITextField kk_createWithPlaceholder:@"请输入手机号码"];
-    phoneTf.backgroundColor = [UIColor yellowColor];
-    [_view addSubview:phoneTf];
-    [phoneTf mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(phoneLa.mas_right);
-        make.height.mas_equalTo(phoneLa);
-        make.top.mas_equalTo(phoneLa);
-        make.width.mas_equalTo(phoneTfWidth);
-    }];
+    if (self.index == 2) {
+        UITextField *verifyTf = [UITextField kk_createWithPlaceholder:@"请再次输入密码"];
+        verifyTf.font = [UIFont systemFontOfSize:15];
+        [self.view addSubview:verifyTf];
+        [verifyTf mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(textField.mas_bottom).mas_equalTo(minMargin);
+            make.left.mas_equalTo(textField);
+            make.size.mas_equalTo(textField);
+        }];
+        self.passVerifyTf = verifyTf;
+        heightMargin = heightMargin + minMargin + height;
+    }
     
-    UIButton *sendMsg = [UIButton kk_buttonWithTitle:@"发送验证码"];
-    sendMsg.backgroundColor = [UIColor orangeColor];
-    [_view addSubview:sendMsg];
-    [sendMsg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(phoneTf.mas_right);
-        make.height.mas_equalTo(phoneTf);
-        make.width.mas_equalTo(sendMsgWidth);
+    KKLoginRegisButton *button = [KKLoginRegisButton kk_buttonWithType:UIButtonTypeRoundedRect title:@"获取验证码"];
+    [self.view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(sideMargin * 2);
+        make.right.mas_equalTo(-sideMargin * 2);
+        make.height.mas_equalTo(height);
+        make.top.mas_equalTo(textField.mas_bottom).mas_equalTo(heightMargin);
     }];
+    button.enabled = NO;
+    self.registerButton = button;
+    
+    if (self.index == 1) {
+        UIButton *sendAgain = [UIButton kk_buttonWithType:UIButtonTypeCustom title:@"60s后重新发送"];;
+        sendAgain.titleLabel.font = [UIFont systemFontOfSize:14];
+        sendAgain.titleLabel.textAlignment = NSTextAlignmentRight;
+        [sendAgain setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _sendAgain = sendAgain;
+        [self.view addSubview:_sendAgain];
+        [_sendAgain mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.mas_equalTo(textField);
+            make.right.mas_equalTo(-sideMargin);
+            make.height.mas_equalTo(textField);
+            make.width.mas_equalTo(sendAgainWidth);
+        }];
+        
+        [textField mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(-sideMargin - sendAgainWidth);
+        }];
+    }
 }
+
 
 @end

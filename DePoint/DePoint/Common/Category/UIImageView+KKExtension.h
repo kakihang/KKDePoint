@@ -16,6 +16,7 @@
 + (instancetype)kk_imageWithImageName:(NSString *)image
                                 frame:(CGRect)frame
                                  mode:(UIViewContentMode)mode;
-
-
++ (instancetype)kk_imageWithImage:(UIImage *)image
+                             mode:(UIViewContentMode)mode
+                           radius:(CGFloat)radius;
 @end

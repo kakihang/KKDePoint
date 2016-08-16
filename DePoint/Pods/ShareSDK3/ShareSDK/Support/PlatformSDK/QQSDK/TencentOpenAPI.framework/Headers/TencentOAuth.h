@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "sdkdef.h"
 #import "TencentOAuthObject.h"
+#import "TencentApiInterface.h"
 
 @protocol TencentSessionDelegate;
 @protocol TencentLoginDelegate;
@@ -41,13 +42,13 @@ typedef enum
 @interface TencentOAuth : NSObject
 {
     NSMutableDictionary* _apiRequests;
-	NSString* _accessToken;
-	NSDate* _expirationDate;
-	id<TencentSessionDelegate> _sessionDelegate;
-	NSString* _localAppId;
-	NSString* _openId;
-	NSString* _redirectURI;
-	NSArray* _permissions;
+    NSString* _accessToken;
+    NSDate* _expirationDate;
+    id<TencentSessionDelegate> _sessionDelegate;
+    NSString* _localAppId;
+    NSString* _openId;
+    NSString* _redirectURI;
+    NSArray* _permissions;
 }
 
 /** Access Token凭证，用于后续访问各开放接口 */
@@ -135,7 +136,7 @@ typedef enum
  * \return YES:安装 NO:没安装
  */
 + (BOOL)iphoneQQInstalled;
- 
+
 /**
  * 判断用户手机上的手机QQ是否支持SSO登录
  * \return YES:支持 NO:不支持
@@ -167,7 +168,7 @@ typedef enum
  * \param bInSafari 是否使用safari进行登录.<b>IOS SDK 1.3版本开始此参数废除</b>
  */
 - (BOOL)authorize:(NSArray *)permissions
-		 inSafari:(BOOL)bInSafari;
+         inSafari:(BOOL)bInSafari;
 
 /**
  * 登录授权
@@ -177,7 +178,7 @@ typedef enum
  */
 - (BOOL)authorize:(NSArray *)permissions
        localAppId:(NSString *)localAppId
-		 inSafari:(BOOL)bInSafari;
+         inSafari:(BOOL)bInSafari;
 
 /**
  * 增量授权，因用户没有授予相应接口调用的权限，需要用户确认是否授权
@@ -454,8 +455,8 @@ typedef enum
  * 第三方应用需要实现每条需要调用的API的回调协议
  */
 @protocol TencentSessionDelegate<NSObject, TencentLoginDelegate,
-                                TencentApiInterfaceDelegate,
-                                TencentWebViewDelegate>
+TencentApiInterfaceDelegate,
+TencentWebViewDelegate>
 
 @optional
 
@@ -526,7 +527,7 @@ typedef enum
  *          错误返回示例: \snippet example/checkPageFansResponse.exp fail
  */
 - (void)checkPageFansResponse:(APIResponse*) response;
- 
+
 /**
  * 分享到QZone回调
  * \param response API返回结果，具体定义参见sdkdef.h文件中\ref APIResponse
