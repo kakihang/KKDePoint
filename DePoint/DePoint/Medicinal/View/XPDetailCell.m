@@ -15,8 +15,9 @@
         _nameLb.font = [UIFont systemFontOfSize:16];
         [self.contentView addSubview:_nameLb];
         [_nameLb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(0);
-            make.top.equalTo(5);
+            make.left.equalTo(self.iconIV.mas_right);
+            make.centerY.equalTo(self.iconIV);
+            make.width.equalTo(self.contentView.mas_width);
         }];
     }
     return _nameLb;
@@ -29,15 +30,15 @@
         [self.contentView addSubview:_iconIV];
         [_iconIV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(10);
-            make.top.equalTo(self.nameLb.mas_bottom).equalTo(0);
-            make.size.equalTo(CGSizeMake(200, 140)).priorityHigh();
+            make.top.equalTo(10);
+            make.size.equalTo(CGSizeMake(100, 80)).priorityHigh();
         }];
     }
     return _iconIV;
 }
 
 - (UITextView *)textLb {
-    CGFloat height = self.contentView.frame.size.height -185 ;
+    CGFloat height = self.contentView.frame.size.height -145 ;
     if(_textLb == nil) {
         _textLb = [[UITextView alloc] init];
         _textLb.font = [UIFont systemFontOfSize:14];

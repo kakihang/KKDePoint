@@ -54,7 +54,8 @@
 #import <XPathQuery.h>
 #import <RESideMenu.h>
 
-
+#import "XPFactory.h"
+#import "XPButton.h"
 #import "JRSwizzle.h"
 #import "XPDefine.h"
 #import "XPNetManager.h"

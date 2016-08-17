@@ -1,61 +1,87 @@
 //
-//  XPDetailController.m
+//  XPSearchController.m
 //  DePoint
 //
-//  Created by apple on 16/8/6.
+//  Created by apple on 16/8/12.
 //  Copyright © 2016年 liudhkk. All rights reserved.
 //
 
-#import "XPDetailController.h"
-#import "XPDrugsModel.h"
+#import "XPSearchController.h"
 #import "XPDetailCell.h"
+#import "XPSearchModel.h"
 #import "XPTextViewCell.h"
-@interface XPDetailController ()
-@property(nonatomic) XPDetailModel *data;
+@interface XPSearchController ()<UISearchBarDelegate>
+@property(nonatomic) XPSearchModel *data;
 @property(nonatomic) NSString *viewLb;
+@property(nonatomic) NSString *name;
 @end
 
-@implementation XPDetailController
-#pragma mark - LazyLoad  懒加载
-- (XPDetailModel *)data {
-    if(_data == nil) {
-        _data = [[XPDetailModel alloc] init];
+@implementation XPSearchController
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar endEditing:YES];
+    if(searchBar.text.length >0){
+        self.name = searchBar.text;
+        [self.view hideHUD];
+        [XPNetManager getSearch:self.name completionHandler:^(XPSearchModel *model, NSError *error) {
+            [self.view hideHUD];
+            self.data = model;
+            [self hpple];
+            [self.tableView reloadData];
+        }];
+    }else{
+        [self.view showWarning:@"请输入搜索内容"];
     }
-    return _data;
 }
--(instancetype)initWithDetai:(NSInteger)idnt{
-    if(self =[super init]){
-        _idnt = idnt;
+-(instancetype)initWithStyle:(UITableViewStyle)style{
+    self =[super initWithStyle:style];
+    if(self){
+        UISearchBar *bar =[[UISearchBar alloc]init];
+        bar.delegate = self;
+        bar.placeholder = @"请输入搜索内容";
+        self.navigationItem.titleView = bar;
+        [XPFactory addSearchItemForVC:self clickedHandler:^{
+            [bar endEditing:YES];
+            if(bar.text.length>0){
+                self.name = bar.text;
+
+                [self.view showHUD];
+                [XPNetManager getSearch:self.name completionHandler:^(XPSearchModel *model, NSError *error) {
+                    [self.view hideHUD];
+                    self.data = model;
+                    [self hpple];
+                    [self.tableView reloadData];
+                }];
+            }else{
+                [self.view showWarning:@"请输入搜索内容"];
+            }
+        }];
     }
     return self;
 }
-#pragma mark - LifeCycle 生命周期
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.scrollEnabled = NO;
+    self.tableView.scrollEnabled =NO;
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]bk_initWithTitle:@"返回" style:UIBarButtonItemStyleDone handler:^(id sender) {
         [self.navigationController popViewControllerAnimated:YES];
     }];
     self.navigationItem.leftBarButtonItem = leftItem;
-    
     self.tableView.rowHeight = self.tableView.bounds.size.height;
     [self.tableView registerClass:[XPDetailCell class] forCellReuseIdentifier:@"Cell"];
     [self.tableView registerClass:[XPTextViewCell class] forCellReuseIdentifier:@"textCell"];
     __weak typeof(self) weakSelf = self;
     [self.tableView addHeaderRefresh:^{
-        [XPNetManager getDetail:weakSelf.idnt completionHandler:^(XPDetailModel *model, NSError *error) {
-            [weakSelf.tableView endHeaderRefresh];
+        [XPNetManager getSearch:weakSelf.name completionHandler:^(XPSearchModel *model, NSError *error) {
             weakSelf.data = model;
-            [weakSelf.tableView reloadData];
+            [weakSelf.tableView endHeaderRefresh];
             [weakSelf hpple];
+            [weakSelf.tableView reloadData];
         }];
     }];
-    [self.tableView beginHeaderRefresh];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -66,11 +92,8 @@
         return 2;
     }
 }
-
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(self.data.count == 0){
+    if(self.data.count==0){
         return 0;
     }else{
         return 1;
@@ -79,7 +102,6 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == 0){
@@ -96,7 +118,9 @@
         self.tableView.rowHeight = self.tableView.bounds.size.height;
         return cell;
     }
-  }
+}
+
+
 -(void)hpple{
     NSString  *html = self.data.message;
     
@@ -108,7 +132,7 @@
         }
         [mustring deleteCharactersInRange:rang];
     }
-
+    
     NSData *htmlData =[html dataUsingEncoding:NSUTF8StringEncoding];
     NSString *nodeString = @"//p";
     TFHpple *xpathParser = [[TFHpple alloc]initWithHTMLData:htmlData];
@@ -165,6 +189,11 @@
 }
 
 
-
+- (XPSearchModel *)data {
+	if(_data == nil) {
+		_data = [[XPSearchModel alloc] init];
+	}
+	return _data;
+}
 
 @end

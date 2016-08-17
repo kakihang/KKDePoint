@@ -20,8 +20,8 @@
         !completionHandler ? : completionHandler([XPDrugNexineModel parse:repsonseObj],error);
     }];
 }
-+(id)getList:(NSInteger)page completionHandler:(void (^)(XPListModel *, NSError *))completionHandler{
-    NSString *path =[NSString stringWithFormat:KListPath,page];
++(id)getList:(NSInteger)page more:(NSInteger)more completionHandler:(void (^)(XPListModel *, NSError *))completionHandler{
+    NSString *path =[NSString stringWithFormat:KListPath,page,more];
     return [self GET:path parameters:nil completionHandler:^(id repsonseObj, NSError *error) {
         !completionHandler ? : completionHandler([XPListModel parse:repsonseObj],error);
     }];
@@ -30,6 +30,20 @@
     NSString *path =[NSString stringWithFormat:KDetailPath,page];
     return [self POST:path parameters:nil completionHandler:^(id repsonseObj, NSError *error) {
         !completionHandler ? : completionHandler([XPDetailModel parse:repsonseObj],error);
+    }];
+}
++(id)getSearch:(NSString *)path completionHandler:(void (^)(XPSearchModel *, NSError *))completionHandler{
+    if(path.length ==0){
+        !completionHandler ? :completionHandler(nil,nil);
+        return nil;
+    }
+    NSString *page = [NSString stringWithFormat:kNamePath,path];
+    page = [page stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSMutableDictionary *params =[NSMutableDictionary new];
+    [params setObject:path forKey:@"name"];
+    return [self POST:page parameters:params completionHandler:^(id repsonseObj, NSError *error) {
+        NSLog(@"-------%@",page);
+        !completionHandler ?:completionHandler([XPSearchModel parse:repsonseObj],error);
     }];
 }
 

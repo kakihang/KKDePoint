@@ -29,17 +29,18 @@
     if(_titleLb == nil) {
         _titleLb = [[UILabel alloc] init];
         _titleLb.font = [UIFont systemFontOfSize:12];
+        CGFloat width = self.contentView.bounds.size.width - 130;
         _titleLb.numberOfLines = 4;
         [self.contentView addSubview:_titleLb];
         [_titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.iconIV);
             make.left.equalTo(self.iconIV.mas_right).equalTo(10);
-            make.right.equalTo(-5);
+            make.width.equalTo(width).priorityHigh();
+            make.right.equalTo(-10);
         }];
     }
     return _titleLb;
 }
-
 - (UILabel *)nameLb {
     if(_nameLb == nil) {
         _nameLb = [[UILabel alloc] init];

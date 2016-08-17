@@ -8,11 +8,11 @@
 
 #import "KKFrameTabC.h"
 
-#import "KKMediVCtrl.h"
 #import "KKDisVCtrl.h"
 #import "KKNearVCtrl.h"
 #import "KKSetVCtrl.h"
 #import "KKSearchVC.h"
+#import "XPMediController.h"
 
 
 
@@ -39,7 +39,7 @@
                 selectedImage:KKIMAGE(@"sear")];
     
     // 添加病类子控制器
-    [self setupViewController:[[KKMediVCtrl alloc] init]
+    [self setupViewController:[[XPMediController alloc] init]
                      navTitle:@"发现"
                   tabBarTitle:@"发现"
                         image:KKIMAGE(@"dis")

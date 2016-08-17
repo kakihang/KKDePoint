@@ -1,14 +1,14 @@
 //
-//  KKMediMClassTVCell.m
+//  XPMediMClassTVCell.m
 //  DePoint
 //
-//  Created by kaki on 16/8/8.
+//  Created by apple on 16/8/13.
 //  Copyright © 2016年 liudhkk. All rights reserved.
 //
 
-#import "KKMediMClassTVCell.h"
+#import "XPMediMClassTVCell.h"
 
-@implementation KKMediMClassTVCell
+@implementation XPMediMClassTVCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -16,11 +16,9 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
+
+    [super setSelected:selected animated:animated];
 }
-
-
 - (UILabel *)label {
     if(_label == nil) {
         _label = [[UILabel alloc] init];

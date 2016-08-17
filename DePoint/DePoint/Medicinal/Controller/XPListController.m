@@ -10,14 +10,15 @@
 #import "XPListViewCell.h"
 #import "XPDetailController.h"
 @interface XPListController ()
-@property(nonatomic) NSArray<XPListDataModel *> *data;
+@property(nonatomic) NSMutableArray<XPListDataModel *> *data;
+@property(nonatomic)NSInteger page;
 @end
 
 @implementation XPListController
 #pragma mark - LazyLoad  懒加载
-- (NSArray<XPListDataModel *> *)data {
+- (NSMutableArray<XPListDataModel *> *)data {
     if(_data == nil) {
-        _data = [[NSArray<XPListDataModel *> alloc] init];
+        _data = [[NSMutableArray<XPListDataModel *> alloc] init];
     }
     return _data;
 }
@@ -30,20 +31,33 @@
 #pragma mark - LifeCycle 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"-------------%ld",(long)_drug);
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    CGFloat width = (self.view.bounds.size.width / 2 - 140);
 //    self.tableView.contentInset = UIEdgeInsetsMake(0, 0,width, 0);
     [self.tableView registerClass:[XPListViewCell class] forCellReuseIdentifier:@"Cell"];
+    NSInteger path = 1;
     __weak typeof(self) weakSelf = self;
     [self.tableView addHeaderRefresh:^{
-        [XPNetManager getList:weakSelf.drug completionHandler:^(XPListModel *model, NSError *error) {
+        [XPNetManager getList:weakSelf.drug more:path completionHandler:^(XPListModel *model, NSError *error) {
+            [weakSelf.data removeAllObjects];
+            [weakSelf.data addObjectsFromArray:model.tngou];
             [weakSelf.tableView endHeaderRefresh];
-            weakSelf.data =model.tngou;
             [weakSelf.tableView reloadData];
         }];
     }];
     [self.tableView beginHeaderRefresh];
+    self.page = path + 1;
+    [self.tableView addFooterRefresh:^{
+        [XPNetManager getList:weakSelf.drug more:weakSelf.page completionHandler:^(XPListModel *model, NSError *error) {
+            weakSelf.page +=1;
+            [weakSelf.data addObjectsFromArray:model.tngou];
+            [weakSelf.tableView reloadData];
+            [weakSelf.tableView endFooterRefresh];
+        }];
+    }];
     self.tableView.rowHeight = 130;
     
 }
@@ -57,7 +71,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XPListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    [cell.iconIV setImageURL:[NSString stringWithFormat:@"http://tnfs.tngou.net/image%@",self.data[indexPath.row].img].yx_URL];
+    [cell.iconIV setImageWithURL:[NSString stringWithFormat:@"http://tnfs.tngou.net/image%@",self.data[indexPath.row].img].yx_URL placeholder:[UIImage imageNamed:@"背景"]];
     cell.titleLb.text = self.data[indexPath.row].desc;
     cell.nameLb.text = self.data[indexPath.row].name;
     cell.backgroundColor = [UIColor clearColor];
