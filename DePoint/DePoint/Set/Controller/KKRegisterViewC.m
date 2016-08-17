@@ -57,17 +57,17 @@
                 [weakSelf.view hideHUD];
                 [weakSelf.view kk_showAlertNoTitleWithMessage:@"手机号不存在，请注册"];
             } else {
-                //    [KKSmsProc kk_smsSendByPhone:self.registerView.phoneTf.text completionHandler:^(NSError *error, NSString *errMsg) {
-                [weakSelf.view hideHUD];
-                //        if (!error) {
-                NSLog(@"发送成功");
-                KKRegisterMsgViewC *msgVC = [[KKRegisterMsgViewC alloc] initWithPhone:weakSelf.registerView.phoneTf.text title:_title];
-                [weakSelf.navigationController pushViewController:msgVC animated:YES];
-                //        } else {
-                //            NSLog(@"发送失败: %@", error);
-                //            [weakSelf.view kk_showAlertNoTitleWithMessage:errMsg];
-                //        }
-                //    }];
+                [KKSmsProc kk_smsSendByPhone:self.registerView.phoneTf.text completionHandler:^(NSError *error, NSString *errMsg) {
+                    [weakSelf.view hideHUD];
+                    if (!error) {
+                        NSLog(@"发送成功");
+                        KKRegisterMsgViewC *msgVC = [[KKRegisterMsgViewC alloc] initWithPhone:weakSelf.registerView.phoneTf.text title:_title];
+                        [weakSelf.navigationController pushViewController:msgVC animated:YES];
+                    } else {
+                        NSLog(@"发送失败: %@", error);
+                        [weakSelf.view kk_showAlertNoTitleWithMessage:errMsg];
+                    }
+                }];
             }
         } else {
             [weakSelf.view hideHUD];

@@ -114,16 +114,16 @@
     [self.view showHUD];
     __weak typeof(self) weakSelf = self;
     NSString *smsCode = self.registerView.phoneTf.text;
-    //    [KKSmsProc kk_smsCheckByPhone:_phoneNumber smsCode:smsCode completionHandler:^(NSError *error, NSString *errMsg) {
-    [weakSelf.view hideHUD];
-    //        if (!error) {
-    NSLog(@"校验成功");
-    [self.navigationController pushViewController:[[KKRegisterPassViewC alloc]initWithPhone:_phoneNumber title:_title] animated:YES];
-    //        } else {
-    //            NSLog(@"校验失败");
-    //            [weakSelf.view kk_showAlertNoTitleWithMessage:errMsg];
-    //        }
-    //    }];
+    [KKSmsProc kk_smsCheckByPhone:_phoneNumber smsCode:smsCode completionHandler:^(NSError *error, NSString *errMsg) {
+        [weakSelf.view hideHUD];
+        if (!error) {
+            NSLog(@"校验成功");
+            [self.navigationController pushViewController:[[KKRegisterPassViewC alloc]initWithPhone:_phoneNumber title:_title] animated:YES];
+        } else {
+            NSLog(@"校验失败");
+            [weakSelf.view kk_showAlertNoTitleWithMessage:errMsg];
+        }
+    }];
 }
 
 

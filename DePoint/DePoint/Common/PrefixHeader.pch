@@ -55,7 +55,7 @@
 #import <RESideMenu.h>
 
 
-
+#import "JRSwizzle.h"
 #import "XPDefine.h"
 #import "XPNetManager.h"
 

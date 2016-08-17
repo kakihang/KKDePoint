@@ -22,6 +22,19 @@
 		2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1F1D5189BD0051FA41 /* KKSanBox.m */; };
 		265671451D62CFDD00AC3DD9 /* KKChangePassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265671441D62CFDD00AC3DD9 /* KKChangePassVC.m */; };
 		265E62361D53658B00D65A37 /* KKFeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265E62351D53658B00D65A37 /* KKFeedBackVC.m */; };
+		267DF2DE1D648B74005D2639 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2BE1D648B74005D2639 /* JRSwizzle.m */; };
+		267DF2DF1D648B74005D2639 /* LLFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2C01D648B74005D2639 /* LLFlowController.m */; };
+		267DF2E01D648B74005D2639 /* LLIntroController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2C21D648B74005D2639 /* LLIntroController.m */; };
+		267DF2E11D648B74005D2639 /* LLScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2C41D648B74005D2639 /* LLScanController.m */; };
+		267DF2E21D648B74005D2639 /* NSDictionary+Unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2C61D648B74005D2639 /* NSDictionary+Unicode.m */; };
+		267DF2E31D648B74005D2639 /* LLNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2C91D648B74005D2639 /* LLNetManager.m */; };
+		267DF2E41D648B74005D2639 /* LLScanningModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2CD1D648B74005D2639 /* LLScanningModel.m */; };
+		267DF2E51D648B74005D2639 /* ScanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2CF1D648B74005D2639 /* ScanModel.m */; };
+		267DF2E61D648B74005D2639 /* ScanningModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2D11D648B74005D2639 /* ScanningModel.m */; };
+		267DF2E71D648B74005D2639 /* LLFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2D61D648B74005D2639 /* LLFlowCell.m */; };
+		267DF2E81D648B74005D2639 /* LLIntroBelowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2D81D648B74005D2639 /* LLIntroBelowCell.m */; };
+		267DF2E91D648B74005D2639 /* LLIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2DA1D648B74005D2639 /* LLIntroCell.m */; };
+		267DF2EC1D648BEE005D2639 /* KKSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2EB1D648BEE005D2639 /* KKSearchVC.m */; };
 		268A10AF1D5A2788009E8962 /* UIImageView+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 268A10AE1D5A2788009E8962 /* UIImageView+KKExtension.m */; };
 		268F4C8B1D41A69100B8AD32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 268F4C8A1D41A69100B8AD32 /* main.m */; };
 		268F4C961D41A69200B8AD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 268F4C951D41A69200B8AD32 /* Assets.xcassets */; };
@@ -140,6 +153,33 @@
 		265E62341D53658B00D65A37 /* KKFeedBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFeedBackVC.h; sourceTree = "<group>"; };
 		265E62351D53658B00D65A37 /* KKFeedBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFeedBackVC.m; sourceTree = "<group>"; };
 		2660E02D1D5859F900C651FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		267DF2BD1D648B74005D2639 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = LLController/JRSwizzle.h; sourceTree = "<group>"; };
+		267DF2BE1D648B74005D2639 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = LLController/JRSwizzle.m; sourceTree = "<group>"; };
+		267DF2BF1D648B74005D2639 /* LLFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLFlowController.h; path = LLController/LLFlowController.h; sourceTree = "<group>"; };
+		267DF2C01D648B74005D2639 /* LLFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLFlowController.m; path = LLController/LLFlowController.m; sourceTree = "<group>"; };
+		267DF2C11D648B74005D2639 /* LLIntroController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLIntroController.h; path = LLController/LLIntroController.h; sourceTree = "<group>"; };
+		267DF2C21D648B74005D2639 /* LLIntroController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLIntroController.m; path = LLController/LLIntroController.m; sourceTree = "<group>"; };
+		267DF2C31D648B74005D2639 /* LLScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLScanController.h; path = LLController/LLScanController.h; sourceTree = "<group>"; };
+		267DF2C41D648B74005D2639 /* LLScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLScanController.m; path = LLController/LLScanController.m; sourceTree = "<group>"; };
+		267DF2C51D648B74005D2639 /* NSDictionary+Unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Unicode.h"; path = "LLController/NSDictionary+Unicode.h"; sourceTree = "<group>"; };
+		267DF2C61D648B74005D2639 /* NSDictionary+Unicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Unicode.m"; path = "LLController/NSDictionary+Unicode.m"; sourceTree = "<group>"; };
+		267DF2C71D648B74005D2639 /* LLDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDefine.h; sourceTree = "<group>"; };
+		267DF2C81D648B74005D2639 /* LLNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLNetManager.h; sourceTree = "<group>"; };
+		267DF2C91D648B74005D2639 /* LLNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLNetManager.m; sourceTree = "<group>"; };
+		267DF2CC1D648B74005D2639 /* LLScanningModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLScanningModel.h; path = LLModel/LLScanningModel.h; sourceTree = "<group>"; };
+		267DF2CD1D648B74005D2639 /* LLScanningModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLScanningModel.m; path = LLModel/LLScanningModel.m; sourceTree = "<group>"; };
+		267DF2CE1D648B74005D2639 /* ScanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanModel.h; path = LLModel/ScanModel.h; sourceTree = "<group>"; };
+		267DF2CF1D648B74005D2639 /* ScanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanModel.m; path = LLModel/ScanModel.m; sourceTree = "<group>"; };
+		267DF2D01D648B74005D2639 /* ScanningModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanningModel.h; path = LLModel/ScanningModel.h; sourceTree = "<group>"; };
+		267DF2D11D648B74005D2639 /* ScanningModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScanningModel.m; path = LLModel/ScanningModel.m; sourceTree = "<group>"; };
+		267DF2D51D648B74005D2639 /* LLFlowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLFlowCell.h; path = LLView/LLFlowCell.h; sourceTree = "<group>"; };
+		267DF2D61D648B74005D2639 /* LLFlowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLFlowCell.m; path = LLView/LLFlowCell.m; sourceTree = "<group>"; };
+		267DF2D71D648B74005D2639 /* LLIntroBelowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLIntroBelowCell.h; path = LLView/LLIntroBelowCell.h; sourceTree = "<group>"; };
+		267DF2D81D648B74005D2639 /* LLIntroBelowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLIntroBelowCell.m; path = LLView/LLIntroBelowCell.m; sourceTree = "<group>"; };
+		267DF2D91D648B74005D2639 /* LLIntroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLIntroCell.h; path = LLView/LLIntroCell.h; sourceTree = "<group>"; };
+		267DF2DA1D648B74005D2639 /* LLIntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLIntroCell.m; path = LLView/LLIntroCell.m; sourceTree = "<group>"; };
+		267DF2EA1D648BEE005D2639 /* KKSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSearchVC.h; sourceTree = "<group>"; };
+		267DF2EB1D648BEE005D2639 /* KKSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSearchVC.m; sourceTree = "<group>"; };
 		268A10AD1D5A2788009E8962 /* UIImageView+KKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+KKExtension.h"; sourceTree = "<group>"; };
 		268A10AE1D5A2788009E8962 /* UIImageView+KKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+KKExtension.m"; sourceTree = "<group>"; };
 		268F4C861D41A69100B8AD32 /* DePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +349,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		267DF2B81D648B37005D2639 /* 5-Search 扫描 */ = {
+			isa = PBXGroup;
+			children = (
+				267DF2C71D648B74005D2639 /* LLDefine.h */,
+				267DF2C81D648B74005D2639 /* LLNetManager.h */,
+				267DF2C91D648B74005D2639 /* LLNetManager.m */,
+				267DF2B91D648B74005D2639 /* Controller */,
+				267DF2CA1D648B74005D2639 /* Model */,
+				267DF2D31D648B74005D2639 /* View */,
+				267DF2DB1D648B74005D2639 /* ViewModel */,
+			);
+			name = "5-Search 扫描";
+			path = Search;
+			sourceTree = "<group>";
+		};
+		267DF2B91D648B74005D2639 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				267DF2EA1D648BEE005D2639 /* KKSearchVC.h */,
+				267DF2EB1D648BEE005D2639 /* KKSearchVC.m */,
+				267DF2BD1D648B74005D2639 /* JRSwizzle.h */,
+				267DF2BE1D648B74005D2639 /* JRSwizzle.m */,
+				267DF2BF1D648B74005D2639 /* LLFlowController.h */,
+				267DF2C01D648B74005D2639 /* LLFlowController.m */,
+				267DF2C11D648B74005D2639 /* LLIntroController.h */,
+				267DF2C21D648B74005D2639 /* LLIntroController.m */,
+				267DF2C31D648B74005D2639 /* LLScanController.h */,
+				267DF2C41D648B74005D2639 /* LLScanController.m */,
+				267DF2C51D648B74005D2639 /* NSDictionary+Unicode.h */,
+				267DF2C61D648B74005D2639 /* NSDictionary+Unicode.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		267DF2CA1D648B74005D2639 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				267DF2CC1D648B74005D2639 /* LLScanningModel.h */,
+				267DF2CD1D648B74005D2639 /* LLScanningModel.m */,
+				267DF2CE1D648B74005D2639 /* ScanModel.h */,
+				267DF2CF1D648B74005D2639 /* ScanModel.m */,
+				267DF2D01D648B74005D2639 /* ScanningModel.h */,
+				267DF2D11D648B74005D2639 /* ScanningModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		267DF2D31D648B74005D2639 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				267DF2D51D648B74005D2639 /* LLFlowCell.h */,
+				267DF2D61D648B74005D2639 /* LLFlowCell.m */,
+				267DF2D71D648B74005D2639 /* LLIntroBelowCell.h */,
+				267DF2D81D648B74005D2639 /* LLIntroBelowCell.m */,
+				267DF2D91D648B74005D2639 /* LLIntroCell.h */,
+				267DF2DA1D648B74005D2639 /* LLIntroCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		267DF2DB1D648B74005D2639 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		268F4C7D1D41A69100B8AD32 = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +448,7 @@
 				26D6BD2F1D42429A00CFBB01 /* 2-Disease 病类查询 */,
 				26D6BD2E1D42429000CFBB01 /* 3-Nearby 附近 */,
 				26D6BD2D1D42428800CFBB01 /* 4-Set 设置 */,
+				267DF2B81D648B37005D2639 /* 5-Search 扫描 */,
 				268F4C951D41A69200B8AD32 /* Assets.xcassets */,
 				268F4C971D41A69200B8AD32 /* LaunchScreen.storyboard */,
 				268F4C9A1D41A69200B8AD32 /* Info.plist */,
@@ -1027,6 +1135,7 @@
 				26D6BD5D1D42456F00CFBB01 /* UIView+HUD.m in Sources */,
 				26D6BD641D42482E00CFBB01 /* BaseViewModel.m in Sources */,
 				26AD335A1D5870B500891D9B /* XPNetManager.m in Sources */,
+				267DF2E51D648B74005D2639 /* ScanModel.m in Sources */,
 				26D6BD611D4247EE00CFBB01 /* BaseNetworking.m in Sources */,
 				2697020C1D629C3C00EF59E5 /* UIImage+KKUserHeadImage.m in Sources */,
 				26E582851D52C7D8007FB00E /* KKSetViewModel.m in Sources */,
@@ -1040,7 +1149,9 @@
 				26ACAB211D58CB9F002E4630 /* KKMediHClassTVCell.m in Sources */,
 				26A8A16B1D5051FC007894CD /* KKColumnButtons.m in Sources */,
 				2635A9FB1D5C2C2D00BF181F /* UILabel+KKExtension.m in Sources */,
+				267DF2E31D648B74005D2639 /* LLNetManager.m in Sources */,
 				26D6BD5A1D42456F00CFBB01 /* NSObject+Parse.m in Sources */,
+				267DF2E81D648B74005D2639 /* LLIntroBelowCell.m in Sources */,
 				264590B41D5DB84B005A42D5 /* KKRegisterMsgViewC.m in Sources */,
 				26AD33411D58708000891D9B /* XPDrugController.m in Sources */,
 				264590B11D5DB418005A42D5 /* KKTest.m in Sources */,
@@ -1059,14 +1170,20 @@
 				26AD33431D58708000891D9B /* XPNexineController.m in Sources */,
 				2635A9F81D5C239900BF181F /* UITextField+KKExtension.m in Sources */,
 				26D6BD7A1D42534400CFBB01 /* KKNearVCtrl.m in Sources */,
+				267DF2E01D648B74005D2639 /* LLIntroController.m in Sources */,
 				26ACAB241D58CC02002E4630 /* KKMediMClassTVCell.m in Sources */,
 				264B33401D5B0A67000C8911 /* UIView+KKVisualEff.m in Sources */,
 				26E2AB341D6317B400A1463C /* KKAlertWithVerifyAndCancel.m in Sources */,
+				267DF2E91D648B74005D2639 /* LLIntroCell.m in Sources */,
 				26FBBD501D54828F00EAAAA9 /* KKPlaceholderTextView.m in Sources */,
 				26B9D42B1D5E27D100BBEBE0 /* KKLoginRegisButton.m in Sources */,
+				267DF2DE1D648B74005D2639 /* JRSwizzle.m in Sources */,
 				26E5828C1D52ED7E007FB00E /* KKAboutViewC.m in Sources */,
 				26AD33401D58708000891D9B /* XPDetailController.m in Sources */,
+				267DF2E11D648B74005D2639 /* LLScanController.m in Sources */,
+				267DF2E61D648B74005D2639 /* ScanningModel.m in Sources */,
 				26AD333F1D58708000891D9B /* KKMediVCtrl.m in Sources */,
+				267DF2EC1D648BEE005D2639 /* KKSearchVC.m in Sources */,
 				264B33481D5B5D58000C8911 /* UIButton+KKExtension.m in Sources */,
 				26D6BD5B1D42456F00CFBB01 /* NSString+YX.m in Sources */,
 				26A657BA1D61E6C000EAC5C1 /* KKLoginInfoVC.m in Sources */,
@@ -1075,7 +1192,9 @@
 				26AD33421D58708000891D9B /* XPListController.m in Sources */,
 				26AD334D1D58708B00891D9B /* XPDetailModel.m in Sources */,
 				26AD334E1D58708B00891D9B /* XPDrugNexineModel.m in Sources */,
+				267DF2E21D648B74005D2639 /* NSDictionary+Unicode.m in Sources */,
 				26E582A31D5315EC007FB00E /* KKCustomNavigationC.m in Sources */,
+				267DF2DF1D648B74005D2639 /* LLFlowController.m in Sources */,
 				265671451D62CFDD00AC3DD9 /* KKChangePassVC.m in Sources */,
 				26E5828F1D531493007FB00E /* KKLoginViewC.m in Sources */,
 				264B33431D5B1418000C8911 /* KKLoginShowView.m in Sources */,
@@ -1087,10 +1206,12 @@
 				26AD7A021D4A2B01009217B5 /* KKCenterAnno.m in Sources */,
 				26AD33561D58709200891D9B /* XPListViewCell.m in Sources */,
 				26AD33441D58708000891D9B /* XPPushController.m in Sources */,
+				267DF2E71D648B74005D2639 /* LLFlowCell.m in Sources */,
 				26AD335F1D58AE7B00891D9B /* KKMediTVC.m in Sources */,
 				26A8A1681D503AC8007894CD /* KKNearbyTViewCell.m in Sources */,
 				264590B71D5DCA04005A42D5 /* KKRegisterPassViewC.m in Sources */,
 				26D6BD6D1D42503400CFBB01 /* UIView+Frame.m in Sources */,
+				267DF2E41D648B74005D2639 /* LLScanningModel.m in Sources */,
 				2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */,
 				26AD334F1D58708B00891D9B /* XPDrugsModel.m in Sources */,
 				26E582A41D5315EC007FB00E /* KKCustomVC.m in Sources */,

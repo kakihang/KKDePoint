@@ -13,4 +13,6 @@
 + (id)GET:(NSString *)path parameters:(NSDictionary *)parameters completionHandler:(void(^)(id repsonseObj, NSError *error))completionHandler;
 
 + (id)POST:(NSString *)path parameters:(NSDictionary *)parameters completionHandler:(void(^)(id repsonseObj, NSError *error))completionHandler;
+
++ (id)GET:(NSString *)path parameters:(NSDictionary *)parameters progress:(NSDictionary *)progress completionHandler:(void(^)(id repsonseObj, NSError *error))completionHandler;
 @end

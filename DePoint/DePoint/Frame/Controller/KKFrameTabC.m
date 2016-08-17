@@ -12,7 +12,7 @@
 #import "KKDisVCtrl.h"
 #import "KKNearVCtrl.h"
 #import "KKSetVCtrl.h"
-
+#import "KKSearchVC.h"
 
 
 
@@ -32,16 +32,16 @@
     [item setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:KKFrameTaBarFont]} forState:UIControlStateSelected];
     
     // 添加yaopin搜索子控制器
-    [self setupViewController:[[KKMediVCtrl alloc] init]
-                     navTitle:@"药品搜索"
-                  tabBarTitle:@"药品搜索"
+    [self setupViewController:[[KKSearchVC alloc] init]
+                     navTitle:@"搜索"
+                  tabBarTitle:@"搜索"
                         image:KKIMAGE(@"sear")
                 selectedImage:KKIMAGE(@"sear")];
     
     // 添加病类子控制器
-    [self setupViewController:[[KKDisVCtrl alloc] init]
-                     navTitle:@"病类搜索"
-                  tabBarTitle:@"病类搜索"
+    [self setupViewController:[[KKMediVCtrl alloc] init]
+                     navTitle:@"发现"
+                  tabBarTitle:@"发现"
                         image:KKIMAGE(@"dis")
                 selectedImage:KKIMAGE(@"dis")];
     
