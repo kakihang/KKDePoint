@@ -10,20 +10,35 @@
 #import "KKRegisterShowView.h"
 #import "KKRegisterMsgViewC.h"
 #import "KKSmsProc.h"
+#import "KKLoginProc.h"
 
 @interface KKRegisterViewC()
 @property (nonatomic, strong) KKRegisterShowView *registerView; //
 @end
 
 
-@implementation KKRegisterViewC
+@implementation KKRegisterViewC {
+    NSString *_title;
+    BOOL _isRegister;
+}
+
+- (instancetype)initWitTitle:(NSString *)title isRegister:(BOOL)isRegister {
+    if (self = [super init]) {
+        _title = title;
+        _isRegister = isRegister;
+    }
+    return self;
+}
+- (instancetype)init {
+    NSCAssert1(NO, @"%p: 请使用initWitTitle:进行初始化", __func__);
+    return nil;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"注册" tintColor:KKGLOTINTCOLOR backgroundColor:[UIColor clearColor]];
+    [self setNavTitle:_title tintColor:KKGLOTINTCOLOR backgroundColor:[UIColor clearColor]];
     [self setNavBottmLinehidden:YES];
     [self.view kk_viewWithVisualEffName:@"130313604324531250"];
-    
     self.registerView = [KKRegisterShowView registerShowOnView:self.view index:0];
     
     [self.registerView.registerButton addTarget:self action:@selector(clickRegisterButtonf) forControlEvents:UIControlEventTouchUpInside];
@@ -33,18 +48,36 @@
 - (void)clickRegisterButtonf {
     [self.view showHUD];
     __weak typeof(self) weakSelf = self;
-    //    [KKSmsProc kk_smsSendByPhone:self.registerView.phoneTf.text completionHandler:^(NSError *error, NSString *errMsg) {
-    [weakSelf.view hideHUD];
-    //        if (!error) {
-    NSLog(@"发送成功");
-    KKRegisterMsgViewC *msgVC = [[KKRegisterMsgViewC alloc] initWithPhone:weakSelf.registerView.phoneTf.text];
-    [weakSelf.navigationController pushViewController:msgVC animated:YES];
-    //        } else {
-    //            NSLog(@"发送失败: %@", error);
-    //            [weakSelf.view kk_showAlertNoTitleWithMessage:errMsg];
-    //        }
-    //    }];
+    [KKLoginProc kk_checkPhoneExist:self.registerView.phoneTf.text complehandler:^(NSError *error, BOOL isExist) {
+        if (!error) {
+            if (isExist && _isRegister) {
+                [weakSelf.view hideHUD];
+                [weakSelf.view kk_showAlertNoTitleWithMessage:@"手机号已注册，请直接登录"];
+            } else if (!_isRegister && !isExist) {
+                [weakSelf.view hideHUD];
+                [weakSelf.view kk_showAlertNoTitleWithMessage:@"手机号不存在，请注册"];
+            } else {
+                //    [KKSmsProc kk_smsSendByPhone:self.registerView.phoneTf.text completionHandler:^(NSError *error, NSString *errMsg) {
+                [weakSelf.view hideHUD];
+                //        if (!error) {
+                NSLog(@"发送成功");
+                KKRegisterMsgViewC *msgVC = [[KKRegisterMsgViewC alloc] initWithPhone:weakSelf.registerView.phoneTf.text title:_title];
+                [weakSelf.navigationController pushViewController:msgVC animated:YES];
+                //        } else {
+                //            NSLog(@"发送失败: %@", error);
+                //            [weakSelf.view kk_showAlertNoTitleWithMessage:errMsg];
+                //        }
+                //    }];
+            }
+        } else {
+            [weakSelf.view hideHUD];
+            [weakSelf.view kk_showAlertNoTitleWithMessage:@"处理失败"];
+        }
+        
+    }];
 }
+
+
 
 - (void)changeRegisterButton {
     self.registerView.registerButton.enabled = self.registerView.phoneTf.text.length == 11;    

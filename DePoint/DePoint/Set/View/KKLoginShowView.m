@@ -7,7 +7,7 @@
 //
 
 #import "KKLoginShowView.h"
-
+#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface KKLoginShowView()
 @property (nonatomic, weak) UIView *mainView;
@@ -16,7 +16,6 @@
 
 @property (nonatomic, strong) KKJustifiedLabel *userLa; // 用户
 @property (nonatomic, strong) KKJustifiedLabel *passLa; // 密码
-@property (nonatomic, strong) UIButton *forgetBtn; // 忘记密码
 @property (nonatomic, strong) UIButton *registerBtn; // 注册按钮
 @property (nonatomic, strong) UIView *tagView; //标签
 
@@ -31,6 +30,7 @@
     [loginView oneKeyLoginBgView];
     [loginView loginBgView];
     [loginView setQuickAndAccountLoginButton];
+    [loginView setLoginThird];
     return loginView;
 }
 
@@ -52,7 +52,7 @@
             [_loginBgView endEditing:YES];
         }];
         
-        CGFloat margin = KKScreenWidthPrecent(0.1);
+        CGFloat margin = KKScreenWidthPrecent(0.08);
         CGFloat height = KKScreenHeightPrecent(0.05);
         CGFloat topMargin = KKScreenHeightPrecent(0.1);
         CGFloat phoneLaWidth = KKScreenWidthPrecent(0.22);
@@ -180,52 +180,78 @@
             [_loginBgView endEditing:YES];
         }];
         
-        // QQ一键登录
-        _qqLoginBtn = [KKSquareButton buttonWithTitle:@"QQ登录" imgName:@"qq24"];
-        [_oneKeyLoginBgView addSubview:_qqLoginBtn];
-        [_qqLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(_oneKeyLoginBgView.mas_centerX).mas_equalTo(-KKScreenWidthPrecent(0.1));
-            make.bottom.mas_equalTo(-KKScreenHeightPrecent(0.2));
-            make.width.mas_equalTo(_oneKeyLoginBgView).multipliedBy(0.15);
-            make.height.mas_equalTo(_qqLoginBtn.mas_width).multipliedBy(1.5);
-        }];
-        
         // 微信一键登录
-        _wxLoginBtn = [KKSquareButton buttonWithTitle:@"微信登录" imgName:@"wx24"];
-        [_oneKeyLoginBgView addSubview:_wxLoginBtn];
-        [_wxLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(_oneKeyLoginBgView.mas_centerX).mas_equalTo(KKScreenWidthPrecent(0.1));
-            make.size.mas_equalTo(_qqLoginBtn);
-            make.bottom.mas_equalTo(_qqLoginBtn);
-        }];
+        //        _wxLoginBtn = [KKSquareButton buttonWithTitle:@"微信登录" imgName:@"wx24"];
+        //        [_oneKeyLoginBgView addSubview:_wxLoginBtn];
+        //        [_wxLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        //            make.left.mas_equalTo(_oneKeyLoginBgView.mas_centerX).mas_equalTo(KKScreenWidthPrecent(0.1));
+        //            make.size.mas_equalTo(_qqLoginBtn);
+        //            make.bottom.mas_equalTo(_qqLoginBtn);
+        //        }];
         
-        UILabel *label = [UILabel kk_labelWithText:@"一键登录"];
+        UILabel *label = [UILabel kk_labelWithText:@"第三方登录"];
+        label.textColor = KKCOLOR(53, 53, 53, 0.8);
+        label.textAlignment = NSTextAlignmentCenter;
+        label.font = [UIFont systemFontOfSize:14];
         [_oneKeyLoginBgView addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(0);
-            make.bottom.mas_equalTo(_wxLoginBtn.mas_top);
-            make.top.mas_greaterThanOrEqualTo(10);
-            make.width.mas_equalTo(KKScreenWidthPrecent(0.2));
+            make.top.mas_greaterThanOrEqualTo(KKScreenHeightPrecent(0.05));
+            make.width.mas_equalTo(KKScreenWidthPrecent(0.3));
         }];
         
-        UIImageView *left = [UIImageView kk_imageWithImageName:@"login_register_left_line" mode:UIViewContentModeScaleToFill];
+        UILabel *left = [[UILabel alloc] init];
+        left.backgroundColor = KKCOLOR(100, 100, 100, 1);
         [_oneKeyLoginBgView addSubview:left];
         [left mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.mas_equalTo(label);
             make.left.mas_equalTo(KKScreenWidthPrecent(0.1));
-            make.right.mas_equalTo(label.mas_left).mas_equalTo(KKScreenWidthPrecent(-0.05));
+            make.right.mas_equalTo(label.mas_left).mas_equalTo(KKScreenWidthPrecent(-0.01));
+            make.height.mas_equalTo(0.5);
         }];
         
-        UIImageView *right = [UIImageView kk_imageWithImageName:@"login_register_right_line" mode:UIViewContentModeScaleToFill];
+        UILabel *right = [[UILabel alloc] init];
+        right.backgroundColor = KKCOLOR(100, 100, 100, 1);
         [_oneKeyLoginBgView addSubview:right];
         [right mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.mas_equalTo(label);
-            make.left.mas_equalTo(label.mas_right).mas_equalTo(KKScreenWidthPrecent(0.05));
+            make.left.mas_equalTo(label.mas_right).mas_equalTo(KKScreenWidthPrecent(0.01));
             make.right.mas_equalTo(KKScreenWidthPrecent(-0.1));
+            make.height.mas_equalTo(0.5);
         }];
     }
     return _oneKeyLoginBgView;
 }
+
+#pragma mark - 第三方 QQ
+- (void)setLoginThird {
+    CGFloat top = KKScreenHeightPrecent(0.15);
+    CGFloat width = KKScreenHeightPrecent(0.4) * 0.16;
+    CGFloat height = width + 25;
+    CGFloat margin = KKScreenWidthPrecent(0.1);
+    NSInteger number = 0;
+    CGFloat x = 0;
+    
+    if ([TencentOAuth iphoneQQInstalled] && [TencentOAuth iphoneQQSupportSSOLogin]) {
+        number++;
+    }
+    
+    x = (KKSCREENBOUNDSIZE.width - number * width - margin * (number - 1))/2;
+    
+    
+    if ([TencentOAuth iphoneQQInstalled] && [TencentOAuth iphoneQQSupportSSOLogin]) {
+        _qqLoginBtn = [KKSquareButton buttonWithTitle:@"QQ" imgName:@"qq24"];
+        _qqLoginBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_oneKeyLoginBgView addSubview:_qqLoginBtn];
+        [_qqLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(top);
+            make.left.mas_equalTo(x);
+            make.size.mas_equalTo(CGSizeMake(width, height));
+        }];
+        x = width + margin;
+    }
+}
+
 
 #pragma mark - 快速登录/账号登录设置
 

@@ -148,6 +148,7 @@ make.right.mas_equalTo(-margin);
         }];
     }
     
+    [cell kk_addBottomLine];
     return cell;
 }
 
@@ -173,6 +174,7 @@ make.right.mas_equalTo(-margin);
         _tableView = [[UITableView alloc] init];
         _tableView.dataSource = self;
         _tableView.delegate = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.view addSubview:_tableView];
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.right.bottom.mas_equalTo(0);

@@ -9,5 +9,6 @@
 #import "KKCustomVC.h"
 
 @interface KKRegisterViewC : KKCustomVC
-
+- (instancetype)initWitTitle:(NSString *)title isRegister:(BOOL)isRegister;
+- (instancetype)init;
 @end

@@ -13,21 +13,19 @@
 
 @interface KKRegisterPassViewC ()
 @property (nonatomic, strong) NSString *phoneNumber;
-@property (nonatomic, strong) NSString *smsCode;
 @property (nonatomic, strong) KKRegisterShowView *registerView; //
 @end
 
-@implementation KKRegisterPassViewC
-
-+ (instancetype)registerPasswordWithPhone:(NSString *)phone smsCode:(NSString *)smsCode {
-    KKRegisterPassViewC *vc = [[KKRegisterPassViewC alloc] initRegister];
-    vc.phoneNumber = phone;
-    vc.smsCode = smsCode;
-    NSLog(@"%@ %@", phone, smsCode);
-    return vc;
+@implementation KKRegisterPassViewC {
+    NSString *_title;
 }
-- (instancetype)initRegister {
-    return [super init];
+
+- (instancetype)initWithPhone:(NSString *)phone title:(NSString *)title {
+    if (self = [super init]) {
+        _title = title;
+        self.phoneNumber = phone;
+    }
+    return self;
 }
 - (instancetype)init {
     NSCAssert1(NO, @"请使用initWithPhone:进行初始化", __func__);
@@ -36,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"注册" tintColor:KKGLOTINTCOLOR backgroundColor:[UIColor clearColor]];
+    [self setNavTitle:_title tintColor:KKGLOTINTCOLOR backgroundColor:[UIColor clearColor]];
     [self setNavBottmLinehidden:YES];
     [self.view kk_viewWithVisualEffName:@"130313604324531250"];
     

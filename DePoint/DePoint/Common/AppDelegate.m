@@ -123,6 +123,10 @@
     [MobClick setLogEnabled:YES]; // 不拦截本地错误日志
     
     /*****************************************************************/
+    
+    [MLTransition validatePanBackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypeScreenEdgePan];
+    /*****************************************************************/
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[KKFrameTabC alloc] init];
     [self.window makeKeyAndVisible];
@@ -131,18 +135,6 @@
     
     return YES;
 }
-
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-//    return [TencentOAuth HandleOpenURL:url]/* ||
-//                                            [WeiboSDK handleOpenURL:url delegate:self] ||
-//                                            [WXApi handleOpenURL:url delegate:self]*/;
-//}
-//
-//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-//    return [TencentOAuth HandleOpenURL:url]/* ||
-//                                            [WeiboSDK handleOpenURL:url delegate:self] ||
-//                                            [WXApi handleOpenURL:url delegate:self]*/;
-//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

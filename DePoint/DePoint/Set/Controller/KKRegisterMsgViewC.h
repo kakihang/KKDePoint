@@ -10,6 +10,6 @@
 
 @interface KKRegisterMsgViewC : KKCustomVC
 
-- (instancetype)initWithPhone:(NSString *)phone;
+- (instancetype)initWithPhone:(NSString *)phone title:(NSString *)title;
 - (instancetype)init;
 @end

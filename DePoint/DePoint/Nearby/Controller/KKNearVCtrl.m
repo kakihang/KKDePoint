@@ -31,6 +31,8 @@ static NSString *cellID = @"KKNearVCtrlCellId";
 
 @implementation KKNearVCtrl {
     BOOL _search;
+    BOOL _selectFlag;
+    NSInteger _selctCellRow;
 }
 
 - (void)viewDidLoad {
@@ -41,7 +43,7 @@ static NSString *cellID = @"KKNearVCtrlCellId";
     [self.tableView registerClass:[KKNearbyTViewCell class] forCellReuseIdentifier:cellID];
     [self.locationVM setSearchDelegate:self]; // 搜索代理
     [self.store kk_createColumns:@[@"药店药房", @"药店药房", @"医院"]]; // 药店药房、医院按钮组
-    [self.range kk_createColumns:@[@"2000", @"500", @"1000", @"1500", @"2000", @"3000", @"5000", @"10000"]];
+    [self.range kk_createColumns:@[@"1500", @"500", @"1000", @"1500", @"2000", @"3000"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -71,6 +73,10 @@ static NSString *cellID = @"KKNearVCtrlCellId";
 
 
 - (void)pointSearch:(CLLocationCoordinate2D)coordinate {
+    [self pointSearchMore:coordinate];
+}
+
+- (void)pointSearchMore:(CLLocationCoordinate2D)coordinate {
     [self.locationVM changeCenterAnno:coordinate];
     [self.locationVM startSearchWithCoordinate:coordinate];
 }
@@ -98,22 +104,25 @@ static NSString *cellID = @"KKNearVCtrlCellId";
     }
 }
 
-
-
 #pragma mark - MKMapViewDelegate
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-    [self removeAllAnnDatas];
-    if (_search) {
+    
+    if (_search && !_selectFlag) {
+        [self removeAllAnnDatas];
         [self pointSearch:mapView.region.center];
     }
+    if (_selectFlag) {
+        _selectFlag = NO;
+        [self.mapView setSelectedAnnotations:@[self.dataList[_selctCellRow]]];
+    }
+    
     [self.store kk_setButtonArrHidden:YES];
     [self.range kk_setButtonArrHidden:YES];
 }
 
 // 商户大头针
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id)annotation {
-    //    NSLog(@"%s", __func__);
     if ([annotation isKindOfClass:[KKAnno class]]) {
         static NSString *viewID = @"商户大头针";
         KKAnno *anno = (KKAnno *)annotation;
@@ -137,14 +146,12 @@ static NSString *cellID = @"KKNearVCtrlCellId";
         pin.annotation = anno;
         pin.canShowCallout = NO;
         pin.image = [UIImage imageNamed:@"center"];
+        pin.alpha = 0.5;
         return pin;
     }
     
     return nil;
 }
-
-
-
 
 #pragma mark - CLLocationManagerDelegate
 
@@ -158,9 +165,6 @@ static NSString *cellID = @"KKNearVCtrlCellId";
         }];
     }
 }
-
-
-
 
 #pragma mark - AMapSearchDelegate
 
@@ -184,8 +188,6 @@ static NSString *cellID = @"KKNearVCtrlCellId";
     [self.tableView reloadData];
 }
 
-
-
 #pragma mark - tableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -194,17 +196,13 @@ static NSString *cellID = @"KKNearVCtrlCellId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     KKNearbyTViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    
-    
     cell.nameLb.text = self.dataList[indexPath.row].title;
     cell.addressLb.text = self.dataList[indexPath.row].subtitle;
     cell.distanceLb.text = [NSString stringWithFormat:@"%zd 米", self.dataList[indexPath.row].distance];
-    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     return [tableView fd_heightForCellWithIdentifier:cellID configuration:^(KKNearbyTViewCell *cell) {
         cell.nameLb.text = self.dataList[indexPath.row].title;
         cell.addressLb.text = self.dataList[indexPath.row].subtitle;
@@ -213,10 +211,42 @@ static NSString *cellID = @"KKNearVCtrlCellId";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.mapView setSelectedAnnotations:@[self.dataList[indexPath.row]]];
+    KKAnno *ann = self.dataList[indexPath.row];
+    
+    CGPoint centerPoint = self.mapView.center;
+    CGFloat margin = KKScreenWidthPrecent(0.2);
+    CGFloat xSide = centerPoint.x - margin;
+    CGFloat ySide = centerPoint.y - margin;
+    CGPoint currPoint = [self.mapView convertCoordinate:ann.coordinate toPointToView:self.mapView];
+    CGPoint movePoint = centerPoint;
+    
+    _selectFlag = NO;
+    if (fabs(currPoint.x - centerPoint.x) > xSide) {
+        _selectFlag = YES;
+        if (currPoint.x > centerPoint.x) {
+            movePoint.x = currPoint.x - xSide;
+        } else {
+            movePoint.x = currPoint.x + xSide;
+        }
+    }
+    
+    if (fabs(currPoint.y - centerPoint.y) > ySide) {
+        _selectFlag = YES;
+        if (currPoint.y > centerPoint.y) {
+            movePoint.y = currPoint.y - ySide;
+        } else {
+            movePoint.y = currPoint.y + xSide;
+        }
+    }
+    
+    if (_selectFlag) {
+        _selctCellRow = indexPath.row;
+        [self.mapView setCenterCoordinate:[self.mapView convertPoint:movePoint toCoordinateFromView:self.mapView] animated:YES];
+    } else {
+        [self.mapView setSelectedAnnotations:@[self.dataList[indexPath.row]]];
+    }
+    
 }
-
-
 
 #pragma mark - 懒加载
 
@@ -306,7 +336,7 @@ static NSString *cellID = @"KKNearVCtrlCellId";
         [_range mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.mas_equalTo(-25);
             make.right.mas_equalTo(-25);
-            make.size.mas_equalTo(CGSizeMake(90, 20));
+            make.size.mas_equalTo(CGSizeMake(90, 25));
         }];
         _range.kk_columnButtonDeledate = self;
     }

@@ -74,9 +74,9 @@
     if(_dataList == nil) {
         _dataList =
         @[@[@{@"icon":@"set_icon",  //0-0
-              @"title":@"药箱"},
-            @{@"icon":@"set_icon",  //0-1
-              @"title":@"收藏"}],
+              @"title":@"药箱"}/*,
+                              @{@"icon":@"set_icon",  //0-1
+                              @"title":@"收藏"}*/],
           
           @[@{@"icon":@"set_icon",  //1-0
               @"title":@"清除缓存",
@@ -84,7 +84,7 @@
                   return [self getCacheRoom];
               },
               @"block":^(UITableViewController *obj){
-                  [self deleteCache];
+                  [self deleteCache:obj];
                   [obj.tableView reloadData];
               }}],
           
@@ -146,7 +146,7 @@
     return [NSString stringWithFormat:@"%.2lfM", totalSize/1000/1000.0];
 }
 
-- (void)deleteCache {
+- (void)deleteCache:(UITableViewController *)vc {
     NSError *error;
     NSFileManager *manager = [NSFileManager defaultManager];
     NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:KKCACHEPATH];
@@ -158,6 +158,7 @@
             break;
         }
     }
+    [vc.view showWarning:@"清理完成~"];
 }
 
 - (void)shareToFriends {
@@ -186,13 +187,11 @@
                        
                        switch (state) {
                            case SSDKResponseStateSuccess: {
-                               UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"分享成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-                               [alertView show];
+                               [UIView kk_showAlertNoTitleWithMessage:@"分享成功"];
                                break;
                            }
                            case SSDKResponseStateFail: {
-                               UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败" message:[NSString stringWithFormat:@"%@",error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                               [alert show];
+                               [UIView kk_showAlertNoTitleWithMessage:@"分享失败"];
                                break;
                            }
                            default:

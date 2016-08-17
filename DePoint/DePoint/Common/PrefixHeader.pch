@@ -39,11 +39,14 @@
 #import "UITextField+KKExtension.h"
 #import "UILabel+KKExtension.h"
 #import "KKJustifiedLabel.h"
+#import "UITableViewCell+KKExtension.h"
 
 #import "Constant.h"
 #import "FrameConstant.h"
 #import "NearConstant.h"
 #import "KKSetConstant.h"
+
+#import "KKAlertWithVerifyAndCancel.h" 
 
 /*********************************XP*************************************/
 #import <TFHpple.h>

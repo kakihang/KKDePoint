@@ -9,6 +9,6 @@
 #import "KKCustomVC.h"
 
 @interface KKRegisterPassViewC : KKCustomVC
-+ (instancetype)registerPasswordWithPhone:(NSString *)phone smsCode:(NSString *)smsCode;
+- (instancetype)initWithPhone:(NSString *)phone title:(NSString *)title;
 - (instancetype)init;
 @end

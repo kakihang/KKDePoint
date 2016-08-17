@@ -12,6 +12,7 @@
 @interface KKColumnButtons()
 
 @property (nonatomic, strong) NSMutableArray <UIButton *> *buttonArr;
+@property (nonatomic, strong) UILabel *alertLabel;
 @end
 
 
@@ -50,7 +51,6 @@
     [lastButton addTarget:self action:@selector(showColumn:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.buttonArr removeAllObjects];
-    hiddenFlag = YES;
     
     for (int i=0; i<columnArr.count-1; i++) {
         
@@ -59,7 +59,6 @@
         
         [button setBackgroundImage:[UIImage imageNamed:@"tomclimber_time_back"] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        [button setHidden:YES];
         [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
         [button bk_addEventHandler:^(id sender) {
             [self kk_setButtonArrHidden:YES];
@@ -93,6 +92,35 @@
         [self.buttonArr addObject:button];
         lastButton = button;
     }
+    
+    if (self.columnMode == KKColunmModeRange) {
+        _alertLabel = [[UILabel alloc] init];
+        _alertLabel.text = @"支持显示附近最多50个";
+        _alertLabel.textColor = KKCOLOR(100, 100, 100, 0.9);
+        [_alertLabel setFont:[UIFont systemFontOfSize:12]];
+        [spview addSubview:_alertLabel];
+        [_alertLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(lastButton);
+            make.centerX.mas_equalTo(lastButton);
+        }];
+        switch (self.direction) {
+            case KKColunmDirectionTop: {
+                [_alertLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.bottom.mas_equalTo(lastButton.mas_top);
+                }];
+                break;
+            }
+            case KKColunmDirectionBottom: {
+                [_alertLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.mas_equalTo(lastButton.mas_bottom);
+                }];
+                break;
+            }
+        }
+    }
+    
+    hiddenFlag = YES;
+    [self kk_setButtonArrHidden:hiddenFlag];
 }
 
 
@@ -103,6 +131,7 @@
 
 - (void)kk_setButtonArrHidden:(BOOL)flag {
     hiddenFlag = flag;
+    _alertLabel.hidden = flag;
     [self.buttonArr enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.isHidden != flag) {
             obj.hidden = flag;

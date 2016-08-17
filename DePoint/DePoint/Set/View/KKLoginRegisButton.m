@@ -12,6 +12,7 @@
 
 + (instancetype)kk_buttonWithType:(UIButtonType)buttonType title:(NSString *)title {
     KKLoginRegisButton *button = [KKLoginRegisButton buttonWithType:buttonType];
+    button.enabled = NO;
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     return button;

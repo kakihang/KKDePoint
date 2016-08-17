@@ -19,11 +19,13 @@
 
 @implementation KKRegisterMsgViewC {
     NSInteger _sec;
+    NSString *_title;
 }
 
-- (instancetype)initWithPhone:(NSString *)phone {
+- (instancetype)initWithPhone:(NSString *)phone title:(NSString *)title {
     if (self = [super init]) {
-        self.phoneNumber = phone;
+        _title = title;
+        _phoneNumber = phone;
     }
     return self;
 }
@@ -35,10 +37,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"注册" tintColor:KKGLOTINTCOLOR backgroundColor:[UIColor clearColor]];
+    [self setNavTitle:_title tintColor:KKGLOTINTCOLOR backgroundColor:[UIColor clearColor]];
     [self setNavBottmLinehidden:YES];
     [self.view kk_viewWithVisualEffName:@"130313604324531250"];
-    
     self.registerView = [KKRegisterShowView registerShowOnView:self.view index:1];
     
     if (self.registerView.showPhoneLa) {
@@ -117,7 +118,7 @@
     [weakSelf.view hideHUD];
     //        if (!error) {
     NSLog(@"校验成功");
-    [self.navigationController pushViewController:[KKRegisterPassViewC registerPasswordWithPhone:_phoneNumber smsCode:smsCode] animated:YES];
+    [self.navigationController pushViewController:[[KKRegisterPassViewC alloc]initWithPhone:_phoneNumber title:_title] animated:YES];
     //        } else {
     //            NSLog(@"校验失败");
     //            [weakSelf.view kk_showAlertNoTitleWithMessage:errMsg];

@@ -39,7 +39,7 @@
 - (UILabel *)titleLa {
     if(_titleLa == nil) {
         _titleLa = [[UILabel alloc] init];
-        _titleLa.font = [UIFont systemFontOfSize:14];
+        _titleLa.font = [UIFont systemFontOfSize:15];
         _titleLa.textColor = [UIColor blackColor];
         [self.contentView addSubview:_titleLa];
         [_titleLa mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -53,7 +53,7 @@
 - (UILabel *)assistLa {
     if(_assistLa == nil) {
         _assistLa = [[UILabel alloc] init];
-        _assistLa.font = [UIFont systemFontOfSize:13];
+        _assistLa.font = [UIFont systemFontOfSize:14];
         _assistLa.textColor = [UIColor colorWithWhite:0.3 alpha:1];
         [self.contentView addSubview:_assistLa];
         [_assistLa mas_makeConstraints:^(MASConstraintMaker *make) {

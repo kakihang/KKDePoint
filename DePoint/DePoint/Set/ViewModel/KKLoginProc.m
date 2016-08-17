@@ -178,30 +178,68 @@
     }];
 }
 
-+ (void)kk_checkExistWithPhone:(NSString *)phone complehandler:(void(^)(BOOL isSuccessful, NSError *error, BOOL isExist))complehandler {
+
++ (void)kk_checkPhoneExist:(NSString *)phone complehandler:(void(^)(NSError *error, BOOL isExist))complehandler {
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"_User"];
     [bquery whereKey:@"mobilePhoneNumber" equalTo:phone];
     [bquery whereKey:@"isPasswordLogin" equalTo:@YES];
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        if (!error) {
-            NSLog(@"查询成功: %@", array);
-            if (array.count == 0) {
-                !complehandler?:complehandler(YES, error, NO);
-            } else {
-                !complehandler?:complehandler(YES, error, YES);
-            }
-        } else {
-            NSLog(@"查询失败");
-            !complehandler?:complehandler(NO, error, NO);
-        }
+        !complehandler?:complehandler(error, array.count>0);
     }];
 }
+
 
 + (void)kk_loginWithAccount:(NSString *)account
                    password:(NSString *)password
               complehandler:(void(^)(NSError *error))complehandler {
     [BmobUser loginInbackgroundWithAccount:account andPassword:password block:^(BmobUser *user, NSError *error) {
         !complehandler?:complehandler(error);
+    }];
+}
+
++ (void)kk_changeUserName:(NSString *)newName complehandler:(void(^)(NSError *error))complehandler {
+    BmobUser *bUser = [BmobUser getCurrentUser];
+    [bUser setObject:newName forKey:@"username"];
+    [bUser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+        !complehandler?:complehandler(error);
+    }];
+}
++ (void)kk_changeUserPasswordWithOldPass:(NSString *)oldPassword newPass:(NSString *)newPass complehandler:(void(^)(NSError *error, NSString *errMsg))complehandler {
+    BmobUser *user = [BmobUser getCurrentUser];
+    [user updateCurrentUserPasswordWithOldPassword:oldPassword newPassword:newPass block:^(BOOL isSuccessful, NSError *error) {
+        if (isSuccessful) {
+            [BmobUser loginInbackgroundWithAccount:user.mobilePhoneNumber andPassword:newPass block:^(BmobUser *user, NSError *error) {
+                !complehandler?:complehandler(error, [self errorCode:error]);
+            }];
+        } else {
+            !complehandler?:complehandler(error, [self errorCode:error]);
+        }
+    }];
+}
+
++ (NSString *)errorCode:(NSError *)error {
+    if (!error) {
+        return nil;
+    }
+    switch (error.code) {
+        case 210:
+            return @"当前密码不正确，请重新输入";
+        case 141:
+        case 20002:
+            return @"网络连接失败";
+        default:
+            return @"处理失败";
+    }
+}
+
++ (void)kk_thirdLoginWithDictionary:(NSDictionary *)dict platform:(id)platform complehandler:(void(^)(NSError *error, NSString *username))complehandler {
+    [BmobUser loginInBackgroundWithAuthorDictionary:dict platform:BmobSNSPlatformQQ block:^(BmobUser *user, NSError *error) {
+        if (error) {
+            NSLog(@"user login error:%@",error);
+        } else if (user){
+            NSLog(@"user objectid is :%@",user.objectId);
+        }
+        !complehandler?:complehandler(error, user.username);
     }];
 }
 
