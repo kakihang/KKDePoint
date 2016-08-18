@@ -14,8 +14,6 @@
 @property (nonatomic, assign) BOOL status;
 
 @property (nonatomic, strong) NSArray<XPDrugsDataModel *> *tngou;
-
-
 @end
 @interface XPDrugsDataModel : NSObject
 

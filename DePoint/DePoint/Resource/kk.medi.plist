@@ -253,6 +253,8 @@
 		<string>感冒发热</string>
 	</dict>
 	<dict>
+		<key>des</key>
+		<string>小儿感冒发烧、小儿止咳化痰、小儿肠胃用药</string>
 		<key>description</key>
 		<string>儿科用药,儿科用药药品,儿科用药相关药品,治疗儿科用药相关功能的药品,儿科用药相关药品查询,儿科用药药品库</string>
 		<key>drugclass</key>
@@ -336,6 +338,8 @@
 		<string>儿科用药</string>
 	</dict>
 	<dict>
+		<key>des</key>
+		<string>艾滋病、生殖器疱疹、带状疱疹</string>
 		<key>description</key>
 		<string>性病用药,性病用药药品,性病用药相关药品,治疗性病用药相关功能的药品,性病用药相关药品查询,性病用药药品库</string>
 		<key>drugclass</key>
@@ -435,6 +439,8 @@
 		<string>性病用药</string>
 	</dict>
 	<dict>
+		<key>des</key>
+		<string>麻风病、结核病</string>
 		<key>description</key>
 		<string>抗结核及麻风类,抗结核及麻风类药品,抗结核及麻风类相关药品,治疗抗结核及麻风类相关功能的药品,抗结核及麻风类相关药品查询,抗结核及麻风类药品库</string>
 		<key>drugclass</key>
@@ -486,6 +492,8 @@
 		<string>抗结核及麻风类</string>
 	</dict>
 	<dict>
+		<key>des</key>
+		<string>血小板减少、白细胞减少</string>
 		<key>description</key>
 		<string>血液疾病类,血液疾病类药品,血液疾病类相关药品,治疗血液疾病类相关功能的药品,血液疾病类相关药品查询,血液疾病类药品库</string>
 		<key>drugclass</key>
@@ -537,6 +545,8 @@
 		<string>血液疾病类</string>
 	</dict>
 	<dict>
+		<key>des</key>
+		<string>其它水电解质、低血糖、低血钾</string>
 		<key>description</key>
 		<string>水电解质及酸碱,水电解质及酸碱药品,水电解质及酸碱相关药品,治疗水电解质及酸碱相关功能的药品,水电解质及酸碱相关药品查询,水电解质及酸碱药品库</string>
 		<key>drugclass</key>

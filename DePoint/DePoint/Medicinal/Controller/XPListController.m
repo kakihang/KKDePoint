@@ -12,6 +12,7 @@
 @interface XPListController ()
 @property(nonatomic) NSMutableArray<XPListDataModel *> *data;
 @property(nonatomic)NSInteger page;
+
 @end
 
 @implementation XPListController
@@ -31,8 +32,7 @@
 #pragma mark - LifeCycle 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"-------------%ld",(long)_drug);
-    
+    self.tableView.frame = CGRectMake(0, 94, self.tableView.width, self.tableView.height);
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    CGFloat width = (self.view.bounds.size.width / 2 - 140);

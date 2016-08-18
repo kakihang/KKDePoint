@@ -38,7 +38,8 @@
             make.bottom.mas_equalTo(self.thirdBt.mas_top).equalTo(0);
         }];
         UIImageView *xp =[UIImageView new];
-        xp.image = [UIImage imageNamed:@"背景"];
+//        xp.image = [UIImage imageNamed:@"5"];
+        xp.backgroundColor = KKCOLOR(0, 104, 89, 0.8);
         xp.layer.cornerRadius = 15;
         xp.clipsToBounds = YES;
         [_firstBt addSubview:xp];
@@ -71,7 +72,8 @@
             make.right.equalTo(-10);
         }];
         UIImageView *xp =[UIImageView new];
-        xp.image = [UIImage imageNamed:@"背景"];
+//        xp.image = [UIImage imageNamed:@"5"];
+        xp.backgroundColor = KKCOLOR(0, 104, 89, 0.8);
         xp.layer.cornerRadius = 15;
         xp.clipsToBounds = YES;
         [_secondBt addSubview:xp];
@@ -100,7 +102,8 @@
             make.bottom.equalTo(-10);
         }];
         UIImageView *xp =[UIImageView new];
-        xp.image = [UIImage imageNamed:@"背景"];
+//        xp.image = [UIImage imageNamed:@"5"];
+        xp.backgroundColor = KKCOLOR(0, 104, 89, 0.8);
         xp.layer.cornerRadius = 15;
         xp.clipsToBounds = YES;
         [_thirdBt addSubview:xp];

@@ -15,7 +15,7 @@
 @end
 @implementation XPDrugNexineDataModel
 +(NSDictionary<NSString *,id> *)modelCustomPropertyMapper{
-    return @{@"ID":@"id",@"desc":@"description"};
+    return @{@"ID":@"id",@"desc":@"description"}; 
 }
 @end
 

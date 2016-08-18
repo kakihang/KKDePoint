@@ -7,13 +7,13 @@
 //
 
 #import "XPMediController.h"
+#import "XPMedClassVC.h"
 #import "XPMediHclassTVCell.h"
 #import "XPMediMClassTVCell.h"
 #import "XPMediTClassTVCell.h"
 #import "XPNetManager.h"
 #import "XPMedClassVC.h"
 #import "XPSearchController.h"
-
 @interface XPMediController ()<XPMedCellClickDelegate,XPMedCellDelegate>
 @property (nonatomic) NSArray *data;
 @end
@@ -123,7 +123,7 @@ static NSString *three = @"XPMedCellthree";
     [self.navigationController pushViewController:[[XPMedClassVC alloc]initWithClassIndex:selectBt nindex:index data:self.data] animated:YES];
 }
 -(void)cellClick:(NSInteger)index{//更多详情
-    [self.navigationController pushViewController:[[XPMedClassVC alloc]initWithClassIndex:selectBt nindex:index data:self.data] animated:YES];
+     [self.navigationController pushViewController:[[XPMedClassVC alloc]initWithClassIndex:selectBt nindex:index data:self.data] animated:YES];
 }
 
 

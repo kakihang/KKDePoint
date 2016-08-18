@@ -18,7 +18,8 @@
         _xpClick = [NSMutableArray new];
         UIButton *c = nil;
         for(int i =0;i<4;i++){
-            XPButton *v =[XPButton buttonWithTitle:@"" imgName:@"背景"];
+            NSString *im = [NSString stringWithFormat:@"y%d",i +1];
+            XPButton *v =[XPButton buttonWithTitle:@"" imgName:im];
             CGFloat width = (self.contentView.bounds.size.width - 92) /4;
             [_xpClick addObject:v];
             [self.contentView addSubview:v];
@@ -48,7 +49,7 @@
         [_moretn setBackgroundColor:[UIColor clearColor]];
         [self.contentView addSubview:_moretn];
         [_moretn bk_addEventHandler:^(id sender) {
-            [self.XPCellDelegate cellClick:0];
+            [self.XPCellDelegate cellClick:4];
         } forControlEvents:UIControlEventTouchUpInside];
         [_moretn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(115);

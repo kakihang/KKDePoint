@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @protocol XPMedCellDelegate<NSObject>
 -(void)cellClick:(NSInteger)index;
+
 @end
 
 @interface XPMediHclassTVCell : UITableViewCell

@@ -12,4 +12,5 @@
 -(instancetype)initWithClassIndex:(NSInteger)cindex nindex:(NSInteger)nindex data:(NSArray *)plistData;
 
 
+
 @end
