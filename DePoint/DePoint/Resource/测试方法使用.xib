@@ -32,18 +32,27 @@
                         <action selector="ch:" destination="iN0-l3-epB" eventType="valueChanged" id="wLd-Ji-SQE"/>
                     </connections>
                 </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P6f-99-IAR">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" red="1" green="0.37204167539166577" blue="0.3725124766218133" alpha="1" colorSpace="calibratedRGB"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="113" y="328" width="155" height="128"/>
+                    </variation>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="gRJ-dA-i8W"/>
                     <exclude reference="jR1-my-6Ox"/>
+                    <exclude reference="P6f-99-IAR"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
                     <include reference="gRJ-dA-i8W"/>
                     <include reference="jR1-my-6Ox"/>
+                    <include reference="P6f-99-IAR"/>
                 </mask>
             </variation>
         </view>

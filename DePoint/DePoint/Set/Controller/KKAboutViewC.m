@@ -8,7 +8,6 @@
 
 #import "KKAboutViewC.h"
 
-#import "KKSanBox.h"
 
 
 @implementation KKAboutViewC

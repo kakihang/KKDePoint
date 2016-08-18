@@ -32,7 +32,7 @@
 #import "NSDate+Extension.h"
 #import "UIView+Frame.h"
 #import "UIView+HUD.h"
-#import "KKSanBox.h"   // 沙盒处理
+#import "KKMedicineDataHandle.h"   // 数据存储处理
 #import "UIImageView+KKExtension.h"
 #import "UIView+KKVisualEff.h"
 #import "UIButton+KKExtension.h"

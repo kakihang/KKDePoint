@@ -132,7 +132,6 @@
     [self.window makeKeyAndVisible];
     NSLog(@"%@", NSStringFromCGRect([UIScreen mainScreen].bounds));
     
-    
     return YES;
 }
 

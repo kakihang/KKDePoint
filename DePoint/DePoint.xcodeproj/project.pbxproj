@@ -17,9 +17,6 @@
 		264B33401D5B0A67000C8911 /* UIView+KKVisualEff.m in Sources */ = {isa = PBXBuildFile; fileRef = 264B333F1D5B0A67000C8911 /* UIView+KKVisualEff.m */; };
 		264B33431D5B1418000C8911 /* KKLoginShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 264B33421D5B1418000C8911 /* KKLoginShowView.m */; };
 		264B33481D5B5D58000C8911 /* UIButton+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 264B33471D5B5D58000C8911 /* UIButton+KKExtension.m */; };
-		2654FE1A1D517AA40051FA41 /* KKMedicineChestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE191D517AA40051FA41 /* KKMedicineChestModel.m */; };
-		2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */; };
-		2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654FE1F1D5189BD0051FA41 /* KKSanBox.m */; };
 		265671451D62CFDD00AC3DD9 /* KKChangePassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265671441D62CFDD00AC3DD9 /* KKChangePassVC.m */; };
 		265E62361D53658B00D65A37 /* KKFeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265E62351D53658B00D65A37 /* KKFeedBackVC.m */; };
 		267DF2DE1D648B74005D2639 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2BE1D648B74005D2639 /* JRSwizzle.m */; };
@@ -65,6 +62,8 @@
 		269EFE8C1D6499EC0011E89B /* XPTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE821D6499EC0011E89B /* XPTextViewCell.m */; };
 		269EFE8D1D6499EC0011E89B /* XPMediMClassTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE841D6499EC0011E89B /* XPMediMClassTVCell.m */; };
 		269EFE901D649A8F0011E89B /* XPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE8F1D649A8F0011E89B /* XPButton.m */; };
+		269EFE991D653F310011E89B /* KKMedicineDataHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE981D653F310011E89B /* KKMedicineDataHandle.m */; };
+		269EFE9C1D6547F60011E89B /* KKMedicineDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE9B1D6547F60011E89B /* KKMedicineDataModel.m */; };
 		26A657BA1D61E6C000EAC5C1 /* KKLoginInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A657B91D61E6C000EAC5C1 /* KKLoginInfoVC.m */; };
 		26A8A1681D503AC8007894CD /* KKNearbyTViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8A1671D503AC8007894CD /* KKNearbyTViewCell.m */; };
 		26A8A16B1D5051FC007894CD /* KKColumnButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A8A16A1D5051FC007894CD /* KKColumnButtons.m */; };
@@ -96,6 +95,7 @@
 		26D6BD7D1D42536700CFBB01 /* KKSetVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6BD7C1D42536700CFBB01 /* KKSetVCtrl.m */; };
 		26E2AB341D6317B400A1463C /* KKAlertWithVerifyAndCancel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E2AB331D6317B400A1463C /* KKAlertWithVerifyAndCancel.m */; };
 		26E2AB371D63430B00A1463C /* UITableViewCell+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E2AB361D63430B00A1463C /* UITableViewCell+KKExtension.m */; };
+		26E575F71D65909A00FE3593 /* KKMedicineChestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E575F61D65909A00FE3593 /* KKMedicineChestVC.m */; };
 		26E582851D52C7D8007FB00E /* KKSetViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E582841D52C7D8007FB00E /* KKSetViewModel.m */; };
 		26E582881D52CF83007FB00E /* KKSetTViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E582871D52CF83007FB00E /* KKSetTViewCell.m */; };
 		26E5828C1D52ED7E007FB00E /* KKAboutViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5828B1D52ED7E007FB00E /* KKAboutViewC.m */; };
@@ -146,12 +146,6 @@
 		264B33421D5B1418000C8911 /* KKLoginShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLoginShowView.m; sourceTree = "<group>"; };
 		264B33461D5B5D58000C8911 /* UIButton+KKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+KKExtension.h"; sourceTree = "<group>"; };
 		264B33471D5B5D58000C8911 /* UIButton+KKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+KKExtension.m"; sourceTree = "<group>"; };
-		2654FE181D517AA40051FA41 /* KKMedicineChestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMedicineChestModel.h; sourceTree = "<group>"; };
-		2654FE191D517AA40051FA41 /* KKMedicineChestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMedicineChestModel.m; sourceTree = "<group>"; };
-		2654FE1B1D517ACB0051FA41 /* KKCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCollectionModel.h; sourceTree = "<group>"; };
-		2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCollectionModel.m; sourceTree = "<group>"; };
-		2654FE1E1D5189BD0051FA41 /* KKSanBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSanBox.h; sourceTree = "<group>"; };
-		2654FE1F1D5189BD0051FA41 /* KKSanBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSanBox.m; sourceTree = "<group>"; };
 		265671431D62CFDD00AC3DD9 /* KKChangePassVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKChangePassVC.h; sourceTree = "<group>"; };
 		265671441D62CFDD00AC3DD9 /* KKChangePassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKChangePassVC.m; sourceTree = "<group>"; };
 		265E62341D53658B00D65A37 /* KKFeedBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFeedBackVC.h; sourceTree = "<group>"; };
@@ -245,6 +239,10 @@
 		269EFE871D6499EC0011E89B /* XPListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPListViewCell.h; sourceTree = "<group>"; };
 		269EFE8E1D649A8F0011E89B /* XPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPButton.h; sourceTree = "<group>"; };
 		269EFE8F1D649A8F0011E89B /* XPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPButton.m; sourceTree = "<group>"; };
+		269EFE971D653F310011E89B /* KKMedicineDataHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMedicineDataHandle.h; sourceTree = "<group>"; };
+		269EFE981D653F310011E89B /* KKMedicineDataHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMedicineDataHandle.m; sourceTree = "<group>"; };
+		269EFE9A1D6547F60011E89B /* KKMedicineDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMedicineDataModel.h; sourceTree = "<group>"; };
+		269EFE9B1D6547F60011E89B /* KKMedicineDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMedicineDataModel.m; sourceTree = "<group>"; };
 		26A657B81D61E6C000EAC5C1 /* KKLoginInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLoginInfoVC.h; sourceTree = "<group>"; };
 		26A657B91D61E6C000EAC5C1 /* KKLoginInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLoginInfoVC.m; sourceTree = "<group>"; };
 		26A8A1661D503AC8007894CD /* KKNearbyTViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNearbyTViewCell.h; sourceTree = "<group>"; };
@@ -311,6 +309,8 @@
 		26E2AB331D6317B400A1463C /* KKAlertWithVerifyAndCancel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAlertWithVerifyAndCancel.m; sourceTree = "<group>"; };
 		26E2AB351D63430B00A1463C /* UITableViewCell+KKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+KKExtension.h"; sourceTree = "<group>"; };
 		26E2AB361D63430B00A1463C /* UITableViewCell+KKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+KKExtension.m"; sourceTree = "<group>"; };
+		26E575F51D65909A00FE3593 /* KKMedicineChestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMedicineChestVC.h; sourceTree = "<group>"; };
+		26E575F61D65909A00FE3593 /* KKMedicineChestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMedicineChestVC.m; sourceTree = "<group>"; };
 		26E582831D52C7D8007FB00E /* KKSetViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSetViewModel.h; sourceTree = "<group>"; };
 		26E582841D52C7D8007FB00E /* KKSetViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSetViewModel.m; sourceTree = "<group>"; };
 		26E582861D52CF83007FB00E /* KKSetTViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSetTViewCell.h; sourceTree = "<group>"; };
@@ -681,6 +681,8 @@
 				265671441D62CFDD00AC3DD9 /* KKChangePassVC.m */,
 				265E62341D53658B00D65A37 /* KKFeedBackVC.h */,
 				265E62351D53658B00D65A37 /* KKFeedBackVC.m */,
+				26E575F51D65909A00FE3593 /* KKMedicineChestVC.h */,
+				26E575F61D65909A00FE3593 /* KKMedicineChestVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -688,10 +690,8 @@
 		26D6BD371D4243DF00CFBB01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2654FE181D517AA40051FA41 /* KKMedicineChestModel.h */,
-				2654FE191D517AA40051FA41 /* KKMedicineChestModel.m */,
-				2654FE1B1D517ACB0051FA41 /* KKCollectionModel.h */,
-				2654FE1C1D517ACB0051FA41 /* KKCollectionModel.m */,
+				269EFE9A1D6547F60011E89B /* KKMedicineDataModel.h */,
+				269EFE9B1D6547F60011E89B /* KKMedicineDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -724,8 +724,8 @@
 		26D6BD391D4243DF00CFBB01 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2654FE1E1D5189BD0051FA41 /* KKSanBox.h */,
-				2654FE1F1D5189BD0051FA41 /* KKSanBox.m */,
+				269EFE971D653F310011E89B /* KKMedicineDataHandle.h */,
+				269EFE981D653F310011E89B /* KKMedicineDataHandle.m */,
 				26E582831D52C7D8007FB00E /* KKSetViewModel.h */,
 				26E582841D52C7D8007FB00E /* KKSetViewModel.m */,
 				26B9D42C1D5E9D1F00BBEBE0 /* KKCheckUtil.h */,
@@ -1162,6 +1162,7 @@
 				26D6BD5A1D42456F00CFBB01 /* NSObject+Parse.m in Sources */,
 				267DF2E81D648B74005D2639 /* LLIntroBelowCell.m in Sources */,
 				264590B41D5DB84B005A42D5 /* KKRegisterMsgViewC.m in Sources */,
+				269EFE9C1D6547F60011E89B /* KKMedicineDataModel.m in Sources */,
 				264590B11D5DB418005A42D5 /* KKTest.m in Sources */,
 				26B9D42E1D5E9D1F00BBEBE0 /* KKCheckUtil.m in Sources */,
 				269EFE891D6499EC0011E89B /* XPListViewCell.m in Sources */,
@@ -1174,10 +1175,10 @@
 				26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */,
 				269702101D62ADE300EF59E5 /* UIButton+KKLoginButton.m in Sources */,
 				268A10AF1D5A2788009E8962 /* UIImageView+KKExtension.m in Sources */,
-				2654FE201D5189BD0051FA41 /* KKSanBox.m in Sources */,
 				269EFE6A1D6499BB0011E89B /* XPDrugController.m in Sources */,
 				269EFE6B1D6499BB0011E89B /* XPNexineController.m in Sources */,
 				269EFE771D6499D10011E89B /* XPSearchModel.m in Sources */,
+				26E575F71D65909A00FE3593 /* KKMedicineChestVC.m in Sources */,
 				265E62361D53658B00D65A37 /* KKFeedBackVC.m in Sources */,
 				2635A9F81D5C239900BF181F /* UITextField+KKExtension.m in Sources */,
 				26D6BD7A1D42534400CFBB01 /* KKNearVCtrl.m in Sources */,
@@ -1196,6 +1197,7 @@
 				267DF2EC1D648BEE005D2639 /* KKSearchVC.m in Sources */,
 				264B33481D5B5D58000C8911 /* UIButton+KKExtension.m in Sources */,
 				26D6BD5B1D42456F00CFBB01 /* NSString+YX.m in Sources */,
+				269EFE991D653F310011E89B /* KKMedicineDataHandle.m in Sources */,
 				26A657BA1D61E6C000EAC5C1 /* KKLoginInfoVC.m in Sources */,
 				26B9D4541D60A5F900BBEBE0 /* KKLoginProc.m in Sources */,
 				267DF2E21D648B74005D2639 /* NSDictionary+Unicode.m in Sources */,
@@ -1216,11 +1218,9 @@
 				264590B71D5DCA04005A42D5 /* KKRegisterPassViewC.m in Sources */,
 				26D6BD6D1D42503400CFBB01 /* UIView+Frame.m in Sources */,
 				267DF2E41D648B74005D2639 /* LLScanningModel.m in Sources */,
-				2654FE1D1D517ACB0051FA41 /* KKCollectionModel.m in Sources */,
 				26E582A41D5315EC007FB00E /* KKCustomVC.m in Sources */,
 				269EFE681D6499BB0011E89B /* XPMediController.m in Sources */,
 				269EFE7B1D6499D10011E89B /* XPListModel.m in Sources */,
-				2654FE1A1D517AA40051FA41 /* KKMedicineChestModel.m in Sources */,
 				268F4C8B1D41A69100B8AD32 /* main.m in Sources */,
 				269EFE661D6499BB0011E89B /* XPListController.m in Sources */,
 				26D695B21D5CC61B0010A025 /* KKRegisterShowView.m in Sources */,

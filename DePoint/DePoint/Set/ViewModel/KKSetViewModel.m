@@ -9,7 +9,7 @@
 #import "KKAboutViewC.h"
 #import "KKFeedBackVC.h"
 #import "KKCustomVC.h"
-
+#import "KKMedicineChestVC.h"
 
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
@@ -63,7 +63,7 @@
     return self.dataList[indexPath.section][indexPath.row][@"viewController"];
 }
 
-- (block)getBlock:(NSIndexPath *)indexPath {
+- (KKSetViewModelBlock)getBlock:(NSIndexPath *)indexPath {
     return self.dataList[indexPath.section][indexPath.row][@"block"];
 }
 
@@ -72,26 +72,31 @@
 
 - (NSArray *)dataList {
     if(_dataList == nil) {
+        __weak typeof(self) weakSelf = self;
         _dataList =
         @[@[@{@"icon":@"set_icon",  //0-0
-              @"title":@"药箱"}/*,
-                              @{@"icon":@"set_icon",  //0-1
-                              @"title":@"收藏"}*/],
+              @"title":@"药箱",
+              @"block":^(id obj){
+                  [weakSelf pushViewContr:[[KKMedicineChestVC alloc] init] from:obj];
+              }
+              }/*,
+                @{@"icon":@"set_icon",  //0-1
+                @"title":@"收藏"}*/],
           
           @[@{@"icon":@"set_icon",  //1-0
               @"title":@"清除缓存",
               @"assist":^(void){
-                  return [self getCacheRoom];
+                  return [weakSelf getCacheRoom];
               },
               @"block":^(UITableViewController *obj){
-                  [self deleteCache:obj];
+                  [weakSelf deleteCache:obj];
                   [obj.tableView reloadData];
               }}],
           
           @[@{@"icon":@"set_icon",  //2-1
               @"title":@"推荐给朋友",
               @"block":^(id obj){
-                  [self shareToFriends];
+                  [weakSelf shareToFriends];
               }},
             @{@"icon":@"set_icon",  //2-2
               @"title":@"给我评分",
@@ -99,13 +104,13 @@
             @{@"icon":@"set_icon", //2-3
               @"title":@"意见反馈",
               @"block":^(id obj){
-                  [self pushViewContr:[[KKFeedBackVC alloc] init] from:obj];
+                  [weakSelf pushViewContr:[[KKFeedBackVC alloc] init] from:obj];
               }}],
           
           @[@{@"icon":@"set_icon",  //3-1
               @"title":@"关于",
               @"block":^(id obj){
-                  [self pushViewContr:[[KKAboutViewC alloc] init] from:obj];
+                  [weakSelf pushViewContr:[[KKAboutViewC alloc] init] from:obj];
               }}]];
     }
     return _dataList;

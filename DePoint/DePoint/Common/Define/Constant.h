@@ -68,7 +68,6 @@
 
 
 /** 代码块 **/
-
 // 归档处理对象代码
 #define KKFILE     unsigned int outCount; \
 Ivar *varList = class_copyIvarList(self.class, &outCount); \
@@ -92,6 +91,18 @@ id value = [aDecoder decodeObjectForKey:sname]; \
 [self setValue:value forKey:sname]; \
 } \
 free(varList);
+
+#define KK_DATA_CURING \
+- (void)encodeWithCoder:(NSCoder *)aCoder { \
+KKFILE; \
+} \
+- (id)initWithCoder:(NSCoder *)aDecoder { \
+if (self = [super init]) { \
+KKSOLFILE; \
+} \
+return self; \
+}
+
 
 #endif /* Constant_h */
 

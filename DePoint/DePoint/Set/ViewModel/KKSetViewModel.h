@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 
 
-typedef void(^block)(id obj);
+typedef void(^KKSetViewModelBlock)(id obj);
 
 @interface KKSetViewModel : NSObject
 
@@ -20,6 +20,6 @@ typedef void(^block)(id obj);
 - (NSString *)getTitleByIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)getAssistByIndexPath:(NSIndexPath *)indexPath;
 - (UIViewController *)getViewCtrlByIndexPath:(NSIndexPath *)indexPath;
-- (block)getBlock:(NSIndexPath *)indexPath;
+- (KKSetViewModelBlock)getBlock:(NSIndexPath *)indexPath;
 
 @end

@@ -76,7 +76,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {    
-    block run = [self.setViewModel getBlock:indexPath];
+    KKSetViewModelBlock run = [self.setViewModel getBlock:indexPath];
     !run?:run(self);
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
