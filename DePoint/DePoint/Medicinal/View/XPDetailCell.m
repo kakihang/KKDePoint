@@ -14,10 +14,11 @@
         _nameLb = [[UILabel alloc] init];
         _nameLb.font = [UIFont systemFontOfSize:16];
         [self.contentView addSubview:_nameLb];
+        __weak typeof(self) weakSelf = self;
         [_nameLb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.iconIV.mas_right);
-            make.centerY.equalTo(self.iconIV);
-            make.width.equalTo(self.contentView.mas_width);
+            make.left.equalTo(weakSelf.iconIV.mas_right);
+            make.centerY.equalTo(weakSelf.iconIV);
+            make.width.equalTo(weakSelf.contentView.mas_width);
         }];
     }
     return _nameLb;
@@ -43,9 +44,10 @@
         _textLb = [[UITextView alloc] init];
         _textLb.font = [UIFont systemFontOfSize:14];
         [self.contentView addSubview:_textLb];
+        __weak typeof(self) weakSelf = self;
         [_textLb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.equalTo(self.contentView.mas_width);
-            make.top.equalTo(self.iconIV.mas_bottom);
+            make.width.equalTo(weakSelf.contentView.mas_width);
+            make.top.equalTo(weakSelf.iconIV.mas_bottom);
             make.left.equalTo(0);
             make.height.equalTo(height);
         }];

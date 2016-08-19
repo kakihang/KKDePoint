@@ -38,10 +38,11 @@ static NSString *rightCell = @"rightCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    __weak typeof(self) weakSelf = self;
     [XPFactory addSearchItemForVC:self clickedHandler:^{
         XPSearchController *vc =[[XPSearchController alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
     _menuHiddex = YES;
     _height = 30;
@@ -59,6 +60,10 @@ static NSString *rightCell = @"rightCell";
     [self.leftView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
     [self setMainButtonTitle];
     [self XPnetwork:[NSIndexPath indexPathForRow:_nIndex inSection:0]];
+}
+
+- (void)dealloc {
+    NSLog(@"%s", __func__);
 }
 
 -(instancetype)initWithClassIndex:(NSInteger)cindex nindex:(NSInteger)nindex data:(NSArray *)plistData{
@@ -79,26 +84,27 @@ static NSString *rightCell = @"rightCell";
     self.bottomView.alpha = 0.4;
     self.leftBt.enabled = NO;
     self.rightBt.enabled = NO;
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.5 animations:^{
-        if (self.bgView.height == 0) {
-            [self.bgView mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_equalTo(self.leftBt.mas_bottom);
+        if (weakSelf.bgView.height == 0) {
+            [weakSelf.bgView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(weakSelf.leftBt.mas_bottom);
                 make.left.right.bottom.mas_equalTo(0);
                 [UIView animateWithDuration:0.5 animations:^{
-                    self.bottomView.alpha =1.0;
+                    weakSelf.bottomView.alpha =1.0;
                 }];
             }];
         } else {
-            [self.bgView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            [weakSelf.bgView mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.right.mas_equalTo(0);
-                make.top.mas_equalTo(self.leftBt.mas_bottom);
+                make.top.mas_equalTo(weakSelf.leftBt.mas_bottom);
                 make.height.mas_equalTo(0);
             }];
         }
-        [self.bgView.superview layoutIfNeeded];//强制绘制
+        [weakSelf.bgView.superview layoutIfNeeded];//强制绘制
     } completion:^(BOOL finished) {
-        self.leftBt.enabled = YES;
-        self.rightBt.enabled = YES;
+        weakSelf.leftBt.enabled = YES;
+        weakSelf.rightBt.enabled = YES;
     }];
 }
 #pragma make -
@@ -116,13 +122,11 @@ static NSString *rightCell = @"rightCell";
         UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:leftCell forIndexPath:indexPath];
         cell.textLabel.text = _plistData[indexPath.row][@"name"];
         cell.textLabel.font = [UIFont systemFontOfSize:18];
-        //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if(tableView ==self.rightView){
         UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:rightCell forIndexPath:indexPath];
         cell.textLabel.text = _plistData[_cIndex][@"idList"][indexPath.row][@"name"];
         cell.textLabel.font = [UIFont systemFontOfSize:18];
-        //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = KKCOLOR(217, 217, 217, 1);
         return cell;
     }else{
@@ -135,7 +139,6 @@ static NSString *rightCell = @"rightCell";
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(tableView ==self.leftView){
         _cIndex = indexPath.row;
         [self.rightView reloadData];
@@ -154,7 +157,6 @@ static NSString *rightCell = @"rightCell";
 - (UIButton *)leftBt {
     if(_leftBt == nil) {
         _leftBt = [[UIButton alloc] init];
-        //        self.leftBt.backgroundColor = [UIColor whiteColor];
         [_leftBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_leftBt addTarget:self action:@selector(clickMainButton) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_leftBt];
@@ -171,15 +173,15 @@ static NSString *rightCell = @"rightCell";
     if(_rightBt == nil) {
         _rightBt = [[UIButton alloc] init];
         [_rightBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        //        self.rightBt.backgroundColor = [UIColor whiteColor];
         [_rightBt addTarget:self action:@selector(clickMainButton) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_rightBt];
+        __weak typeof(self) weakSelf = self;
         [_rightBt mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(0);
-            make.top.mas_equalTo(self.leftBt);
-            make.height.mas_equalTo(self.leftBt);
-            make.left.mas_equalTo(self.leftBt.mas_right);
-            make.width.mas_equalTo(self.leftBt.mas_width);
+            make.top.mas_equalTo(weakSelf.leftBt);
+            make.height.mas_equalTo(weakSelf.leftBt);
+            make.left.mas_equalTo(weakSelf.leftBt.mas_right);
+            make.width.mas_equalTo(weakSelf.leftBt.mas_width);
         }];
     }
     return _rightBt;
@@ -190,9 +192,10 @@ static NSString *rightCell = @"rightCell";
         _leftView.dataSource = self;
         _leftView.delegate = self;
         [self.bgView addSubview:_leftView];
+        __weak typeof(self) weakSelf = self;
         [_leftView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.mas_equalTo(0);
-            make.bottom.mas_equalTo(self.bottomView.mas_top);
+            make.bottom.mas_equalTo(weakSelf.bottomView.mas_top);
         }];
     }
     return _leftView;
@@ -204,11 +207,12 @@ static NSString *rightCell = @"rightCell";
         _rightView.delegate = self;
         _rightView.backgroundColor = KKCOLOR(217, 217, 217, 1);
         [self.bgView addSubview:_rightView];
+        __weak typeof(self) weakSelf = self;
         [_rightView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.top.mas_equalTo(0);
-            make.left.mas_equalTo(self.leftView.mas_right);
-            make.width.mas_equalTo(self.leftView);
-            make.height.mas_equalTo(self.leftView);
+            make.left.mas_equalTo(weakSelf.leftView.mas_right);
+            make.width.mas_equalTo(weakSelf.leftView);
+            make.height.mas_equalTo(weakSelf.leftView);
         }];
     }
     return _rightView;
@@ -218,9 +222,9 @@ static NSString *rightCell = @"rightCell";
         _bgView = [[UIView alloc] init];
         _bgView.backgroundColor = [UIColor colorWithWhite:0.4 alpha:0.8];
         [self.view addSubview:_bgView];
+        __weak typeof(self) weakSelf = self;
         [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {            make.centerX.equalTo(0);
-            make.top.mas_equalTo(self.leftBt.mas_bottom);
-            //            make.left.right.bottom.mas_equalTo(0);
+            make.top.mas_equalTo(weakSelf.leftBt.mas_bottom);
             make.height.equalTo(0);
         }];
         UIView *bottomView = [[UIView alloc] init];
@@ -232,12 +236,12 @@ static NSString *rightCell = @"rightCell";
         }];
         bottomView.userInteractionEnabled = YES;
         [bottomView bk_whenTapped:^{
-            [self clickMainButton];
+            [weakSelf clickMainButton];
         }];
         
         UISwipeGestureRecognizer *gr = [[UISwipeGestureRecognizer alloc] bk_initWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
             bottomView.userInteractionEnabled = NO;
-            [self clickMainButton];
+            [weakSelf clickMainButton];
             bottomView.userInteractionEnabled = YES;
         }];
         [bottomView addGestureRecognizer:gr];
@@ -255,8 +259,9 @@ static NSString *rightCell = @"rightCell";
         _listView.dataSource =self;
         _listView.delegate = self;
         [self.view addSubview:_listView];
+        __weak typeof(self) weakSelf = self;
         [_listView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.leftBt.mas_bottom);
+            make.top.equalTo(weakSelf.leftBt.mas_bottom);
             make.left.right.bottom.equalTo(0);
         }];
     }

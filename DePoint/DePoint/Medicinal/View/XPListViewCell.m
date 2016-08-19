@@ -15,9 +15,10 @@
         _iconIV.contentMode = UIViewContentModeScaleAspectFill;
         _iconIV.clipsToBounds = YES;
         [self.contentView addSubview:_iconIV];
+        __weak typeof(self) weakSelf = self;
         [_iconIV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(-10);
-            make.top.equalTo(self.nameLb.mas_bottom).equalTo(10);
+            make.top.equalTo(weakSelf.nameLb.mas_bottom).equalTo(10);
             make.left.equalTo(10);
             make.size.equalTo(CGSizeMake(100, 80)).priorityHigh();
         }];
@@ -32,9 +33,10 @@
         CGFloat width = self.contentView.bounds.size.width - 130;
         _titleLb.numberOfLines = 4;
         [self.contentView addSubview:_titleLb];
+        __weak typeof(self) weakSelf = self;
         [_titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.iconIV);
-            make.left.equalTo(self.iconIV.mas_right).equalTo(10);
+            make.top.equalTo(weakSelf.iconIV);
+            make.left.equalTo(weakSelf.iconIV.mas_right).equalTo(10);
             make.width.equalTo(width).priorityHigh();
             make.right.equalTo(-10);
         }];
@@ -71,8 +73,8 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-   
+    
+    
 }
 
 @end

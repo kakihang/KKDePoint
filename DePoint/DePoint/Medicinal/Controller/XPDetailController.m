@@ -35,15 +35,15 @@
     [super viewDidLoad];
     self.tableView.scrollEnabled = NO;
     self.tableView.height = self.tableView.bounds.size.height;
+    __weak typeof(self) weakSelf = self;
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]bk_initWithTitle:@"返回" style:UIBarButtonItemStyleDone handler:^(id sender) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     }];
     self.navigationItem.leftBarButtonItem = leftItem;
     
     self.tableView.rowHeight = self.tableView.bounds.size.height;
     [self.tableView registerClass:[XPDetailCell class] forCellReuseIdentifier:@"Cell"];
     [self.tableView registerClass:[XPTextViewCell class] forCellReuseIdentifier:@"textCell"];
-    __weak typeof(self) weakSelf = self;
     [self.tableView addHeaderRefresh:^{
         [XPNetManager getDetail:weakSelf.idnt completionHandler:^(XPDetailModel *model, NSError *error) {
             [weakSelf.tableView endHeaderRefresh];
@@ -58,6 +58,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    NSLog(@"%s", __func__);
 }
 
 #pragma mark - Table view data source
@@ -84,20 +88,20 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if(indexPath.section == 0){
-//        XPDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-//        [cell.iconIV setImageWithURL:[NSString stringWithFormat:@"http://tnfs.tngou.net/image%@",self.data.img].yx_URL placeholder:[UIImage imageNamed:@"背景"]];
-//        cell.nameLb.text = self.data.name;
-//        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-//        self.tableView.rowHeight = 100;
-//        return cell;
-//    }else{
-        XPTextViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"textCell" forIndexPath:indexPath];
-        cell.textLb.text = self.viewLb;
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        return cell;
-//    }
-  }
+    //    if(indexPath.section == 0){
+    //        XPDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    //        [cell.iconIV setImageWithURL:[NSString stringWithFormat:@"http://tnfs.tngou.net/image%@",self.data.img].yx_URL placeholder:[UIImage imageNamed:@"背景"]];
+    //        cell.nameLb.text = self.data.name;
+    //        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    //        self.tableView.rowHeight = 100;
+    //        return cell;
+    //    }else{
+    XPTextViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"textCell" forIndexPath:indexPath];
+    cell.textLb.text = self.viewLb;
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    return cell;
+    //    }
+}
 -(void)hpple{
     NSString  *html = self.data.message;
     
@@ -109,7 +113,7 @@
         }
         [mustring deleteCharactersInRange:rang];
     }
-
+    
     NSData *htmlData =[html dataUsingEncoding:NSUTF8StringEncoding];
     NSString *nodeString = @"//p";
     TFHpple *xpathParser = [[TFHpple alloc]initWithHTMLData:htmlData];

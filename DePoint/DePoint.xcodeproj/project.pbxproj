@@ -774,14 +774,14 @@
 		26D6BD3E1D42440C00CFBB01 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				269EFE561D6499BB0011E89B /* XPMediController.h */,
+				269EFE581D6499BB0011E89B /* XPMediController.m */,
 				269EFE5C1D6499BB0011E89B /* XPDetailController.h */,
 				269EFE531D6499BB0011E89B /* XPDetailController.m */,
 				269EFE571D6499BB0011E89B /* XPSearchController.h */,
 				269EFE5A1D6499BB0011E89B /* XPSearchController.m */,
 				269EFE591D6499BB0011E89B /* XPMedClassVC.h */,
 				269EFE551D6499BB0011E89B /* XPMedClassVC.m */,
-				269EFE561D6499BB0011E89B /* XPMediController.h */,
-				269EFE581D6499BB0011E89B /* XPMediController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -814,12 +814,12 @@
 				269EFE7D1D6499EC0011E89B /* XPListViewCell.m */,
 				269EFE851D6499EC0011E89B /* XPMediHclassTVCell.h */,
 				269EFE7E1D6499EC0011E89B /* XPMediHclassTVCell.m */,
+				269EFE7F1D6499EC0011E89B /* XPMediMClassTVCell.h */,
+				269EFE841D6499EC0011E89B /* XPMediMClassTVCell.m */,
 				269EFE801D6499EC0011E89B /* XPMediTClassTVCell.h */,
 				269EFE811D6499EC0011E89B /* XPMediTClassTVCell.m */,
 				269EFE831D6499EC0011E89B /* XPTextViewCell.h */,
 				269EFE821D6499EC0011E89B /* XPTextViewCell.m */,
-				269EFE7F1D6499EC0011E89B /* XPMediMClassTVCell.h */,
-				269EFE841D6499EC0011E89B /* XPMediMClassTVCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";

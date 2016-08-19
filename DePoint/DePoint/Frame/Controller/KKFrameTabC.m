@@ -38,8 +38,8 @@
                         image:KKIMAGE(@"sear")
                 selectedImage:KKIMAGE(@"sear")];
     
-    // 添加病类子控制器
-    [self setupViewController:[[XPMediController alloc] init]
+    // 添加yaopin分类子控制器
+    [self setupViewController:[[XPMediController alloc] initWithStyle:UITableViewStyleGrouped]
                      navTitle:@"发现"
                   tabBarTitle:@"发现"
                         image:KKIMAGE(@"dis")

@@ -22,11 +22,12 @@
     if(searchBar.text.length >0){
         self.name = searchBar.text;
         [self.view hideHUD];
+        __weak typeof(self) weakSelf = self;
         [XPNetManager getSearch:self.name completionHandler:^(XPSearchModel *model, NSError *error) {
-            [self.view hideHUD];
-            self.data = model;
-            [self hpple];
-            [self.tableView reloadData];
+            [weakSelf.view hideHUD];
+            weakSelf.data = model;
+            [weakSelf hpple];
+            [weakSelf.tableView reloadData];
         }];
     }else{
         [self.view showWarning:@"请输入搜索内容"];
@@ -39,20 +40,21 @@
         bar.delegate = self;
         bar.placeholder = @"请输入搜索内容";
         self.navigationItem.titleView = bar;
+        __weak typeof(self) weakSelf = self;
         [XPFactory addSearchItemForVC:self clickedHandler:^{
             [bar endEditing:YES];
             if(bar.text.length>0){
-                self.name = bar.text;
-
-                [self.view showHUD];
-                [XPNetManager getSearch:self.name completionHandler:^(XPSearchModel *model, NSError *error) {
-                    [self.view hideHUD];
-                    self.data = model;
-                    [self hpple];
-                    [self.tableView reloadData];
+                weakSelf.name = bar.text;
+                
+                [weakSelf.view showHUD];
+                [XPNetManager getSearch:weakSelf.name completionHandler:^(XPSearchModel *model, NSError *error) {
+                    [weakSelf.view hideHUD];
+                    weakSelf.data = model;
+                    [weakSelf hpple];
+                    [weakSelf.tableView reloadData];
                 }];
             }else{
-                [self.view showWarning:@"请输入搜索内容"];
+                [weakSelf.view showWarning:@"请输入搜索内容"];
             }
         }];
     }
@@ -62,14 +64,14 @@
     [super viewDidLoad];
     self.tableView.height = self.tableView.bounds.size.height;
     self.tableView.scrollEnabled =NO;
+    __weak typeof(self) weakSelf = self;
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]bk_initWithTitle:@"返回" style:UIBarButtonItemStyleDone handler:^(id sender) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     }];
     self.navigationItem.leftBarButtonItem = leftItem;
     self.tableView.rowHeight = self.tableView.bounds.size.height;
     [self.tableView registerClass:[XPDetailCell class] forCellReuseIdentifier:@"Cell"];
     [self.tableView registerClass:[XPSearchCell class] forCellReuseIdentifier:@"textCell"];
-    __weak typeof(self) weakSelf = self;
     [self.tableView addHeaderRefresh:^{
         [XPNetManager getSearch:weakSelf.name completionHandler:^(XPSearchModel *model, NSError *error) {
             weakSelf.data = model;
@@ -78,6 +80,10 @@
             [weakSelf.tableView reloadData];
         }];
     }];
+}
+
+- (void)dealloc {
+    NSLog(@"%s", __func__);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,19 +108,19 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if(indexPath.section == 0){
-//        XPDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-//        [cell.iconIV setImageWithURL:[NSString stringWithFormat:@"http://tnfs.tngou.net/image%@",self.data.img].yx_URL placeholder:[UIImage imageNamed:@"背景"]];
-//        cell.nameLb.text = self.data.name;
-//        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-//        self.tableView.rowHeight = 100;
-//        return cell;
-//    }else{
-        XPSearchCell *cell =[tableView dequeueReusableCellWithIdentifier:@"textCell" forIndexPath:indexPath];
-        cell.textLb.text = self.viewLb;
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        return cell;
-//    }
+    //    if(indexPath.section == 0){
+    //        XPDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    //        [cell.iconIV setImageWithURL:[NSString stringWithFormat:@"http://tnfs.tngou.net/image%@",self.data.img].yx_URL placeholder:[UIImage imageNamed:@"背景"]];
+    //        cell.nameLb.text = self.data.name;
+    //        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    //        self.tableView.rowHeight = 100;
+    //        return cell;
+    //    }else{
+    XPSearchCell *cell =[tableView dequeueReusableCellWithIdentifier:@"textCell" forIndexPath:indexPath];
+    cell.textLb.text = self.viewLb;
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    return cell;
+    //    }
 }
 -(void)hpple{
     NSString  *html = self.data.message;
@@ -183,10 +189,10 @@
     self.viewLb = result;
 }
 - (XPSearchModel *)data {
-	if(_data == nil) {
-		_data = [[XPSearchModel alloc] init];
-	}
-	return _data;
+    if(_data == nil) {
+        _data = [[XPSearchModel alloc] init];
+    }
+    return _data;
 }
 
 @end

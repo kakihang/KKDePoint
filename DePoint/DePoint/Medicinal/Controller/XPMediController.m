@@ -20,6 +20,7 @@
 @end
 
 @implementation XPMediController{
+    CGFloat _headViewHeight;
     NSInteger selectBt;
     BOOL bt;
 }
@@ -27,19 +28,22 @@ static NSString *one = @"XPMedCellone";
 static NSString *two = @"XPMedCelltwo";
 static NSString *three = @"XPMedCellthree";
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     bt =NO;
+    _headViewHeight = WHeigth * 0.3;
+    __weak typeof(self) weakSelf = self;
     [XPFactory addSearchItemForVC:self clickedHandler:^{
         XPSearchController *vc =[[XPSearchController alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
     selectBt = 0;
     UIImageView *headView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"headView"]];
     headView.contentMode = UIViewContentModeScaleAspectFill;
     headView.clipsToBounds = YES;
-    [headView setFrame:CGRectMake(0, 0,KWidth,WHeigth * 0.3)];
+    [headView setFrame:CGRectMake(0, 0,KWidth,_headViewHeight)];
     [self.tableView registerClass:[XPMediHclassTVCell class] forCellReuseIdentifier:one];
     [self.tableView registerClass:[XPMediMClassTVCell class] forCellReuseIdentifier:two];
     [self.tableView registerClass:[XPMediTClassTVCell class] forCellReuseIdentifier:three];
@@ -66,22 +70,23 @@ static NSString *three = @"XPMedCellthree";
     return 1;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    __weak typeof(self) weakSelf = self;
     if(indexPath.section == 0){
         XPMediHclassTVCell *cell =[tableView dequeueReusableCellWithIdentifier:one forIndexPath:indexPath];
-        [cell.xpClick enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if(idx == 3){
-                [obj setTitle:@"更多详情" forState:UIControlStateNormal];
-            }else{
-                [obj setTitle:self.data[idx][@"name"] forState:UIControlStateNormal];
-            }
-        }];
-        if(bt !=YES){
+        if(bt != YES){
+            bt =YES;
+            [cell.xpClick enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if(idx == 3){
+                    [obj setTitle:@"更多详情" forState:UIControlStateNormal];
+                }else{
+                    [obj setTitle:weakSelf.data[idx][@"name"] forState:UIControlStateNormal];
+                }
+            }];
             [cell.xpClick enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 if(idx ==3){
                     [obj bk_addEventHandler:^(id sender) {
-                        [self.navigationController pushViewController:[[XPMedClassVC alloc]initWithClassIndex:selectBt nindex:idx data:self.data] animated:YES];
+                        [weakSelf.navigationController pushViewController:[[XPMedClassVC alloc]initWithClassIndex:selectBt nindex:idx data:weakSelf.data] animated:YES];
                     } forControlEvents:UIControlEventTouchUpInside];
                 }else{
                     [obj bk_addEventHandler:^(id sender) {
@@ -90,9 +95,8 @@ static NSString *three = @"XPMedCellthree";
                     } forControlEvents:UIControlEventTouchUpInside];
                 }
             }];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        bt =YES;
         return cell;
     }else if(indexPath.section == 1){
         XPMediMClassTVCell *cell =[tableView dequeueReusableCellWithIdentifier:two forIndexPath:indexPath];
@@ -110,21 +114,22 @@ static NSString *three = @"XPMedCellthree";
     }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    __weak typeof(self) weakSelf = self;
     if(indexPath.section == 0){
         return [tableView fd_heightForCellWithIdentifier:one configuration:^(XPMediHclassTVCell *cell) {
             [cell.xpClick enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                [obj setTitle:self.data[idx][@""] forState:UIControlStateNormal];
+                [obj setTitle:weakSelf.data[idx][@""] forState:UIControlStateNormal];
             }];
         }];
     }else if(indexPath.section == 1){
         return [tableView fd_heightForCellWithIdentifier:two configuration:^(XPMediMClassTVCell *cell) {
-            cell.label.text = self.data[selectBt][@"name"];
+            cell.label.text = weakSelf.data[selectBt][@"name"];
         }];
     }else{
         return [tableView fd_heightForCellWithIdentifier:three configuration:^(XPMediTClassTVCell *cell) {
-            [cell.firstBt setTitle:self.data[selectBt][@"idList"][0][@"name"] forState:UIControlStateNormal];
-            [cell.secondBt setTitle:self.data[selectBt][@"idList"][1][@"name"] forState:UIControlStateNormal];
-            [cell.thirdBt setTitle:self.data[selectBt][@"idList"][2][@"name"] forState:UIControlStateNormal];
+            [cell.firstBt setTitle:weakSelf.data[selectBt][@"idList"][0][@"name"] forState:UIControlStateNormal];
+            [cell.secondBt setTitle:weakSelf.data[selectBt][@"idList"][1][@"name"] forState:UIControlStateNormal];
+            [cell.thirdBt setTitle:weakSelf.data[selectBt][@"idList"][2][@"name"] forState:UIControlStateNormal];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }];
     }

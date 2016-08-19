@@ -14,11 +14,12 @@
         _textLb = [[UITextView alloc] init];
         _textLb.font = [UIFont systemFontOfSize:14];
         [self.contentView addSubview:_textLb];
+        __weak typeof(self) weakSelf = self;
         [_textLb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.equalTo(self.contentView.mas_width);
+            make.width.equalTo(weakSelf.contentView.mas_width);
             make.top.equalTo(0);
             make.left.equalTo(0);
-            make.height.equalTo(self.contentView.mas_height).equalTo(-30);
+            make.height.equalTo(weakSelf.contentView.mas_height).equalTo(-30);
         }];
     }
     return _textLb;
@@ -30,7 +31,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

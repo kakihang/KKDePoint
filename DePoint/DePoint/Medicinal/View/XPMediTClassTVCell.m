@@ -23,22 +23,21 @@
 - (UIButton *)firstBt {
     if(_firstBt == nil) {
         _firstBt = [[UIButton alloc] init];
+        __weak typeof(self) weakSelf = self;
         [self.contentView addSubview:_firstBt];
         [_firstBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        //        [_firstBt setBackgroundColor:[UIColor greenColor]];
         _firstBt.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         _firstBt.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
         [_firstBt bk_addEventHandler:^(id sender) {
-            [self.XPCellClickDelegate cellClickIndex:0];
+            [weakSelf.XPCellClickDelegate cellClickIndex:0];
         } forControlEvents:UIControlEventTouchUpInside];
         [_firstBt mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(10);
             make.top.mas_equalTo(10);
-            make.size.mas_equalTo(CGSizeMake(self.contentView.bounds.size.width / 2, 50)).priorityHigh();
-            make.bottom.mas_equalTo(self.thirdBt.mas_top).equalTo(0);
+            make.size.mas_equalTo(CGSizeMake(weakSelf.contentView.bounds.size.width / 2, 50)).priorityHigh();
+            make.bottom.mas_equalTo(weakSelf.thirdBt.mas_top).equalTo(0);
         }];
         UIImageView *xp =[UIImageView new];
-//        xp.image = [UIImage imageNamed:@"5"];
         xp.backgroundColor = KKCOLOR(0, 104, 89, 0.8);
         xp.layer.cornerRadius = 15;
         xp.clipsToBounds = YES;
@@ -56,23 +55,22 @@
 - (UIButton *)secondBt {
     if(_secondBt == nil) {
         _secondBt = [[UIButton alloc] init];
-        //        _secondBt.backgroundColor = [UIColor greenColor];
         [_secondBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self.contentView addSubview:_secondBt];
         _secondBt.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
         _secondBt.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        __weak typeof(self) weakSelf = self;
         [_secondBt bk_addEventHandler:^(id sender) {
-            [self.XPCellClickDelegate cellClickIndex:1];
+            [weakSelf.XPCellClickDelegate cellClickIndex:1];
         } forControlEvents:UIControlEventTouchUpInside];
         [_secondBt mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_firstBt.mas_right).equalTo(1);
             make.top.equalTo(10);
             make.size.equalTo(_firstBt).priorityHigh();
-            make.bottom.equalTo(self.firstBt.mas_bottom);
+            make.bottom.equalTo(weakSelf.firstBt.mas_bottom);
             make.right.equalTo(-10);
         }];
         UIImageView *xp =[UIImageView new];
-//        xp.image = [UIImage imageNamed:@"5"];
         xp.backgroundColor = KKCOLOR(0, 104, 89, 0.8);
         xp.layer.cornerRadius = 15;
         xp.clipsToBounds = YES;
@@ -93,16 +91,16 @@
         _thirdBt.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
         _thirdBt.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [self.contentView addSubview:_thirdBt];
+        __weak typeof(self) weakSelf = self;
         [_thirdBt bk_addEventHandler:^(id sender) {
-            [self.XPCellClickDelegate cellClickIndex:2];
+            [weakSelf.XPCellClickDelegate cellClickIndex:2];
         } forControlEvents:UIControlEventTouchUpInside];
         [_thirdBt mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.firstBt.mas_left);
+            make.left.equalTo(weakSelf.firstBt.mas_left);
             make.size.equalTo(_firstBt).priorityHigh();
             make.bottom.equalTo(-10);
         }];
         UIImageView *xp =[UIImageView new];
-//        xp.image = [UIImage imageNamed:@"5"];
         xp.backgroundColor = KKCOLOR(0, 104, 89, 0.8);
         xp.layer.cornerRadius = 15;
         xp.clipsToBounds = YES;
