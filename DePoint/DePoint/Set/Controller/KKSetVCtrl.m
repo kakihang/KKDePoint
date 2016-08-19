@@ -15,6 +15,7 @@
 #import "KKLoginProc.h"
 #import "KKLoginInfoVC.h"
 #import "UIImage+KKUserHeadImage.h"
+#import "KKUserFileProc.h"
 
 
 @interface KKSetVCtrl() <UITableViewDataSource, UITableViewDelegate>

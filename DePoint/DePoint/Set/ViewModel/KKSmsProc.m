@@ -14,7 +14,8 @@
 
 NSString *zone = @"86";
 
-+ (void)kk_smsSendByPhone:(NSString *)phone completionHandler:(void (^)(NSError *error, NSString *errMsg))completionHandler {
++ (void)kk_smsSendByPhone:(NSString *)phone
+        completionHandler:(void (^)(NSError *error, NSString *errMsg))completionHandler {
     return [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phone zone:zone customIdentifier:nil result:^(NSError *error) {
         NSString *errMsg = error.userInfo[@"getVerificationCode"];
         errMsg = errMsg?errMsg:@"验证码发送失败";
@@ -23,7 +24,9 @@ NSString *zone = @"86";
     }];
 }
 
-+ (void)kk_smsCheckByPhone:(NSString *)phone smsCode:(NSString *)code completionHandler:(void (^)(NSError *error, NSString *errMsg))completionHandler {
++ (void)kk_smsCheckByPhone:(NSString *)phone
+                   smsCode:(NSString *)code
+         completionHandler:(void (^)(NSError *error, NSString *errMsg))completionHandler {
     return [SMSSDK commitVerificationCode:code phoneNumber:phone zone:zone result:^(NSError *error) {
         NSString *errMsg = error.userInfo[@"commitVerificationCode"];
         errMsg = errMsg?errMsg:@"验证码错误,请重新输入";

@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		2635A9F81D5C239900BF181F /* UITextField+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2635A9F71D5C239900BF181F /* UITextField+KKExtension.m */; };
 		2635A9FB1D5C2C2D00BF181F /* UILabel+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2635A9FA1D5C2C2D00BF181F /* UILabel+KKExtension.m */; };
-		2635A9FD1D5C536B00BF181F /* 测试方法使用.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2635A9FC1D5C536B00BF181F /* 测试方法使用.xib */; };
 		2635AA061D5C78D700BF181F /* KKJustifiedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2635AA051D5C78D700BF181F /* KKJustifiedLabel.m */; };
-		264590B11D5DB418005A42D5 /* KKTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 264590B01D5DB418005A42D5 /* KKTest.m */; };
 		264590B41D5DB84B005A42D5 /* KKRegisterMsgViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 264590B31D5DB84B005A42D5 /* KKRegisterMsgViewC.m */; };
 		264590B71D5DCA04005A42D5 /* KKRegisterPassViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 264590B61D5DCA04005A42D5 /* KKRegisterPassViewC.m */; };
 		264B33401D5B0A67000C8911 /* UIView+KKVisualEff.m in Sources */ = {isa = PBXBuildFile; fileRef = 264B333F1D5B0A67000C8911 /* UIView+KKVisualEff.m */; };
@@ -19,6 +17,8 @@
 		264B33481D5B5D58000C8911 /* UIButton+KKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 264B33471D5B5D58000C8911 /* UIButton+KKExtension.m */; };
 		265671451D62CFDD00AC3DD9 /* KKChangePassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265671441D62CFDD00AC3DD9 /* KKChangePassVC.m */; };
 		265E62361D53658B00D65A37 /* KKFeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265E62351D53658B00D65A37 /* KKFeedBackVC.m */; };
+		265E87FE1D669FC20087E173 /* KKUserFileProc.m in Sources */ = {isa = PBXBuildFile; fileRef = 265E87FD1D669FC20087E173 /* KKUserFileProc.m */; };
+		265E88001D66A9A50087E173 /* fei.png in Resources */ = {isa = PBXBuildFile; fileRef = 265E87FF1D66A9A50087E173 /* fei.png */; };
 		267DF2DE1D648B74005D2639 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2BE1D648B74005D2639 /* JRSwizzle.m */; };
 		267DF2DF1D648B74005D2639 /* LLFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2C01D648B74005D2639 /* LLFlowController.m */; };
 		267DF2E01D648B74005D2639 /* LLIntroController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DF2C21D648B74005D2639 /* LLIntroController.m */; };
@@ -43,13 +43,9 @@
 		269702101D62ADE300EF59E5 /* UIButton+KKLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2697020F1D62ADE300EF59E5 /* UIButton+KKLoginButton.m */; };
 		269EFE511D6499A30011E89B /* XPFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE501D6499A30011E89B /* XPFactory.m */; };
 		269EFE651D6499BB0011E89B /* XPDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE531D6499BB0011E89B /* XPDetailController.m */; };
-		269EFE661D6499BB0011E89B /* XPListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE541D6499BB0011E89B /* XPListController.m */; };
 		269EFE671D6499BB0011E89B /* XPMedClassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE551D6499BB0011E89B /* XPMedClassVC.m */; };
 		269EFE681D6499BB0011E89B /* XPMediController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE581D6499BB0011E89B /* XPMediController.m */; };
 		269EFE691D6499BB0011E89B /* XPSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE5A1D6499BB0011E89B /* XPSearchController.m */; };
-		269EFE6A1D6499BB0011E89B /* XPDrugController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE5E1D6499BB0011E89B /* XPDrugController.m */; };
-		269EFE6B1D6499BB0011E89B /* XPNexineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE611D6499BB0011E89B /* XPNexineController.m */; };
-		269EFE6C1D6499BB0011E89B /* XPPushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE631D6499BB0011E89B /* XPPushController.m */; };
 		269EFE771D6499D10011E89B /* XPSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE6E1D6499D10011E89B /* XPSearchModel.m */; };
 		269EFE781D6499D10011E89B /* XPDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE701D6499D10011E89B /* XPDetailModel.m */; };
 		269EFE791D6499D10011E89B /* XPDrugNexineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 269EFE721D6499D10011E89B /* XPDrugNexineModel.m */; };
@@ -104,6 +100,7 @@
 		26E582A31D5315EC007FB00E /* KKCustomNavigationC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5829E1D5315EC007FB00E /* KKCustomNavigationC.m */; };
 		26E582A41D5315EC007FB00E /* KKCustomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E582A01D5315EC007FB00E /* KKCustomVC.m */; };
 		26E5D7DC1D49AA8800B6CCC1 /* KKAnno.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E5D7DB1D49AA8800B6CCC1 /* KKAnno.m */; };
+		26EEDC401D66F7C9006EAE07 /* XPSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EEDC3F1D66F7C9006EAE07 /* XPSearchCell.m */; };
 		26FBBD501D54828F00EAAAA9 /* KKPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FBBD4F1D54828F00EAAAA9 /* KKPlaceholderTextView.m */; };
 		70C35D79B8847229B799CA52 /* libPods-DePoint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7A60D83CAB1FE7C8E3A9FF /* libPods-DePoint.a */; };
 /* End PBXBuildFile section */
@@ -131,11 +128,8 @@
 		2635A9F71D5C239900BF181F /* UITextField+KKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+KKExtension.m"; sourceTree = "<group>"; };
 		2635A9F91D5C2C2D00BF181F /* UILabel+KKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+KKExtension.h"; sourceTree = "<group>"; };
 		2635A9FA1D5C2C2D00BF181F /* UILabel+KKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+KKExtension.m"; sourceTree = "<group>"; };
-		2635A9FC1D5C536B00BF181F /* 测试方法使用.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "测试方法使用.xib"; sourceTree = "<group>"; };
 		2635AA041D5C78D700BF181F /* KKJustifiedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKJustifiedLabel.h; sourceTree = "<group>"; };
 		2635AA051D5C78D700BF181F /* KKJustifiedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKJustifiedLabel.m; sourceTree = "<group>"; };
-		264590AF1D5DB418005A42D5 /* KKTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKTest.h; sourceTree = "<group>"; };
-		264590B01D5DB418005A42D5 /* KKTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKTest.m; sourceTree = "<group>"; };
 		264590B21D5DB84B005A42D5 /* KKRegisterMsgViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKRegisterMsgViewC.h; sourceTree = "<group>"; };
 		264590B31D5DB84B005A42D5 /* KKRegisterMsgViewC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKRegisterMsgViewC.m; sourceTree = "<group>"; };
 		264590B51D5DCA04005A42D5 /* KKRegisterPassViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKRegisterPassViewC.h; sourceTree = "<group>"; };
@@ -150,6 +144,9 @@
 		265671441D62CFDD00AC3DD9 /* KKChangePassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKChangePassVC.m; sourceTree = "<group>"; };
 		265E62341D53658B00D65A37 /* KKFeedBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFeedBackVC.h; sourceTree = "<group>"; };
 		265E62351D53658B00D65A37 /* KKFeedBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFeedBackVC.m; sourceTree = "<group>"; };
+		265E87FC1D669FC20087E173 /* KKUserFileProc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKUserFileProc.h; sourceTree = "<group>"; };
+		265E87FD1D669FC20087E173 /* KKUserFileProc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKUserFileProc.m; sourceTree = "<group>"; };
+		265E87FF1D66A9A50087E173 /* fei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fei.png; sourceTree = "<group>"; };
 		2660E02D1D5859F900C651FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		267DF2BD1D648B74005D2639 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = LLController/JRSwizzle.h; sourceTree = "<group>"; };
 		267DF2BE1D648B74005D2639 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = LLController/JRSwizzle.m; sourceTree = "<group>"; };
@@ -200,7 +197,6 @@
 		269EFE4F1D6499A30011E89B /* XPFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPFactory.h; sourceTree = "<group>"; };
 		269EFE501D6499A30011E89B /* XPFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPFactory.m; sourceTree = "<group>"; };
 		269EFE531D6499BB0011E89B /* XPDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPDetailController.m; sourceTree = "<group>"; };
-		269EFE541D6499BB0011E89B /* XPListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPListController.m; sourceTree = "<group>"; };
 		269EFE551D6499BB0011E89B /* XPMedClassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPMedClassVC.m; sourceTree = "<group>"; };
 		269EFE561D6499BB0011E89B /* XPMediController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPMediController.h; sourceTree = "<group>"; };
 		269EFE571D6499BB0011E89B /* XPSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPSearchController.h; sourceTree = "<group>"; };
@@ -208,13 +204,6 @@
 		269EFE591D6499BB0011E89B /* XPMedClassVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPMedClassVC.h; sourceTree = "<group>"; };
 		269EFE5A1D6499BB0011E89B /* XPSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPSearchController.m; sourceTree = "<group>"; };
 		269EFE5C1D6499BB0011E89B /* XPDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPDetailController.h; sourceTree = "<group>"; };
-		269EFE5D1D6499BB0011E89B /* XPDrugController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPDrugController.h; sourceTree = "<group>"; };
-		269EFE5E1D6499BB0011E89B /* XPDrugController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPDrugController.m; sourceTree = "<group>"; };
-		269EFE5F1D6499BB0011E89B /* XPListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPListController.h; sourceTree = "<group>"; };
-		269EFE601D6499BB0011E89B /* XPNexineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPNexineController.h; sourceTree = "<group>"; };
-		269EFE611D6499BB0011E89B /* XPNexineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPNexineController.m; sourceTree = "<group>"; };
-		269EFE621D6499BB0011E89B /* XPPushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPPushController.h; sourceTree = "<group>"; };
-		269EFE631D6499BB0011E89B /* XPPushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPPushController.m; sourceTree = "<group>"; };
 		269EFE6D1D6499D10011E89B /* XPSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPSearchModel.h; sourceTree = "<group>"; };
 		269EFE6E1D6499D10011E89B /* XPSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPSearchModel.m; sourceTree = "<group>"; };
 		269EFE6F1D6499D10011E89B /* XPDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPDetailModel.h; sourceTree = "<group>"; };
@@ -329,6 +318,8 @@
 		26E582A11D5315EC007FB00E /* KKCustomVCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCustomVCConstants.h; sourceTree = "<group>"; };
 		26E5D7DA1D49AA8800B6CCC1 /* KKAnno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKAnno.h; sourceTree = "<group>"; };
 		26E5D7DB1D49AA8800B6CCC1 /* KKAnno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKAnno.m; sourceTree = "<group>"; };
+		26EEDC3E1D66F7C9006EAE07 /* XPSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPSearchCell.h; sourceTree = "<group>"; };
+		26EEDC3F1D66F7C9006EAE07 /* XPSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPSearchCell.m; sourceTree = "<group>"; };
 		26FBBD4E1D54828E00EAAAA9 /* KKPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPlaceholderTextView.h; sourceTree = "<group>"; };
 		26FBBD4F1D54828F00EAAAA9 /* KKPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPlaceholderTextView.m; sourceTree = "<group>"; };
 		4F7A60D83CAB1FE7C8E3A9FF /* libPods-DePoint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DePoint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -643,10 +634,8 @@
 		26D6BD341D4242FD00CFBB01 /* Resource-资源 */ = {
 			isa = PBXGroup;
 			children = (
+				265E87FF1D66A9A50087E173 /* fei.png */,
 				26ACAB1C1D58C28E002E4630 /* kk.medi.plist */,
-				2635A9FC1D5C536B00BF181F /* 测试方法使用.xib */,
-				264590AF1D5DB418005A42D5 /* KKTest.h */,
-				264590B01D5DB418005A42D5 /* KKTest.m */,
 			);
 			name = "Resource-资源";
 			path = Resource;
@@ -734,6 +723,8 @@
 				26B9D4501D6014D800BBEBE0 /* KKSmsProc.m */,
 				26B9D4521D60A5F900BBEBE0 /* KKLoginProc.h */,
 				26B9D4531D60A5F900BBEBE0 /* KKLoginProc.m */,
+				265E87FC1D669FC20087E173 /* KKUserFileProc.h */,
+				265E87FD1D669FC20087E173 /* KKUserFileProc.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -785,20 +776,12 @@
 			children = (
 				269EFE5C1D6499BB0011E89B /* XPDetailController.h */,
 				269EFE531D6499BB0011E89B /* XPDetailController.m */,
-				269EFE5F1D6499BB0011E89B /* XPListController.h */,
-				269EFE541D6499BB0011E89B /* XPListController.m */,
 				269EFE571D6499BB0011E89B /* XPSearchController.h */,
 				269EFE5A1D6499BB0011E89B /* XPSearchController.m */,
 				269EFE591D6499BB0011E89B /* XPMedClassVC.h */,
 				269EFE551D6499BB0011E89B /* XPMedClassVC.m */,
 				269EFE561D6499BB0011E89B /* XPMediController.h */,
 				269EFE581D6499BB0011E89B /* XPMediController.m */,
-				269EFE5D1D6499BB0011E89B /* XPDrugController.h */,
-				269EFE5E1D6499BB0011E89B /* XPDrugController.m */,
-				269EFE601D6499BB0011E89B /* XPNexineController.h */,
-				269EFE611D6499BB0011E89B /* XPNexineController.m */,
-				269EFE621D6499BB0011E89B /* XPPushController.h */,
-				269EFE631D6499BB0011E89B /* XPPushController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -823,18 +806,20 @@
 		26D6BD401D42440C00CFBB01 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				26EEDC3E1D66F7C9006EAE07 /* XPSearchCell.h */,
+				26EEDC3F1D66F7C9006EAE07 /* XPSearchCell.m */,
+				269EFE861D6499EC0011E89B /* XPDetailCell.h */,
 				269EFE7C1D6499EC0011E89B /* XPDetailCell.m */,
+				269EFE871D6499EC0011E89B /* XPListViewCell.h */,
 				269EFE7D1D6499EC0011E89B /* XPListViewCell.m */,
+				269EFE851D6499EC0011E89B /* XPMediHclassTVCell.h */,
 				269EFE7E1D6499EC0011E89B /* XPMediHclassTVCell.m */,
-				269EFE7F1D6499EC0011E89B /* XPMediMClassTVCell.h */,
 				269EFE801D6499EC0011E89B /* XPMediTClassTVCell.h */,
 				269EFE811D6499EC0011E89B /* XPMediTClassTVCell.m */,
-				269EFE821D6499EC0011E89B /* XPTextViewCell.m */,
 				269EFE831D6499EC0011E89B /* XPTextViewCell.h */,
+				269EFE821D6499EC0011E89B /* XPTextViewCell.m */,
+				269EFE7F1D6499EC0011E89B /* XPMediMClassTVCell.h */,
 				269EFE841D6499EC0011E89B /* XPMediMClassTVCell.m */,
-				269EFE851D6499EC0011E89B /* XPMediHclassTVCell.h */,
-				269EFE861D6499EC0011E89B /* XPDetailCell.h */,
-				269EFE871D6499EC0011E89B /* XPListViewCell.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1059,7 +1044,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2635A9FD1D5C536B00BF181F /* 测试方法使用.xib in Resources */,
+				265E88001D66A9A50087E173 /* fei.png in Resources */,
 				26ACAB1D1D58C28E002E4630 /* kk.medi.plist in Resources */,
 				268F4C991D41A69200B8AD32 /* LaunchScreen.storyboard in Resources */,
 				268F4C961D41A69200B8AD32 /* Assets.xcassets in Resources */,
@@ -1162,8 +1147,8 @@
 				26D6BD5A1D42456F00CFBB01 /* NSObject+Parse.m in Sources */,
 				267DF2E81D648B74005D2639 /* LLIntroBelowCell.m in Sources */,
 				264590B41D5DB84B005A42D5 /* KKRegisterMsgViewC.m in Sources */,
+				26EEDC401D66F7C9006EAE07 /* XPSearchCell.m in Sources */,
 				269EFE9C1D6547F60011E89B /* KKMedicineDataModel.m in Sources */,
-				264590B11D5DB418005A42D5 /* KKTest.m in Sources */,
 				26B9D42E1D5E9D1F00BBEBE0 /* KKCheckUtil.m in Sources */,
 				269EFE891D6499EC0011E89B /* XPListViewCell.m in Sources */,
 				269EFE881D6499EC0011E89B /* XPDetailCell.m in Sources */,
@@ -1175,8 +1160,6 @@
 				26AD7A0F1D4A447D009217B5 /* CLLocationManager+KKModel.m in Sources */,
 				269702101D62ADE300EF59E5 /* UIButton+KKLoginButton.m in Sources */,
 				268A10AF1D5A2788009E8962 /* UIImageView+KKExtension.m in Sources */,
-				269EFE6A1D6499BB0011E89B /* XPDrugController.m in Sources */,
-				269EFE6B1D6499BB0011E89B /* XPNexineController.m in Sources */,
 				269EFE771D6499D10011E89B /* XPSearchModel.m in Sources */,
 				26E575F71D65909A00FE3593 /* KKMedicineChestVC.m in Sources */,
 				265E62361D53658B00D65A37 /* KKFeedBackVC.m in Sources */,
@@ -1202,7 +1185,6 @@
 				26B9D4541D60A5F900BBEBE0 /* KKLoginProc.m in Sources */,
 				267DF2E21D648B74005D2639 /* NSDictionary+Unicode.m in Sources */,
 				26E582A31D5315EC007FB00E /* KKCustomNavigationC.m in Sources */,
-				269EFE6C1D6499BB0011E89B /* XPPushController.m in Sources */,
 				269EFE691D6499BB0011E89B /* XPSearchController.m in Sources */,
 				267DF2DF1D648B74005D2639 /* LLFlowController.m in Sources */,
 				265671451D62CFDD00AC3DD9 /* KKChangePassVC.m in Sources */,
@@ -1211,6 +1193,7 @@
 				26D6BD771D42532F00CFBB01 /* KKDisVCtrl.m in Sources */,
 				26E582A21D5315EC007FB00E /* KKCustomNavBarV.m in Sources */,
 				26E582881D52CF83007FB00E /* KKSetTViewCell.m in Sources */,
+				265E87FE1D669FC20087E173 /* KKUserFileProc.m in Sources */,
 				26D695AF1D5CBF290010A025 /* KKRegisterViewC.m in Sources */,
 				26AD7A021D4A2B01009217B5 /* KKCenterAnno.m in Sources */,
 				267DF2E71D648B74005D2639 /* LLFlowCell.m in Sources */,
@@ -1222,7 +1205,6 @@
 				269EFE681D6499BB0011E89B /* XPMediController.m in Sources */,
 				269EFE7B1D6499D10011E89B /* XPListModel.m in Sources */,
 				268F4C8B1D41A69100B8AD32 /* main.m in Sources */,
-				269EFE661D6499BB0011E89B /* XPListController.m in Sources */,
 				26D695B21D5CC61B0010A025 /* KKRegisterShowView.m in Sources */,
 				269EFE781D6499D10011E89B /* XPDetailModel.m in Sources */,
 				269EFE8C1D6499EC0011E89B /* XPTextViewCell.m in Sources */,

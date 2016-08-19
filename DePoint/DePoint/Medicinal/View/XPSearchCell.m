@@ -1,14 +1,14 @@
 //
-//  XPTextViewCell.m
+//  XPSearchCell.m
 //  DePoint
 //
-//  Created by apple on 16/8/15.
+//  Created by apple on 16/8/19.
 //  Copyright © 2016年 liudhkk. All rights reserved.
 //
 
-#import "XPTextViewCell.h"
+#import "XPSearchCell.h"
 
-@implementation XPTextViewCell
+@implementation XPSearchCell
 - (UITextView *)textLb {
     if(_textLb == nil) {
         _textLb = [[UITextView alloc] init];
@@ -18,7 +18,7 @@
             make.width.equalTo(self.contentView.mas_width);
             make.top.equalTo(0);
             make.left.equalTo(0);
-            make.height.equalTo(self.contentView.mas_height).equalTo(-90);
+            make.height.equalTo(self.contentView.mas_height).equalTo(-30);
         }];
     }
     return _textLb;

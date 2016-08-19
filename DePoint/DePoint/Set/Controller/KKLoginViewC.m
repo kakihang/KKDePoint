@@ -12,14 +12,12 @@
 #import "KKCheckUtil.h"
 
 #import <TencentOpenAPI/TencentOAuth.h>
-#import <BmobSDK/Bmob.h>
 #import "KKSmsProc.h"
 #import "KKLoginProc.h"
 
-@interface KKLoginViewC() <TencentSessionDelegate, UIWebViewDelegate>
+@interface KKLoginViewC() <TencentSessionDelegate>
 @property (nonatomic, strong)TencentOAuth *tencentOAuth;
 @property (nonatomic, weak) KKLoginShowView *showView; //
-@property (nonatomic, strong) UIWebView *qqWebView; //
 @end
 
 
@@ -50,7 +48,6 @@
 
 - (KKLoginShowView *)showView {
     if(_showView == nil) {
-        __weak typeof(self) weakSelf = self;
         _showView = [KKLoginShowView loginShowOnView:self.view];
         [_showView.loginBtn addTarget:self action:@selector(clickLoginButton) forControlEvents:UIControlEventTouchUpInside];
         [_showView.sendMag addTarget:self action:@selector(clickSendMsg) forControlEvents:UIControlEventTouchUpInside];
@@ -58,17 +55,8 @@
         [_showView.userTf addTarget:self action:@selector(textFieldValueChange) forControlEvents:UIControlEventAllEditingEvents];
         [_showView.passTf addTarget:self action:@selector(textFieldValueChange) forControlEvents:UIControlEventAllEditingEvents];
         [_showView.qqLoginBtn addTarget:self action:@selector(clickQQlogin) forControlEvents:UIControlEventTouchUpInside];
-        //        [_showView.wxLoginBtn addTarget:self action:@selector(clickWXText) forControlEvents:UIControlEventTouchUpInside];
-        [_showView.quickLoginBtn bk_addEventHandler:^(id sender) {
-            _isQuickLogin = YES;
-            [weakSelf.view endEditing:YES];
-            [weakSelf textFieldValueChange];
-        } forControlEvents:UIControlEventTouchUpInside];
-        [_showView.accLoginBtn bk_addEventHandler:^(id sender) {
-            _isQuickLogin = NO;
-            [weakSelf.view endEditing:YES];
-            [weakSelf textFieldValueChange];
-        } forControlEvents:UIControlEventTouchUpInside];
+        [_showView.quickLoginBtn addTarget:self action:@selector(clickQucikLoginButton) forControlEvents:UIControlEventTouchUpInside];
+        [_showView.accLoginBtn addTarget:self action:@selector(clickAccLoginButton) forControlEvents:UIControlEventTouchUpInside];
         _isQuickLogin = YES;
     }
     return _showView;
@@ -76,6 +64,17 @@
 
 - (void)dealloc {
     NSLog(@"%s", __func__);
+}
+
+- (void)clickQucikLoginButton {
+    _isQuickLogin = YES;
+    [self.view endEditing:YES];
+    [self textFieldValueChange];
+}
+- (void)clickAccLoginButton {
+    _isQuickLogin = NO;
+    [self.view endEditing:YES];
+    [self textFieldValueChange];
 }
 
 - (void)textFieldValueChange {
@@ -137,103 +136,7 @@
     [self.showView.sendMag setTitle:[NSString stringWithFormat:@"%zd%@", _sec--, @"s后发送"] forState:UIControlStateDisabled];
 }
 
-#pragma mark - 普通登录处理
-
-
 #pragma mark - QQ登录
-
-/** QQ互联需要注册网站 **/
-//- (void)webQQLogin {
-//    NSLog(@"%s", __func__);
-//    _qqWebView=[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-//    _qqWebView.backgroundColor = [UIColor whiteColor];
-//    _qqWebView.delegate =self;
-//    NSString *urlStr = [NSString stringWithFormat:@"https://graph.qq.com/oauth2.0/authorize?response_type=token&client_id=%@&display=mobile&redirect_uri=http://addon.discuz.com", APIKEY];
-//    
-//    NSURLRequest *request=[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlStr]];
-//    [_qqWebView loadRequest:request];
-//    [_qqWebView setUserInteractionEnabled:YES];
-//    
-//    [self.view addSubview:_qqWebView];
-//}
-//- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-//    NSLog(@"%s", __func__);
-//    NSString *requestString = [[[request URL] absoluteString] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    
-//    //    if ([requestString hasPrefix:@"QQLoginTest://"]) {
-//    //
-//    //如果是自己定义的协议, 再截取协议中的方法和参数, 判断无误后在这里手动调用oc方法
-//    
-//    if ([requestString hasPrefix:@"http://qzs.qq.com"]) {
-//        
-//        NSLog(@"requestString:%@",requestString);
-//        
-//        NSString *paramsStr = [[requestString componentsSeparatedByString:@"#&"] lastObject];
-//        NSArray *paramsArr = [paramsStr componentsSeparatedByString:@"&"];
-//        
-//        NSString *openid = [[paramsArr[0] componentsSeparatedByString:@"="] lastObject];
-//        NSString *token = [[paramsArr[2] componentsSeparatedByString:@"="] lastObject];
-//        
-//        
-//        [self getUserInfoWithToken:token openId:openid];
-//    }
-//    
-//    
-//    return YES;
-//}
-//
-//- (void)getUserInfoWithToken:(NSString *)token openId:(NSString *)openid{
-//    NSLog(@"%s", __func__);
-//    // https://graph.qq.com/user/get_simple_userinfo?access_token=F6XXXXD005CCF705D&oauth_consumer_key=XXXX463&openid=40XXXBA5D8667C&format=json
-//    
-//    NSString *url = [NSString stringWithFormat:@"https://graph.qq.com/user/get_simple_userinfo?access_token=%@&openid=%@&oauth_consumer_key=%@&format=json", token, openid, APIKEY];
-//    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        NSURL *zoneUrl = [NSURL URLWithString:url];
-//        NSString *zoneStr = [NSString stringWithContentsOfURL:zoneUrl encoding:NSUTF8StringEncoding error:nil];
-//        NSData *data = [zoneStr dataUsingEncoding:NSUTF8StringEncoding];
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            if (data)
-//            {
-//                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-//                NSLog(@"DIC:%@",dic);
-//                // 登录成功 可以获取用户信息
-//                /*
-//                 {
-//                 "ret": 0,
-//                 "msg": "",
-//                 "is_lost": 0,
-//                 "nickname": "ZZZZZZZ",
-//                 "gender": "男",
-//                 "province": "北京",
-//                 "city": "海淀",
-//                 "figureurl": "http://qzapp.qlogXXX32A09044BA5D8667C/30",
-//                 "figureurl_1": "http://qzapp.qlogo.XXXXA09044BA5D8667C/50",
-//                 "figureurl_2": "http://qzapp.qlogo.cnXXXX44BA5D8667C/100",
-//                 "figureurl_qq_1": "http://q.qlogoXXXF89F646432A09044BA5D8667C/40",
-//                 "figureurl_qq_2": "http://q.qlogo.XXXX46432A09044BA5D8667C/100",
-//                 "is_yellow_vip": "0",
-//                 "vip": "0",
-//                 "yellow_vip_level": "0",
-//                 "level": "0",
-//                 "is_yellow_year_vip": "0"
-//                 }
-//                 */
-//                
-//                
-//                _qqWebView.hidden = YES;
-//                //                self.head.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[dic objectForKey:@"figureurl_qq_2"]]]];
-//                //                self.nick.text = dic[@"nickname"];
-//                
-//            }
-//        });
-//        
-//    });
-//}
-
-
-
 
 - (void)clickQQlogin {
     NSLog(@"%zd  %zd", [TencentOAuth iphoneQQInstalled], [TencentOAuth iphoneQQSupportSSOLogin]);
@@ -292,13 +195,6 @@
 }
 
 #pragma mark - 微信
-//- (void)clickWXText {
-////    [self webQQLogin];
-//    //    BmobUser *user = [BmobUser getCurrentUser];
-//    //    NSLog(@"%@|%@|%@|%@", user.username, user.password, user.email, user.mobilePhoneNumber);
-//    //    NSLog(@"%zd", [TencentOAuth authorizeState]);;
-//    //    NSLog(@"%p", self.tencentOAuth);
-//}
 
 #pragma mark - 短信登录处理
 - (void)sendSms {

@@ -9,7 +9,7 @@
 #import "XPSearchController.h"
 #import "XPDetailCell.h"
 #import "XPSearchModel.h"
-#import "XPTextViewCell.h"
+#import "XPSearchCell.h"
 @interface XPSearchController ()<UISearchBarDelegate>
 @property(nonatomic) XPSearchModel *data;
 @property(nonatomic) NSString *viewLb;
@@ -58,9 +58,9 @@
     }
     return self;
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.height = self.tableView.bounds.size.height;
     self.tableView.scrollEnabled =NO;
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]bk_initWithTitle:@"返回" style:UIBarButtonItemStyleDone handler:^(id sender) {
         [self.navigationController popViewControllerAnimated:YES];
@@ -68,7 +68,7 @@
     self.navigationItem.leftBarButtonItem = leftItem;
     self.tableView.rowHeight = self.tableView.bounds.size.height;
     [self.tableView registerClass:[XPDetailCell class] forCellReuseIdentifier:@"Cell"];
-    [self.tableView registerClass:[XPTextViewCell class] forCellReuseIdentifier:@"textCell"];
+    [self.tableView registerClass:[XPSearchCell class] forCellReuseIdentifier:@"textCell"];
     __weak typeof(self) weakSelf = self;
     [self.tableView addHeaderRefresh:^{
         [XPNetManager getSearch:weakSelf.name completionHandler:^(XPSearchModel *model, NSError *error) {
@@ -83,13 +83,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 #pragma mark - Table view data source
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if(self.data.count==0){
         return 0;
     }else{
-        return 2;
+        return 1;
     }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -102,25 +101,21 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == 0){
-        XPDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-        [cell.iconIV setImageWithURL:[NSString stringWithFormat:@"http://tnfs.tngou.net/image%@",self.data.img].yx_URL placeholder:[UIImage imageNamed:@"背景"]];
-        cell.nameLb.text = self.data.name;
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        self.tableView.rowHeight = 100;
-        return cell;
-    }else{
-        XPTextViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"textCell" forIndexPath:indexPath];
+//    if(indexPath.section == 0){
+//        XPDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+//        [cell.iconIV setImageWithURL:[NSString stringWithFormat:@"http://tnfs.tngou.net/image%@",self.data.img].yx_URL placeholder:[UIImage imageNamed:@"背景"]];
+//        cell.nameLb.text = self.data.name;
+//        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//        self.tableView.rowHeight = 100;
+//        return cell;
+//    }else{
+        XPSearchCell *cell =[tableView dequeueReusableCellWithIdentifier:@"textCell" forIndexPath:indexPath];
         cell.textLb.text = self.viewLb;
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        self.tableView.rowHeight = self.tableView.bounds.size.height;
         return cell;
-    }
+//    }
 }
-
-
 -(void)hpple{
     NSString  *html = self.data.message;
     
@@ -187,8 +182,6 @@
     }];
     self.viewLb = result;
 }
-
-
 - (XPSearchModel *)data {
 	if(_data == nil) {
 		_data = [[XPSearchModel alloc] init];

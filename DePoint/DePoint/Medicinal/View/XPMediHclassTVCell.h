@@ -7,15 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol XPMedCellDelegate<NSObject>
--(void)cellClick:(NSInteger)index;
 
-@end
 
 @interface XPMediHclassTVCell : UITableViewCell
 @property(nonatomic) NSMutableArray<UIButton *> *xpClick;
-@property(nonatomic) UIButton *moretn;
-@property(nonatomic,weak)id<XPMedCellDelegate> XPCellDelegate;
+
 
 
 @end

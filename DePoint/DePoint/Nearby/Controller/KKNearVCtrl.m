@@ -25,20 +25,19 @@ static NSString *cellID = @"KKNearVCtrlCellId";
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) KKColumnButtons *store;
 @property (nonatomic, strong) KKColumnButtons *range;
+@property (atomic, assign) NSInteger didSelectCount;
 @end
 
 
 
 @implementation KKNearVCtrl {
     BOOL _search;
-    BOOL _selectFlag;
     NSInteger _selctCellRow;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%s", __func__);
-    
     self.tableView.rowHeight = 58; //后面会自动修改
     [self.tableView registerClass:[KKNearbyTViewCell class] forCellReuseIdentifier:cellID];
     [self.locationVM setSearchDelegate:self]; // 搜索代理
@@ -52,6 +51,7 @@ static NSString *cellID = @"KKNearVCtrlCellId";
         self.navigationController.navigationBar.hidden = YES;
     }
     // 开始定位 和 地图
+    _didSelectCount = 0;
     _search = NO;
     [self.view addSubview:self.mapView];
     self.mapView.delegate = self;
@@ -107,14 +107,14 @@ static NSString *cellID = @"KKNearVCtrlCellId";
 #pragma mark - MKMapViewDelegate
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-    
-    if (_search && !_selectFlag) {
+    if (_search && _didSelectCount==0) {
         [self removeAllAnnDatas];
         [self pointSearch:mapView.region.center];
-    }
-    if (_selectFlag) {
-        _selectFlag = NO;
+    } else if (_didSelectCount == 1) {
         [self.mapView setSelectedAnnotations:@[self.dataList[_selctCellRow]]];
+        _didSelectCount--;
+    } else if (_didSelectCount > 1) {
+        _didSelectCount--;
     }
     
     [self.store kk_setButtonArrHidden:YES];
@@ -157,11 +157,12 @@ static NSString *cellID = @"KKNearVCtrlCellId";
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     NSLog(@"%s", __func__);
+    __weak typeof(self) weakSelf = self;
     if (!_search) {
         _search = YES;
         [self pointSearch:userLocation.coordinate];
         [UIView animateWithDuration:1 animations:^{
-            [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, KKREGIONSPAN)];
+            [weakSelf.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, KKREGIONSPAN)];
         }];
     }
 }
@@ -173,7 +174,6 @@ static NSString *cellID = @"KKNearVCtrlCellId";
     if(response.pois.count == 0) {
         return;
     }
-    
     [self removeAllAnnDatas];
     for (AMapPOI *p in response.pois) {
         KKAnno *anno = [[KKAnno alloc] init];
@@ -203,10 +203,11 @@ static NSString *cellID = @"KKNearVCtrlCellId";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    __weak typeof(self) weakSelf = self;
     return [tableView fd_heightForCellWithIdentifier:cellID configuration:^(KKNearbyTViewCell *cell) {
-        cell.nameLb.text = self.dataList[indexPath.row].title;
-        cell.addressLb.text = self.dataList[indexPath.row].subtitle;
-        cell.distanceLb.text = [NSString stringWithFormat:@"%zd 米", self.dataList[indexPath.row].distance];
+        cell.nameLb.text = weakSelf.dataList[indexPath.row].title;
+        cell.addressLb.text = weakSelf.dataList[indexPath.row].subtitle;
+        cell.distanceLb.text = [NSString stringWithFormat:@"%zd 米", weakSelf.dataList[indexPath.row].distance];
     }];
 }
 
@@ -220,9 +221,10 @@ static NSString *cellID = @"KKNearVCtrlCellId";
     CGPoint currPoint = [self.mapView convertCoordinate:ann.coordinate toPointToView:self.mapView];
     CGPoint movePoint = centerPoint;
     
-    _selectFlag = NO;
+    
+    BOOL selectFlag = NO;
     if (fabs(currPoint.x - centerPoint.x) > xSide) {
-        _selectFlag = YES;
+        selectFlag = YES;
         if (currPoint.x > centerPoint.x) {
             movePoint.x = currPoint.x - xSide;
         } else {
@@ -231,7 +233,7 @@ static NSString *cellID = @"KKNearVCtrlCellId";
     }
     
     if (fabs(currPoint.y - centerPoint.y) > ySide) {
-        _selectFlag = YES;
+        selectFlag = YES;
         if (currPoint.y > centerPoint.y) {
             movePoint.y = currPoint.y - ySide;
         } else {
@@ -239,7 +241,8 @@ static NSString *cellID = @"KKNearVCtrlCellId";
         }
     }
     
-    if (_selectFlag) {
+    if (selectFlag) {
+        _didSelectCount++;
         _selctCellRow = indexPath.row;
         [self.mapView setCenterCoordinate:[self.mapView convertPoint:movePoint toCoordinateFromView:self.mapView] animated:YES];
     } else {
@@ -266,6 +269,7 @@ static NSString *cellID = @"KKNearVCtrlCellId";
 
 - (KKMapView *)mapView {
     if(_mapView == nil) {
+        __weak typeof(self) weakSelf = self;
         _mapView = [KKMapView mapViewWithFram:CGRectMake(0, 0, KKSCREENBOUNDSIZE.width, KKSCREENBOUNDSIZE.height * 0.6)];
         [self.view addSubview:_mapView];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -279,13 +283,13 @@ static NSString *cellID = @"KKNearVCtrlCellId";
         [button bk_addEventHandler:^(id sender) {
             if (_search) {
                 _search = NO;
-                [self mapView:self.mapView didUpdateUserLocation:self.mapView.userLocation];
+                [weakSelf mapView:weakSelf.mapView didUpdateUserLocation:weakSelf.mapView.userLocation];
             }
         } forControlEvents:UIControlEventTouchUpInside];
         
         UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] bk_initWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
-            [self.store kk_setButtonArrHidden:YES];
-            [self.range kk_setButtonArrHidden:YES];
+            [weakSelf.store kk_setButtonArrHidden:YES];
+            [weakSelf.range kk_setButtonArrHidden:YES];
         }];
         [_mapView addGestureRecognizer:gr];
     }
@@ -302,6 +306,7 @@ static NSString *cellID = @"KKNearVCtrlCellId";
 
 - (UITableView *)tableView {
     if(_tableView == nil) {
+        __weak typeof(self) weakSelf = self;
         _tableView = [[UITableView alloc] init];
         _tableView.dataSource = self;
         _tableView.delegate = self;
@@ -309,7 +314,7 @@ static NSString *cellID = @"KKNearVCtrlCellId";
         [self.view addSubview:_tableView];
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.mas_equalTo(0);
-            make.top.mas_equalTo(self.mapView.bottom);
+            make.top.mas_equalTo(weakSelf.mapView.bottom);
         }];
     }
     return _tableView;
@@ -317,12 +322,13 @@ static NSString *cellID = @"KKNearVCtrlCellId";
 
 - (KKColumnButtons *)store {
     if(_store == nil) {
+        __weak typeof(self) weakSelf = self;
         _store = [[KKColumnButtons alloc] initWithMode:KKColunmModeStore direction:KKColunmDirectionTop];
         [self.mapView addSubview:_store];
         [_store mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.top.mas_equalTo(self.range);
-            make.right.mas_equalTo(self.range.mas_left).mas_equalTo(-20);
-            make.size.mas_equalTo(self.range);
+            make.bottom.top.mas_equalTo(weakSelf.range);
+            make.right.mas_equalTo(weakSelf.range.mas_left).mas_equalTo(-20);
+            make.size.mas_equalTo(weakSelf.range);
         }];
         _store.kk_columnButtonDeledate = self;
     }

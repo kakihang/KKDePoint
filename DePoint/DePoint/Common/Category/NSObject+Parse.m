@@ -11,12 +11,13 @@
 @implementation NSObject (Parse)
 
 + (id)parse:(id)JSON{
+    __weak typeof(self) weakSelf = self;
     if ([JSON isKindOfClass:[NSArray class]]) {
-        return [NSArray modelArrayWithClass:[self class] json:JSON];
+        return [NSArray modelArrayWithClass:[weakSelf class] json:JSON];
     }
     if ([JSON isKindOfClass:[NSDictionary class]] ||[JSON isKindOfClass:[NSString class]]||[JSON isKindOfClass:[NSData class]]) {
         
-        return [self modelWithJSON:JSON];
+        return [weakSelf modelWithJSON:JSON];
     }
     
     return JSON;

@@ -29,10 +29,12 @@
     }
     return self;
 }
+
 #pragma mark - LifeCycle 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.scrollEnabled = NO;
+    self.tableView.height = self.tableView.bounds.size.height;
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]bk_initWithTitle:@"返回" style:UIBarButtonItemStyleDone handler:^(id sender) {
         [self.navigationController popViewControllerAnimated:YES];
     }];
@@ -63,7 +65,7 @@
     if(self.data.count==0){
         return 0;
     }else{
-        return 2;
+        return 1;
     }
 }
 
@@ -82,20 +84,19 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == 0){
-        XPDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-        [cell.iconIV setImageWithURL:[NSString stringWithFormat:@"http://tnfs.tngou.net/image%@",self.data.img].yx_URL placeholder:[UIImage imageNamed:@"背景"]];
-        cell.nameLb.text = self.data.name;
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        self.tableView.rowHeight = 100;
-        return cell;
-    }else{
+//    if(indexPath.section == 0){
+//        XPDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+//        [cell.iconIV setImageWithURL:[NSString stringWithFormat:@"http://tnfs.tngou.net/image%@",self.data.img].yx_URL placeholder:[UIImage imageNamed:@"背景"]];
+//        cell.nameLb.text = self.data.name;
+//        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//        self.tableView.rowHeight = 100;
+//        return cell;
+//    }else{
         XPTextViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"textCell" forIndexPath:indexPath];
         cell.textLb.text = self.viewLb;
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        self.tableView.rowHeight = self.tableView.bounds.size.height;
         return cell;
-    }
+//    }
   }
 -(void)hpple{
     NSString  *html = self.data.message;

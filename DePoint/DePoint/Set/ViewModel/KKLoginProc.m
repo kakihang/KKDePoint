@@ -152,11 +152,12 @@
 }
 
 + (void)kk_changePassAndLoginWithPhone:(NSString *)phone newPassword:(NSString *)newPassword complehandler:(void(^)(BOOL isSuccessful, NSError *error))complehandler {
+    __weak typeof(self) weakSelf = self;
     [BmobUser loginWithUsernameInBackground:phone password:phone.loginString block:^(BmobUser *user, NSError *error) {
         if (error) {
             !complehandler?:complehandler(NO, error);
         } else {
-            [self kk_updateCurrentUserPasswordWithOldPassword:phone.loginString newPassword:newPassword complehandler:^(NSError *error) {
+            [weakSelf kk_updateCurrentUserPasswordWithOldPassword:phone.loginString newPassword:newPassword complehandler:^(NSError *error) {
                 !complehandler?:complehandler(NO, error);
             }];
         }
@@ -206,13 +207,14 @@
 }
 + (void)kk_changeUserPasswordWithOldPass:(NSString *)oldPassword newPass:(NSString *)newPass complehandler:(void(^)(NSError *error, NSString *errMsg))complehandler {
     BmobUser *user = [BmobUser getCurrentUser];
+    __weak typeof(self) weakSelf = self;
     [user updateCurrentUserPasswordWithOldPassword:oldPassword newPassword:newPass block:^(BOOL isSuccessful, NSError *error) {
         if (isSuccessful) {
             [BmobUser loginInbackgroundWithAccount:user.mobilePhoneNumber andPassword:newPass block:^(BmobUser *user, NSError *error) {
-                !complehandler?:complehandler(error, [self errorCode:error]);
+                !complehandler?:complehandler(error, [weakSelf errorCode:error]);
             }];
         } else {
-            !complehandler?:complehandler(error, [self errorCode:error]);
+            !complehandler?:complehandler(error, [weakSelf errorCode:error]);
         }
     }];
 }

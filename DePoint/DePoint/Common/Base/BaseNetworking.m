@@ -11,7 +11,7 @@
 @implementation BaseNetworking
 + (id)GET:(NSString *)path parameters:(NSDictionary *)parameters completionHandler:(void (^)(id, NSError *))completionHandler{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
+    manager.requestSerializer.timeoutInterval = 5;
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", @"text/json", @"text/javascript", @"text/plain", nil];
     
     return [manager GET:path parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -20,7 +20,7 @@
         
         [[NSOperationQueue new] addOperationWithBlock:^{
             // 做缓存
-            NSString *cachePath = [KKNETWORKCACHESPATH stringByAppendingPathComponent:task.currentRequest.URL.absoluteString.md5String];
+            NSString *cachePath = [NSString stringWithFormat:@"%@.%@", KKNETWORKCACHESPATH, task.currentRequest.URL.absoluteString.md5String];
             [NSKeyedArchiver archiveRootObject:responseObject toFile:cachePath];
         }];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -29,7 +29,7 @@
         
         [[NSOperationQueue new] addOperationWithBlock:^{
             // 读缓存
-            NSString *cachePath = [KKNETWORKCACHESPATH stringByAppendingPathComponent:task.currentRequest.URL.absoluteString.md5String];
+            NSString *cachePath = [NSString stringWithFormat:@"%@.%@", KKNETWORKCACHESPATH, task.currentRequest.URL.absoluteString.md5String];
             id responseObj = [NSKeyedUnarchiver unarchiveObjectWithFile:cachePath];
             
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{

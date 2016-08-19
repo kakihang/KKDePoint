@@ -11,9 +11,11 @@
 #import "UIImage+KKUserHeadImage.h"
 #import "KKChangePassVC.h"
 #import "KKRegisterViewC.h"
+#import "KKUserFileProc.h"
 
 @interface KKLoginInfoVC () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView; //
+@property (nonatomic, weak) UILabel *userNameLabel;
 @end
 
 @implementation KKLoginInfoVC {
@@ -76,6 +78,7 @@
     } else if (row == 1) {
         [cell.textLabel setText:[KKLoginProc kk_getCurrentUser]];
         cell.detailTextLabel.text = @"修改";
+        _userNameLabel = cell.textLabel;
     } else if (row == 2) {
         [cell.textLabel setText:@"修改账号密码"];
         cell.detailTextLabel.text = @"修改";
@@ -89,7 +92,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
     if (row == 0) {
-        
+        [KKUserFileProc kk_getUserIcon:nil];
     } else if (row == 1) {
         [KKAlertWithVerifyAndCancel kk_alertWithDelegate:self title:@"修改账号" message:nil verifyTitle:@"确认修改" verifyhandler:^(UIAlertController *alert) {
             [tableView showHUD];
@@ -98,7 +101,7 @@
                 if (!error) {
                     NSLog(@"更新成功: %@", [alert.textFields firstObject].text);
                     [tableView showWarning:@"更新成功"];
-                    [tableView reloadData];
+                    [_userNameLabel setText:[KKLoginProc kk_getCurrentUser]];
                 } else {
                     [tableView kk_showAlertNoTitleWithMessage:@"更新失败"];
                 }

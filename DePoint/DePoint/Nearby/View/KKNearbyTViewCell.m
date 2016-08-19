@@ -39,13 +39,14 @@
 
 - (UILabel *)addressLb {
     if(_addressLb == nil) {
+        __weak typeof(self) weakSelf = self;
         _addressLb = [[UILabel alloc] init];
         [self.contentView addSubview:_addressLb];
         _addressLb.font = [UIFont systemFontOfSize:13];
         _addressLb.textColor = [UIColor colorWithWhite:0.5 alpha:1.0];
         [_addressLb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.nameLb.mas_bottom).mas_equalTo(0);
-            make.left.mas_equalTo(self.nameLb.mas_left);
+            make.top.mas_equalTo(weakSelf.nameLb.mas_bottom).mas_equalTo(0);
+            make.left.mas_equalTo(weakSelf.nameLb.mas_left);
             make.width.mas_lessThanOrEqualTo(300);
             make.bottom.mas_equalTo(-10);
         }];

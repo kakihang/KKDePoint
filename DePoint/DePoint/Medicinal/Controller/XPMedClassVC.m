@@ -8,9 +8,9 @@
 
 #import "XPMedClassVC.h"
 #import "XPListViewCell.h"
-#import "XPListController.h"
 #import "XPSearchController.h"
 #import "XPListModel.h"
+#import "XPDetailController.h"
 @interface XPMedClassVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic) NSInteger cIndex;
 @property (nonatomic) NSInteger nIndex;
@@ -58,7 +58,7 @@ static NSString *rightCell = @"rightCell";
     [self.rightView registerClass:[UITableViewCell class] forCellReuseIdentifier:rightCell];
     [self.leftView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
     [self setMainButtonTitle];
-    [self XPnetwork:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [self XPnetwork:[NSIndexPath indexPathForRow:_nIndex inSection:0]];
 }
 
 -(instancetype)initWithClassIndex:(NSInteger)cindex nindex:(NSInteger)nindex data:(NSArray *)plistData{
@@ -72,10 +72,9 @@ static NSString *rightCell = @"rightCell";
 -(void)setMainButtonTitle{
     [self.leftBt setTitle:self.plistData[_cIndex][@"name"] forState:UIControlStateNormal];
     [self.rightBt setTitle:self.plistData[_cIndex][@"idList"][_nIndex][@"name"] forState:UIControlStateNormal];
+    
 }
 -(void)clickMainButton{
-    
-    NSLog(@"kk--");
     [self.bgView.superview layoutIfNeeded];
     self.bottomView.alpha = 0.4;
     self.leftBt.enabled = NO;
@@ -102,7 +101,7 @@ static NSString *rightCell = @"rightCell";
         self.rightBt.enabled = YES;
     }];
 }
-#pragma make - 
+#pragma make -
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(tableView ==self.leftView){
         return _plistData.count;
@@ -117,13 +116,13 @@ static NSString *rightCell = @"rightCell";
         UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:leftCell forIndexPath:indexPath];
         cell.textLabel.text = _plistData[indexPath.row][@"name"];
         cell.textLabel.font = [UIFont systemFontOfSize:18];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else if(tableView ==self.rightView){
         UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:rightCell forIndexPath:indexPath];
         cell.textLabel.text = _plistData[_cIndex][@"idList"][indexPath.row][@"name"];
         cell.textLabel.font = [UIFont systemFontOfSize:18];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = KKCOLOR(217, 217, 217, 1);
         return cell;
     }else{
@@ -136,7 +135,7 @@ static NSString *rightCell = @"rightCell";
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(tableView ==self.leftView){
         _cIndex = indexPath.row;
         [self.rightView reloadData];
@@ -145,17 +144,17 @@ static NSString *rightCell = @"rightCell";
         [self clickMainButton];
         [self setMainButtonTitle];
         [self XPnetwork:indexPath];
-        
-//        XPListController *vc =[[XPListController alloc]initWithDrug:[_plistData[_cIndex][@"idList"][indexPath.row][@"id"]integerValue]];
     }else{
-        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        XPDetailController *vc =[[XPDetailController alloc]initWithDetai:self.data[indexPath.row].ID];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 #pragma mark - LazyLoad  懒加载
 - (UIButton *)leftBt {
     if(_leftBt == nil) {
         _leftBt = [[UIButton alloc] init];
-        self.leftBt.backgroundColor = [UIColor whiteColor];
+        //        self.leftBt.backgroundColor = [UIColor whiteColor];
         [_leftBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_leftBt addTarget:self action:@selector(clickMainButton) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_leftBt];
@@ -172,7 +171,7 @@ static NSString *rightCell = @"rightCell";
     if(_rightBt == nil) {
         _rightBt = [[UIButton alloc] init];
         [_rightBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        self.rightBt.backgroundColor = [UIColor whiteColor];
+        //        self.rightBt.backgroundColor = [UIColor whiteColor];
         [_rightBt addTarget:self action:@selector(clickMainButton) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_rightBt];
         [_rightBt mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -221,7 +220,7 @@ static NSString *rightCell = @"rightCell";
         [self.view addSubview:_bgView];
         [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {            make.centerX.equalTo(0);
             make.top.mas_equalTo(self.leftBt.mas_bottom);
-//            make.left.right.bottom.mas_equalTo(0);
+            //            make.left.right.bottom.mas_equalTo(0);
             make.height.equalTo(0);
         }];
         UIView *bottomView = [[UIView alloc] init];
@@ -251,9 +250,8 @@ static NSString *rightCell = @"rightCell";
     [super didReceiveMemoryWarning];
 }
 - (UITableView *)listView {
-	if(_listView == nil) {
-		_listView = [[UITableView alloc] init];
-        _listView.backgroundColor = [UIColor blueColor];
+    if(_listView == nil) {
+        _listView = [[UITableView alloc] init];
         _listView.dataSource =self;
         _listView.delegate = self;
         [self.view addSubview:_listView];
@@ -261,8 +259,8 @@ static NSString *rightCell = @"rightCell";
             make.top.equalTo(self.leftBt.mas_bottom);
             make.left.right.bottom.equalTo(0);
         }];
-	}
-	return _listView;
+    }
+    return _listView;
 }
 - (NSMutableArray<XPListDataModel *> *)data {
     if(_data == nil) {
@@ -278,7 +276,6 @@ static NSString *rightCell = @"rightCell";
             [weakSelf.data removeAllObjects];
             [weakSelf.data addObjectsFromArray:model.tngou];
             [weakSelf.listView endHeaderRefresh];
-            NSLog(@"kk------0");
             [weakSelf.listView reloadData];
         }];
     }];

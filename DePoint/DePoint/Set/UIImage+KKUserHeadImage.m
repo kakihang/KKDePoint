@@ -7,7 +7,8 @@
 //
 
 #import "UIImage+KKUserHeadImage.h"
-#import "KKLoginProc.h"
+#import "KKUserFileProc.h"
+
 
 @implementation UIImage (KKUserHeadImage)
 

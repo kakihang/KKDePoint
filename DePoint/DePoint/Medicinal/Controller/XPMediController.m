@@ -14,12 +14,14 @@
 #import "XPNetManager.h"
 #import "XPMedClassVC.h"
 #import "XPSearchController.h"
-@interface XPMediController ()<XPMedCellClickDelegate,XPMedCellDelegate>
+@interface XPMediController ()<XPMedCellClickDelegate>
 @property (nonatomic) NSArray *data;
+
 @end
 
 @implementation XPMediController{
     NSInteger selectBt;
+    BOOL bt;
 }
 static NSString *one = @"XPMedCellone";
 static NSString *two = @"XPMedCelltwo";
@@ -27,7 +29,7 @@ static NSString *three = @"XPMedCellthree";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.scrollEnabled = NO;
+    bt =NO;
     [XPFactory addSearchItemForVC:self clickedHandler:^{
         XPSearchController *vc =[[XPSearchController alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
@@ -69,17 +71,28 @@ static NSString *three = @"XPMedCellthree";
     if(indexPath.section == 0){
         XPMediHclassTVCell *cell =[tableView dequeueReusableCellWithIdentifier:one forIndexPath:indexPath];
         [cell.xpClick enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [obj setTitle:self.data[idx][@"name"] forState:UIControlStateNormal];
+            if(idx == 3){
+                [obj setTitle:@"更多详情" forState:UIControlStateNormal];
+            }else{
+                [obj setTitle:self.data[idx][@"name"] forState:UIControlStateNormal];
+            }
         }];
-        [cell.moretn setTitle:@"更多详情" forState:UIControlStateNormal];
-        cell.XPCellDelegate = self;
-        [cell.xpClick enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [obj bk_addEventHandler:^(id sender) {
-                selectBt = idx;
-                [tableView reloadData];
-            } forControlEvents:UIControlEventTouchUpInside];
-        }];
+        if(bt !=YES){
+            [cell.xpClick enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if(idx ==3){
+                    [obj bk_addEventHandler:^(id sender) {
+                        [self.navigationController pushViewController:[[XPMedClassVC alloc]initWithClassIndex:selectBt nindex:idx data:self.data] animated:YES];
+                    } forControlEvents:UIControlEventTouchUpInside];
+                }else{
+                    [obj bk_addEventHandler:^(id sender) {
+                        selectBt = idx;
+                        [tableView reloadData];
+                    } forControlEvents:UIControlEventTouchUpInside];
+                }
+            }];
+        }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        bt =YES;
         return cell;
     }else if(indexPath.section == 1){
         XPMediMClassTVCell *cell =[tableView dequeueReusableCellWithIdentifier:two forIndexPath:indexPath];
@@ -122,17 +135,12 @@ static NSString *three = @"XPMedCellthree";
 -(void)cellClickIndex:(NSInteger)index{
     [self.navigationController pushViewController:[[XPMedClassVC alloc]initWithClassIndex:selectBt nindex:index data:self.data] animated:YES];
 }
--(void)cellClick:(NSInteger)index{//更多详情
-     [self.navigationController pushViewController:[[XPMedClassVC alloc]initWithClassIndex:selectBt nindex:index data:self.data] animated:YES];
-}
-
-
 - (NSArray *)data {
-	if(_data == nil) {
+    if(_data == nil) {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"kk.medi" ofType:@"plist"];
         _data = [NSArray arrayWithContentsOfFile:path];
-	}
-	return _data;
+    }
+    return _data;
 }
 
 @end

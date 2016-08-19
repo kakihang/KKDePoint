@@ -27,8 +27,6 @@
                                  newPass:(NSString *)newPass
                            complehandler:(void(^)(NSError *error, NSString *errMsg))complehandler;
 
-//+ (void)kk_checkExistWithPhone:(NSString *)phone
-//                 complehandler:(void(^)(BOOL isSuccessful, NSError *error, BOOL isExist))complehandler;
 + (void)kk_checkPhoneExist:(NSString *)phone
              complehandler:(void(^)(NSError *error, BOOL isExist))complehandler;
 + (void)kk_thirdLoginWithDictionary:(NSDictionary *)dict platform:(id)platform complehandler:(void(^)(NSError *error, NSString *username))complehandler;

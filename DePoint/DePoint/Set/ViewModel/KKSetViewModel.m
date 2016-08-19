@@ -10,6 +10,7 @@
 #import "KKFeedBackVC.h"
 #import "KKCustomVC.h"
 #import "KKMedicineChestVC.h"
+#import "KKLoginProc.h"
 
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKUI/ShareSDK+SSUI.h>
@@ -76,8 +77,12 @@
         _dataList =
         @[@[@{@"icon":@"set_icon",  //0-0
               @"title":@"药箱",
-              @"block":^(id obj){
-                  [weakSelf pushViewContr:[[KKMedicineChestVC alloc] init] from:obj];
+              @"block":^(UIViewController *obj){
+                  if (![KKLoginProc kk_getCurrentUser]) {
+                      [obj.view kk_showAlertNoTitleWithMessage:@"请先进行登录"];
+                  } else {
+                      [weakSelf pushViewContr:[[KKMedicineChestVC alloc] init] from:obj];
+                  }
               }
               }/*,
                 @{@"icon":@"set_icon",  //0-1
