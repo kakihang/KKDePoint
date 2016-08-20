@@ -121,7 +121,7 @@
     UMConfigInstance.channelId = @"App Store";
     [MobClick startWithConfigure:UMConfigInstance];
     [MobClick setLogEnabled:YES]; // 不拦截本地错误日志
-    
+
     /*****************************************************************/
     
     [MLTransition validatePanBackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypeScreenEdgePan];

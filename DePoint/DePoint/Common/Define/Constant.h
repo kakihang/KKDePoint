@@ -9,7 +9,16 @@
 #ifndef Constant_h
 #define Constant_h
 
+/** 全局参数 **/
 
+// title字体大小
+#define KKGlobalTitleTextFont  [UIFont systemFontOfSize:15]
+// detail字体大小
+#define KKGlobalDetailTextFont [UIFont systemFontOfSize:14]
+// min字体大小
+#define KKGlobalMinTextFont [UIFont systemFontOfSize:14]
+// tabBar字体大小
+#define KKTabBarTextFont [UIFont systemFontOfSize:10]
 
 // 三原色和透明度 颜色宏
 #define KKCOLOR(kred, kgreen, kblue, kalpha) [UIColor colorWithRed:kred/255.0 green:kgreen/255.0 blue:kblue/255.0 alpha:kalpha]

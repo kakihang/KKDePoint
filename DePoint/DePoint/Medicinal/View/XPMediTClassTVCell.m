@@ -23,6 +23,7 @@
 - (UIButton *)firstBt {
     if(_firstBt == nil) {
         _firstBt = [[UIButton alloc] init];
+        _firstBt.titleLabel.font = KKGlobalTitleTextFont;
         __weak typeof(self) weakSelf = self;
         [self.contentView addSubview:_firstBt];
         [_firstBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -55,6 +56,7 @@
 - (UIButton *)secondBt {
     if(_secondBt == nil) {
         _secondBt = [[UIButton alloc] init];
+        _secondBt.titleLabel.font = KKGlobalTitleTextFont;
         [_secondBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self.contentView addSubview:_secondBt];
         _secondBt.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
@@ -87,6 +89,7 @@
 - (UIButton *)thirdBt {
     if(_thirdBt == nil) {
         _thirdBt = [[UIButton alloc] init];
+        _thirdBt.titleLabel.font = KKGlobalTitleTextFont;
         [_thirdBt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _thirdBt.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
         _thirdBt.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;

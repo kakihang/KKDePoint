@@ -50,6 +50,8 @@ static NSString *three = @"XPMedCellthree";
     self.tableView.tableHeaderView = headView;
     self.tableView.sectionHeaderHeight = 5;
     self.tableView.sectionFooterHeight = 15;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
 }
 
 - (void)didReceiveMemoryWarning {

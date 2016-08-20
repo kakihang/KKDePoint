@@ -42,7 +42,6 @@
 #import "UITableViewCell+KKExtension.h"
 
 #import "Constant.h"
-#import "FrameConstant.h"
 #import "NearConstant.h"
 #import "KKSetConstant.h"
 

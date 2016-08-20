@@ -12,7 +12,7 @@
 
 - (void)setup {
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    self.titleLabel.font = [UIFont systemFontOfSize:14];
+    self.titleLabel.font = KKGlobalTitleTextFont;
     [self setTitleColor:[UIColor colorWithWhite:0.3 alpha:1] forState:(UIControlStateNormal)];
     [self setTitleColor:[UIColor lightGrayColor] forState:(UIControlStateHighlighted)];
 }

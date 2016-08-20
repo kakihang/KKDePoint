@@ -251,7 +251,6 @@
 		26AD7A101D4A44B6009217B5 /* KKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMapView.h; sourceTree = "<group>"; };
 		26AD7A111D4A44B6009217B5 /* KKMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMapView.m; sourceTree = "<group>"; };
 		26AE8F451D48D39C00E5E763 /* NearConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NearConstant.h; sourceTree = "<group>"; };
-		26AE8F461D48D3D800E5E763 /* FrameConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameConstant.h; sourceTree = "<group>"; };
 		26AE8F471D48D5C300E5E763 /* KKLocationVModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLocationVModel.h; sourceTree = "<group>"; };
 		26AE8F481D48D5C300E5E763 /* KKLocationVModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLocationVModel.m; sourceTree = "<group>"; };
 		26B9D4291D5E27D100BBEBE0 /* KKLoginRegisButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLoginRegisButton.h; sourceTree = "<group>"; };
@@ -576,7 +575,6 @@
 		26D6BD311D4242AB00CFBB01 /* 0-Frame 主框架 */ = {
 			isa = PBXGroup;
 			children = (
-				26AE8F461D48D3D800E5E763 /* FrameConstant.h */,
 				26D6BD421D42441900CFBB01 /* Controller */,
 				26D6BD431D42441900CFBB01 /* Model */,
 				26D6BD441D42441900CFBB01 /* View */,

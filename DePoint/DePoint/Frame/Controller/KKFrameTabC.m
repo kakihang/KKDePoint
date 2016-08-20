@@ -28,8 +28,8 @@
     
     // 统一设置所有UITabBarItem属性
     UITabBarItem *item = [UITabBarItem appearance];
-    [item setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:KKFrameTaBarFont]} forState:UIControlStateNormal];
-    [item setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:KKFrameTaBarFont]} forState:UIControlStateSelected];
+    [item setTitleTextAttributes:@{NSFontAttributeName:KKTabBarTextFont} forState:UIControlStateNormal];
+    [item setTitleTextAttributes:@{NSFontAttributeName:KKTabBarTextFont} forState:UIControlStateSelected];
     
     // 添加yaopin搜索子控制器
     [self setupViewController:[[KKSearchVC alloc] init]

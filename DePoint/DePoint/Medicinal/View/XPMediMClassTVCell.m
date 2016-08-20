@@ -16,12 +16,13 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     [super setSelected:selected animated:animated];
 }
 - (UILabel *)label {
     if(_label == nil) {
         _label = [[UILabel alloc] init];
+        _label.font = KKGlobalTitleTextFont;
         [self.contentView addSubview:_label];
         [_label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(10);
